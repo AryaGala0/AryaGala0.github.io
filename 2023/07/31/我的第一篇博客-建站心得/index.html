@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="AryaGala">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/07/31/我的第一篇博客-建站心得/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="▶️前言其实很久之前就想建一个网站了。第一次接触hexo是因为学校的大神师兄 ，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一直迟迟没有动手。后来，看着越来越多认识的学长学姐也开始建立了自己的博客，我便发出了疑问，难道他们那么快就掌握了前后端的知识了？！！怎么大家都开始那么卷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的第一篇博客--建站心得">
+<meta property="og:url" content="http://example.com/2023/07/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="▶️前言其实很久之前就想建一个网站了。第一次接触hexo是因为学校的大神师兄 ，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一直迟迟没有动手。后来，看着越来越多认识的学长学姐也开始建立了自己的博客，我便发出了疑问，难道他们那么快就掌握了前后端的知识了？！！怎么大家都开始那么卷">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-31T14:09:52.000Z">
+<meta property="article:modified_time" content="2023-10-23T09:54:50.222Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="生活">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/my_icon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/my_icon.ico">
+    <meta name="theme-color" content="#c7aded">
+    <link rel="shortcut icon" href="/images/my_icon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            我的第一篇博客--建站心得 -
+        
+        AryaGala&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#c7aded","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Once you name it,you start getting attached to it.--《Monsters'Inc》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","The real death is that no one in the world remembers you. --《Coco》","The family is more important than the dream  --《Coco》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","灵魂是压不死的，只有生活才能压垮你。-- 《心灵奇旅》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#000","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":false,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"1263870289@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/selfie.webp">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                AryaGala&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">我的第一篇博客--建站心得</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/selfie.webp">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">AryaGala</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-07-31 22:09:52</span>
+        <span class="mobile">2023-07-31 22:09:52</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-23 17:54:50</span>
+            <span class="mobile">2023-10-23 17:54:50</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h2 id="▶️前言"><a href="#▶️前言" class="headerlink" title="▶️前言"></a>▶️前言</h2><p>其实很久之前就想建一个网站了。第一次接触hexo是因为学校的<a class="link"   target="_blank" rel="noopener" href="https://blog.l0v0.com/" >大神师兄 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一直迟迟没有动手。后来，看着越来越多认识的学长学姐也开始建立了自己的博客，我便发出了疑问，难道他们那么快就掌握了前后端的知识了？！！怎么大家都开始那么卷了…这个疑问和想法一直伴随了我整个大学，直到工作之后，接触了github工作流，有了一些实践和勇气，我才开始真正着手建立自己的博客。博客建成之后，我才意识到，原来建立一个博客网站是件比较简单的事情！通过hexo框架，再下载一些软件和执行一些命令就可以完成啦！！！话不多说，我们开始建站吧！</p>
+<h2 id="👐建站历程"><a href="#👐建站历程" class="headerlink" title="👐建站历程"></a>👐建站历程</h2><p>建站的过程主要就是  安装Git –&gt; 安装node.js –&gt; 安装hexo –&gt;初始化hexo博客,配置_config.yml文件，这些完成之后就会有一个博客的框架出来，接着可以上<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >hexo的官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>上下载自己喜欢的主题，根据自己<a class="link"   target="_blank" rel="noopener" href="https://redefine-docs.ohevan.com/getting-started" >主题的文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，对主题元素进行配置。<br>建站的过程我参考的是<a class="link"   target="_blank" rel="noopener" href="https://vannyyuan.github.io/2020/08/27/own/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" >师姐的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，她是我TD职业道路上的引路人，多亏了她我才顺利地进入TD这个领域。跟着师姐博客中的<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029" >参考教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，便可以解决大部分建立博客网站的问题了！如果想要自定义域名，可以参考<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249" >GitHub+Hexo 搭建个人网站详细教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="❣️挑选主题"><a href="#❣️挑选主题" class="headerlink" title="❣️挑选主题"></a>❣️挑选主题</h2><p>当一个基础的hexo网站建立之后，可以选择下载自己喜欢的<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >Hexo主题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>（当然你也可以自己写，depend yourself）,选好主题后，点击主题的github地址，然后克隆或者下载到hexo文件中的themes文件夹内，然后打开hexo文件根目录下的配置文件_config.yml,修改主题名称为你下载好的主题名称(注意冒号之后需要加空格)</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: hexo-theme-redefine</span><br></pre></td></tr></table></figure></div>
+
+
+<p>然后在hexo文件根目录打开git bash，生成相应的文件</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><figcaption><span>bash</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
+<p>然后可以通过主题文件夹中的_config.yml文件对主题进行配置。具体如何配置要看这个主题的帮助文档啦，一般github上会有</p>
+<p>一切都弄好之后可以在’source\_posts’文件夹中新建一个.md文件来写自己的第一篇博客了。.md文件是markdown文件，具体介绍可以康康<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/python/python-os-path.html" >🥦🐦 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，他是通过vscode配置后来写markdown的，不得不说，vscode！！！不挑体质，清爽不油腻！！</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>最后一步就是把他部署到服务器上。在部署过程中我遇到了两个问题，当然通过查找之后都得到了解决。最大的问题是在config.yml文件中对仓库地址的配置问题。我出现的报错是“git: fatal: Could not read from remote repository”。这个问题通过把deploy中github的ssh地址改为https地址得到了解决。我猜想是因为配置了公钥和私钥导致使用<a class="link"   target="_blank" rel="noopener" href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls" >SSH时无法通过端口22进行连接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，所以改为HTTPS可以解决这个问题。<br>部署的一般步骤是</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
+<h4 id="额外的话：ssh密钥文件"><a href="#额外的话：ssh密钥文件" class="headerlink" title="额外的话：ssh密钥文件"></a>额外的话：ssh密钥文件</h4><p>因为在工作过程中也会遇到网站部署问题，我就顺便地浅浅了解了一下<a class="link"   target="_blank" rel="noopener" href="https://www.cainiaojc.com/ssh/ssh-index.html" >ssh <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>相关的知识。也连带着了解了<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" >操作系统 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>和<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux" >Linux <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。SSH用于加密计算机之间的通信。在部署hexo博客时，使用ssh加密可以限制特定的用户部署并且避免每次部署时都要输入密码的复杂操作。ssh是一种很难被暴力破解的<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58050071" >非对称加密方式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。在进行配置github的过程中，可以使用</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github登录邮箱&quot;</span><br></pre></td></tr></table></figure></div>
+<p>来生成.ssh文件，它会生成id_rsa（私钥）,id_ras.pub（公钥）文件，在github仓库中对公钥进行配置，部署时会自动与私钥配对进行部署。</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>工作了一段时间，我发现td是一个广度和深度并存的职业，各个方面的知识都会涉及到一些，不仅是程序、三维，有时候开发软件甚至需要自己当自己的产品经理，给自己提需求，构想软件的使用逻辑，排布ui等等。但是我很喜欢这个职业，它很具挑战性，也能大大提高我的能力。希望我以后在这条路上能越走越远，让此博客作为我的见证吧！</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 我的第一篇博客--建站心得</li>
+        <li><strong>Author:</strong> AryaGala</li>
+        <li><strong>Created at
+                :</strong> 2023-07-31 22:09:52</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-10-23 17:54:50
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://aryagala0.github.io/2023/07/31/我的第一篇博客-建站心得/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E7%94%9F%E6%B4%BB/">#生活</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/08/09/pythonos/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">python os模块常用操作解析</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">我的第一篇博客--建站心得</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%96%B6%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">▶️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%91%90%E5%BB%BA%E7%AB%99%E5%8E%86%E7%A8%8B"><span class="nav-text">👐建站历程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%9D%A3%EF%B8%8F%E6%8C%91%E9%80%89%E4%B8%BB%E9%A2%98"><span class="nav-text">❣️挑选主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2"><span class="nav-text">部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="nav-text">写在后面</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">AryaGala</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
