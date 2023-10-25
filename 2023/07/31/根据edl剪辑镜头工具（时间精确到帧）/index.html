@@ -13,22 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/07/31/我的第一篇博客-建站心得/"/>
+    <link rel="canonical" href="http://example.com/2023/07/31/根据edl剪辑镜头工具（时间精确到帧）/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="▶️前言其实很久之前就想建一个网站了。第一次接触hexo是因为学校的大神师兄 ，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一直迟迟没有动手。后来，看着越来越多认识的学长学姐也开始建立了自己的博客，我便发出了疑问，难道他们那么快就掌握了前后端的知识了？！！怎么大家都开始那么卷">
+        <meta name="description" content="⏸️前言 公司的流程中经常会用到EDL （Edit Desicion List剪辑决策表）来确定每个镜头时间。因为要分别把不同的镜头发给不同的动画师，所以需要一个能够将每一集的分镜根据edl的时间剪辑出不同镜头的插件。用python进行视频处理，有两个现成的库可以用，一是moviepy，第二个是opencv。其中moviepy可以精确到秒对视频进行剪辑，而opencv可以精确到帧对视频进行剪辑。本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客--建站心得">
-<meta property="og:url" content="http://example.com/2023/07/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:title" content="pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑">
+<meta property="og:url" content="http://example.com/2023/07/31/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="▶️前言其实很久之前就想建一个网站了。第一次接触hexo是因为学校的大神师兄 ，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一直迟迟没有动手。后来，看着越来越多认识的学长学姐也开始建立了自己的博客，我便发出了疑问，难道他们那么快就掌握了前后端的知识了？！！怎么大家都开始那么卷">
+<meta property="og:description" content="⏸️前言 公司的流程中经常会用到EDL （Edit Desicion List剪辑决策表）来确定每个镜头时间。因为要分别把不同的镜头发给不同的动画师，所以需要一个能够将每一集的分镜根据edl的时间剪辑出不同镜头的插件。用python进行视频处理，有两个现成的库可以用，一是moviepy，第二个是opencv。其中moviepy可以精确到秒对视频进行剪辑，而opencv可以精确到帧对视频进行剪辑。本">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-07-31T14:09:52.000Z">
-<meta property="article:modified_time" content="2023-10-24T01:52:48.883Z">
+<meta property="article:modified_time" content="2023-10-25T08:25:49.903Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="生活">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
     
     
@@ -41,7 +41,7 @@
     
     <title>
         
-            我的第一篇博客--建站心得 -
+            pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑 -
         
         AryaGala&#39;s Blog
     </title>
@@ -218,7 +218,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">我的第一篇博客--建站心得</h1>
+                <h1 class="article-title-regular">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</h1>
             
             </div>
             
@@ -247,8 +247,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-24 09:52:48</span>
-            <span class="mobile">2023-10-24 09:52:48</span>
+            <span class="desktop">2023-10-25 16:25:49</span>
+            <span class="mobile">2023-10-25 16:25:49</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -260,7 +260,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
+                        <a href="/tags/python/">python</a>&nbsp;
                     </li>
                 
             </ul>
@@ -286,22 +286,11 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="▶️前言"><a href="#▶️前言" class="headerlink" title="▶️前言"></a>▶️前言</h2><p>其实很久之前就想建一个网站了。第一次接触hexo是因为学校的<a class="link"   target="_blank" rel="noopener" href="https://blog.l0v0.com/" >大神师兄 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一直迟迟没有动手。后来，看着越来越多认识的学长学姐也开始建立了自己的博客，我便发出了疑问，难道他们那么快就掌握了前后端的知识了？！！怎么大家都开始那么卷了…这个疑问和想法一直伴随了我整个大学，直到工作之后，接触了github工作流，有了一些实践和勇气，我才开始真正着手建立自己的博客。博客建成之后，我才意识到，原来建立一个博客网站是件比较简单的事情！通过hexo框架，再下载一些软件和执行一些命令就可以完成啦！！！话不多说，我们开始建站吧！</p>
-<h2 id="👐建站历程"><a href="#👐建站历程" class="headerlink" title="👐建站历程"></a>👐建站历程</h2><p>建站的过程主要就是  安装Git –&gt; 安装node.js –&gt; 安装hexo –&gt;初始化hexo博客,配置_config.yml文件，这些完成之后就会有一个博客的框架出来，接着可以上<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >hexo的官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>上下载自己喜欢的主题，根据自己<a class="link"   target="_blank" rel="noopener" href="https://redefine-docs.ohevan.com/getting-started" >主题的文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，对主题元素进行配置。<br>建站的过程我参考的是<a class="link"   target="_blank" rel="noopener" href="https://vannyyuan.github.io/2020/08/27/own/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" >师姐的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，她是我TD职业道路上的引路人，多亏了她我才顺利地进入TD这个领域。跟着师姐博客中的<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029" >参考教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，便可以解决大部分建立博客网站的问题了！如果想要自定义域名，可以参考<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249" >GitHub+Hexo 搭建个人网站详细教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h3 id="❣️挑选主题"><a href="#❣️挑选主题" class="headerlink" title="❣️挑选主题"></a>❣️挑选主题</h3><p>当一个基础的hexo网站建立之后，可以选择下载自己喜欢的<a class="link"   target="_blank" rel="noopener" href="https://hexo.io/themes/" >Hexo主题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>（当然你也可以自己写，depend yourself）,选好主题后，点击主题的github地址，然后克隆或者下载到hexo文件中的themes文件夹内，然后打开hexo文件根目录下的配置文件_config.yml,修改主题名称为你下载好的主题名称(注意冒号之后需要加空格)</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: hexo-theme-redefine</span><br></pre></td></tr></table></figure></div>
+            <h2 id="⏸️前言"><a href="#⏸️前言" class="headerlink" title="⏸️前言"></a>⏸️前言</h2><p> 公司的流程中经常会用到<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/65080858" >EDL <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>（Edit Desicion List剪辑决策表）来确定每个镜头时间。因为要分别把不同的镜头发给不同的动画师，所以需要一个能够将每一集的分镜根据edl的时间剪辑出不同镜头的插件。用python进行视频处理，有两个现成的库可以用，一是moviepy，第二个是opencv。其中moviepy可以精确到秒对视频进行剪辑，而opencv可以精确到帧对视频进行剪辑。本想着用opencv就可以简单处理了。没想到流程中要求剪辑的视频需要带声音！！！半路杀出个程咬金。因为opencv按帧数剪辑视频的原理是将视频拆分成每一帧，然后再把每一帧重新合成为一个视频，所以导致剪辑出来的视频没有声音，而且这个过程会很慢。而其他的音频处理库，例如pydub也只能精确到毫秒，因为帧是视频的时间概念，转换到音频的时间概念必须要四舍五入，所以总会有那么一两帧与edl有出入。<br>在互联网上搜寻了一天无果后，我想出了一种视频剪辑全家福（pydub+moviepy+opencv+ffmpeg）套餐，可能不是最优解，但勉强能用，如果有大佬有更好的方法，请评论在下方，我愿献上我的膝盖！！话不多说，下面来介绍下我的方法。</p>
+<h2 id="💡思路"><a href="#💡思路" class="headerlink" title="💡思路"></a>💡思路</h2><p>我的方法思路有点繁复，其中的关键是ffmpeg，使用它可以剪辑视频的零到任何一帧，但是无法自定义起始帧（或者是我没查到文档中正确的方法）。所以我只能将精确到帧的视频（没有声音）用opencv剪辑出来，然后合成上精确到毫秒的声音（moviepy转换+pydub剪辑音频）。然后再用ffmpeg剪辑一次，保证视频的帧数正确，而多出的声音则会被剪掉。</p>
+<h2 id="💻具体做法"><a href="#💻具体做法" class="headerlink" title="💻具体做法"></a>💻具体做法</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> pydub <span class="keyword">import</span> AudioSegment</span><br><span class="line"><span class="keyword">from</span> moviepy.editor <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">clip_video</span>(<span class="params">self</span>):</span><br><span class="line">        audio = AudioFileClip(self.video_file_path)                                          <span class="comment">#moviepy提取视频中的音频</span></span><br><span class="line">        audio.write_audiofile(self.folder_path+<span class="string">&quot;/audio.wav&quot;</span>)                            <span class="comment">#写入音频文件</span></span><br><span class="line">        audio = AudioSegment.from_file(self.folder_path+<span class="string">&quot;/audio.wav&quot;</span>)          <span class="comment">#pydub</span></span><br><span class="line">        edl_path = self.edl_file_path</span><br><span class="line">        title = self.detect_edl_title(edl_path)           <span class="comment">#提取edl的Title，并进行处理</span></span><br><span class="line">        title_list=title.split(<span class="string">&quot;_&quot;</span>)</span><br><span class="line">        self.data=self.extract_data()              <span class="comment">#提取edl镜头名称及时间信息</span></span><br><span class="line">        self.show = []</span><br><span class="line">        self.edl_infomation=[]</span><br><span class="line">        <span class="comment">#计算每个镜头的帧数以及起止时间</span></span><br><span class="line">        <span class="keyword">for</span> clip_name, timecode_in, timecode_out <span class="keyword">in</span> self.data:</span><br><span class="line">            hours_in, minutes_in, seconds_in, frames_in = <span class="built_in">map</span>(<span class="built_in">int</span>, timecode_in.split(<span class="string">&quot;:&quot;</span>))</span><br><span class="line">            hours_out, minutes_out, seconds_out, frames_out = <span class="built_in">map</span>(<span class="built_in">int</span>, timecode_out.split(<span class="string">&quot;:&quot;</span>))</span><br><span class="line">            <span class="comment">#audio time clip</span></span><br><span class="line">            start_time = (hours_in * <span class="number">3600</span> + minutes_in * <span class="number">60</span> + seconds_in) * <span class="number">1000</span> + frames_in * (<span class="number">1000</span> / <span class="number">24</span>)</span><br><span class="line">            end_time = (hours_out * <span class="number">3600</span> + minutes_out * <span class="number">60</span> + seconds_out) * <span class="number">1000</span> + frames_out * (<span class="number">1000</span> / <span class="number">24</span>)</span><br><span class="line">            <span class="comment">#video frames clip</span></span><br><span class="line">            edl_frames = (<span class="number">3600</span> * (hours_out - hours_in) + <span class="number">60</span> * (minutes_out - minutes_in) + (</span><br><span class="line">                        seconds_out - seconds_in)) * <span class="number">24</span> + (frames_out - frames_in)</span><br><span class="line">            clip_name = title_list[<span class="number">0</span>] + <span class="string">&quot;_&quot;</span> + clip_name</span><br><span class="line">            self.edl_infomation.append([clip_name, edl_frames,start_time,end_time])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        video_path = self.video_file_path</span><br><span class="line">        video_path = video_path.replace(<span class="string">&quot;\\&quot;</span>, <span class="string">&quot;/&quot;</span>).replace(<span class="string">&#x27;&quot;&#x27;</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;&quot;</span>).strip()</span><br><span class="line">        video_capture = cv2.VideoCapture(video_path)        <span class="comment">#opencv</span></span><br><span class="line">        fps = video_capture.get(cv2.CAP_PROP_FPS)           <span class="comment">#得到视频的帧速率</span></span><br><span class="line">        width = video_capture.get(cv2.CAP_PROP_FRAME_WIDTH)     <span class="comment">#得到视频宽度</span></span><br><span class="line">        height = video_capture.get(cv2.CAP_PROP_FRAME_HEIGHT)       <span class="comment">#得到视频高度</span></span><br><span class="line">        frames = video_capture.get(cv2.CAP_PROP_FRAME_COUNT)        <span class="comment">#得到视频总帧数</span></span><br><span class="line">        size = (<span class="built_in">int</span>(width),<span class="built_in">int</span>(height))</span><br><span class="line">        fourcc = cv2.VideoWriter_fourcc(<span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;4&#x27;</span>)             <span class="comment">#视频是H264编码，也就是mov格式</span></span><br><span class="line">        start_frame=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> self.edl_infomation:</span><br><span class="line">            video_capture = cv2.VideoCapture(video_path)</span><br><span class="line">            output_dir=self.folder_path.replace(<span class="string">&quot;\\&quot;</span>,<span class="string">&quot;/&quot;</span>)</span><br><span class="line">            out_video_pth = output_dir+<span class="string">&quot;/&quot;</span>+item[<span class="number">0</span>]+<span class="string">&quot;_temp_.mov&quot;</span>             <span class="comment">#临时文件1的地址，帧数准确但无声的视频 </span></span><br><span class="line">            video_write = cv2.VideoWriter(out_video_pth, fourcc, fps, size, <span class="literal">True</span>)</span><br><span class="line">            end_frame = start_frame+<span class="built_in">int</span>(item[<span class="number">1</span>])</span><br><span class="line">            pos_frame = start_frame</span><br><span class="line">            <span class="keyword">while</span> (pos_frame &lt;= end_frame):</span><br><span class="line">                video_capture.<span class="built_in">set</span>(cv2.CAP_PROP_POS_FRAMES, pos_frame)</span><br><span class="line">                isSuccess, frame = video_capture.read()</span><br><span class="line">                video_write.write(frame)        <span class="comment">#把每一帧写入文件中</span></span><br><span class="line">                pos_frame = pos_frame + <span class="number">1</span></span><br><span class="line">            video_capture.release()             <span class="comment">#释放内存</span></span><br><span class="line">            video_write.release()</span><br><span class="line">            index=self.edl_infomation.index(item)</span><br><span class="line">            out_video_pth = out_video_pth.replace(<span class="string">&quot;\\&quot;</span>, <span class="string">&quot;/&quot;</span>).replace(<span class="string">&#x27;&quot;&#x27;</span>, <span class="string">&#x27;&#x27;</span>).replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;&quot;</span>).strip()</span><br><span class="line">            video=VideoFileClip(out_video_pth)              <span class="comment">#moviepy</span></span><br><span class="line">            video_time=video.duration</span><br><span class="line">            <span class="comment"># 提取视频的音频</span></span><br><span class="line">            <span class="comment">#audio segment file</span></span><br><span class="line">            output_audiofile=output_dir+<span class="string">&quot;/&quot;</span>+item[<span class="number">0</span>]+<span class="string">&quot;.wav&quot;</span></span><br><span class="line">            audio_segment = audio[item[<span class="number">2</span>]:item[<span class="number">3</span>]]</span><br><span class="line">            audio_segment.export(output_audiofile, <span class="built_in">format</span>=<span class="string">&quot;wav&quot;</span>)</span><br><span class="line">            <span class="comment">#合成音视频</span></span><br><span class="line">            audiofile=AudioFileClip(output_audiofile)</span><br><span class="line">            video_out=video.set_audio(audiofile)        <span class="comment">#合成视频和音频，生成的视频帧数是音频的帧数，不太准确</span></span><br><span class="line">            out_name=out_video_pth.replace(<span class="string">&quot;.mov&quot;</span>,<span class="string">&quot;.mp4&quot;</span>)</span><br><span class="line">            output_path=output_dir+<span class="string">&quot;/&quot;</span>+item[<span class="number">0</span>]+<span class="string">&quot;.mov&quot;</span></span><br><span class="line">            video_out.write_videofile(out_name)</span><br><span class="line">            ff=<span class="string">&quot;ffmpeg.exe&quot;</span>                 <span class="comment">#这个exe要去ffmpeg官网下载</span></span><br><span class="line">            cmd01=ff+<span class="string">&quot; -i &quot;</span>+out_name+<span class="string">&quot; -ss 0 -vframes &quot;</span>+<span class="built_in">str</span>(end_frame-start_frame)+<span class="string">&quot; -y &quot;</span>+output_path</span><br><span class="line">            os.system(cmd01)            <span class="comment">#用cmd运行ffmpeg，对合成的视频再次进行剪辑，保证帧数准确</span></span><br><span class="line">            <span class="comment">#清理之前的临时文件</span></span><br><span class="line">            os.remove(out_video_pth)    </span><br><span class="line">            os.remove(out_name)</span><br><span class="line">            os.remove(output_audiofile)</span><br><span class="line">            start_frame=end_frame</span><br><span class="line">            <span class="keyword">if</span> end_frame == frames:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        os.remove(self.folder_path+<span class="string">&quot;/audio.wav&quot;</span>)        <span class="comment">#删除之前提取出来的音频</span></span><br></pre></td></tr></table></figure></div>
 
-
-<p>然后在hexo文件根目录打开git bash，生成相应的文件</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></div>
-<p>然后可以通过主题文件夹中的_config.yml文件对主题进行配置。具体如何配置要看这个主题的帮助文档啦，一般github上会有</p>
-<p>一切都弄好之后可以在’source\_posts’文件夹中新建一个.md文件来写自己的第一篇博客了。.md文件是markdown文件，具体介绍可以康康<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/python/python-os-path.html" >🥦🐦 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，他是通过vscode配置后来写markdown的，不得不说，vscode！！！不挑体质，清爽不油腻！！</p>
-<h3 id="😀部署"><a href="#😀部署" class="headerlink" title="😀部署"></a>😀部署</h3><p>最后一步就是把他部署到服务器上。在部署过程中我遇到了两个问题，当然通过查找之后都得到了解决。最大的问题是在config.yml文件中对仓库地址的配置问题。我出现的报错是“git: fatal: Could not read from remote repository”。这个问题通过把deploy中github的ssh地址改为https地址得到了解决。我猜想是因为配置了公钥和私钥导致使用<a class="link"   target="_blank" rel="noopener" href="https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls" >SSH时无法通过端口22进行连接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，所以改为HTTPS可以解决这个问题。<br>部署的一般步骤是</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></div>
-<h4 id="🧐额外的话：ssh密钥文件"><a href="#🧐额外的话：ssh密钥文件" class="headerlink" title="🧐额外的话：ssh密钥文件"></a>🧐额外的话：ssh密钥文件</h4><p>因为在工作过程中也会遇到网站部署问题，我就顺便地浅浅了解了一下<a class="link"   target="_blank" rel="noopener" href="https://www.cainiaojc.com/ssh/ssh-index.html" >ssh <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>相关的知识。也连带着了解了<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" >操作系统 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>和<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux" >Linux <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。SSH用于加密计算机之间的通信。在部署hexo博客时，使用ssh加密可以限制特定的用户部署并且避免每次部署时都要输入密码的复杂操作。ssh是一种很难被暴力破解的<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58050071" >非对称加密方式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。在进行配置github的过程中，可以使用</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;github登录邮箱&quot;</span><br></pre></td></tr></table></figure></div>
-<p>来生成.ssh文件，它会生成id_rsa（私钥）,id_ras.pub（公钥）文件，在github仓库中对公钥进行配置，部署时会自动与私钥配对进行部署。</p>
-<h2 id="🎖️-写在后面"><a href="#🎖️-写在后面" class="headerlink" title="🎖️ 写在后面"></a>🎖️ 写在后面</h2><p>工作了一段时间，我发现td是一个广度和深度并存的职业，各个方面的知识都会涉及到一些，不仅是程序、三维，有时候开发软件甚至需要自己当自己的产品经理，给自己提需求，构想软件的使用逻辑，排布ui等等。但是我很喜欢这个职业，它很具挑战性，也能大大提高我的能力。希望我以后在这条路上能越走越远，让此博客作为我的见证吧！</p>
+<h2 id="📖遇到的问题"><a href="#📖遇到的问题" class="headerlink" title="📖遇到的问题"></a>📖遇到的问题</h2><p>保证帧数准确还要有声音是一个难题。其次的难题就是格式问题，因为动画师习惯用mov格式的视频，所以要用ffmpeg对格式进行转换，而用opencv时需要去查询编码格式，才能生成正确格式的视频。而moviepy无法生成mov格式的视频。因为这个项目的另一个部分是按照edl剪辑音频（不是我写的），还是会有反馈音频的帧数不准的问题，如果还想让音频帧数准确的话，可以生成视频后再提取一遍音频吧😳…但是运行的时间嘛….就当然没有那么快了</p>
 
         </div>
 
@@ -309,18 +298,18 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 我的第一篇博客--建站心得</li>
+        <li><strong>Title:</strong> pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
                 :</strong> 2023-07-31 22:09:52</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-10-24 09:52:48
+                    :</strong> 2023-10-25 16:25:49
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/07/31/我的第一篇博客-建站心得/
+            <strong>Link:</strong> https://aryagala0.github.io/2023/07/31/根据edl剪辑镜头工具（时间精确到帧）/
         </li>
         <li>
             <strong>
@@ -341,7 +330,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E7%94%9F%E6%B4%BB/">#生活</a>&nbsp;
+                        <a href="/tags/python/">#python</a>&nbsp;
                     </li>
                 
             </ul>
@@ -355,33 +344,18 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2023/08/09/pythonos/"
+                        href="/2023/07/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">python os模块常用操作解析</span>
+                                <span class="post-nav-title-item">我的第一篇博客--建站心得</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
                     </div>
                 
-                
-                    <div class="article-next">
-                        <a class="next"
-                        rel="next"
-                        href="/2023/07/31/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
                 
             </div>
         
@@ -439,8 +413,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">我的第一篇博客--建站心得</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%96%B6%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">▶️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%91%90%E5%BB%BA%E7%AB%99%E5%8E%86%E7%A8%8B"><span class="nav-text">👐建站历程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A3%EF%B8%8F%E6%8C%91%E9%80%89%E4%B8%BB%E9%A2%98"><span class="nav-text">❣️挑选主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%98%80%E9%83%A8%E7%BD%B2"><span class="nav-text">😀部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8E%96%EF%B8%8F-%E5%86%99%E5%9C%A8%E5%90%8E%E9%9D%A2"><span class="nav-text">🎖️ 写在后面</span></a></li></ol>
+        <div class="page-title">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%8F%B8%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">⏸️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%92%A1%E6%80%9D%E8%B7%AF"><span class="nav-text">💡思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%92%BB%E5%85%B7%E4%BD%93%E5%81%9A%E6%B3%95"><span class="nav-text">💻具体做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%96%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">📖遇到的问题</span></a></li></ol>
 
     </div>
 </div>
