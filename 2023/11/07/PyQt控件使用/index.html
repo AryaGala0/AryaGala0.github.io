@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言✨PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LGPL授权方式（利用Qt官方动态链接库，但不必开放商业代码）。2009年8月，Qt的开发公司诺基亚发布PySide，提供与PyQt类似的功能，但提供了L">
+        <meta name="description" content="前言✨     “QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。     “QtWigets”模块包含了大多数的控件类型。包含按钮、文本框、列表等常见控件     ““uic”子模块能够将Qt的窗体文件转换为Python代码，能够即时读入窗体文件并且显示出来。  参考来自于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt控件使用">
 <meta property="og:url" content="http://example.com/2023/11/07/PyQt%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言✨PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LGPL授权方式（利用Qt官方动态链接库，但不必开放商业代码）。2009年8月，Qt的开发公司诺基亚发布PySide，提供与PyQt类似的功能，但提供了L">
+<meta property="og:description" content="前言✨     “QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。     “QtWigets”模块包含了大多数的控件类型。包含按钮、文本框、列表等常见控件     ““uic”子模块能够将Qt的窗体文件转换为Python代码，能够即时读入窗体文件并且显示出来。  参考来自于">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-07T10:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-08T05:58:26.056Z">
+<meta property="article:published_time" content="2023-11-07T10:30:00.000Z">
+<meta property="article:modified_time" content="2023-11-08T12:31:26.620Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="PyQt">
 <meta name="twitter:card" content="summary">
@@ -240,15 +240,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-11-07 18:00</span>
-        <span class="mobile">2023-11-07 18:00</span>
+        <span class="desktop">2023-11-07 18:30</span>
+        <span class="mobile">2023-11-07 18:30</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-08 13:58:26</span>
-            <span class="mobile">2023-11-08 13:58:26</span>
+            <span class="desktop">2023-11-08 20:31:26</span>
+            <span class="mobile">2023-11-08 20:31:26</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -286,8 +286,13 @@
 
 
         <div class="article-content markdown-body">
-            <h1 id="前言✨"><a href="#前言✨" class="headerlink" title="前言✨"></a>前言✨</h1><p>PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LGPL授权方式（利用Qt官方动态链接库，但不必开放商业代码）。2009年8月，Qt的开发公司诺基亚发布PySide，提供与PyQt类似的功能，但提供了LGPL授权。自4.5版本以后[4]，PyQt同时支持Python 2.x与Python 3.x。<br></p>
-<p>“QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。<br><br>“QtGui”模块包含了大多数的GUI类型。包含按钮、文本框、列表等常见控件.<br><br>“uic”子模块能够将Qt的窗体文件转换为Python代码，能够即时读入窗体文件并且显示出来。<br>“Phonon”子模块支持高级的多媒体编程。包含音频播放器、视频播放器与声效处理。<br><br>QtOpenGL”模块允许Qt程序使用OpenGL渲染3D图形，而且不必大量更改代码。<br><br>参考来自于<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/PyQt" >维基百科 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+            <h1 id="前言✨"><a href="#前言✨" class="headerlink" title="前言✨"></a>前言✨</h1><ul>
+    <li>“QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。</li>
+    <li>“QtWigets”模块包含了大多数的控件类型。包含按钮、文本框、列表等常见控件</li>
+    <li>““uic”子模块能够将Qt的窗体文件转换为Python代码，能够即时读入窗体文件并且显示出来。</li>
+</ul>
+参考来自于[维基百科](https://zh.wikipedia.org/wiki/PyQt)
+
 <h1 id="PyQt控件的使用"><a href="#PyQt控件的使用" class="headerlink" title="PyQt控件的使用"></a>PyQt控件的使用</h1><p>PyQt控件通常在QtWidgets模块下，通过<a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/index.html" >PyQt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>可以查询具体的用法。下面是我常用的一些PyQt控件的用法总结：</p>
 <h2 id="QAbstractButton"><a href="#QAbstractButton" class="headerlink" title="QAbstractButton"></a>QAbstractButton</h2><p>QAbstractButton类为抽象类，不能实例化，是QPushButton，QToolButton，QRadioButton和QCheckBox等的基类。<br><br>下面的方法用于判断按钮的状态。<br><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jia666666/article/details/81513443" >参考来自 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><br>使用方法🌰：<br><br>PySide6.QtWidgets.QAbstractButton.isChecked()</p>
 <table>
@@ -448,7 +453,341 @@
     </tbody>
 </table>
 
+<h2 id="输入控件"><a href="#输入控件" class="headerlink" title="输入控件"></a>输入控件</h2><h3 id="QlineEdit"><a href="#QlineEdit" class="headerlink" title="QlineEdit"></a>QlineEdit</h3><p><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLineEdit.html#id11" >参考来自 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>该控件可以控制或者限制用户的输入行为。通过掩码属性（setInputMask）和验证器(setValidator)来达到。<br>设置该控件属性的方法如下：</p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>setText(string)</th>
+            <th>设置输入框中的文本</th>
+        </tr>
+        <tr>
+            <th>text()</th>
+            <th>返回输入框中的文字</th>
+        </tr>
+        <tr>
+            <th>setReadOnly(bool)</th>
+            <th>设置文本是否为只读</th>
+        </tr>
+        <tr>
+            <th>setClearButtonEnabled(bool)</th>
+            <th>设置输入框是否有清空输入的按钮</th>
+        </tr>
+        <tr>
+            <th>placeholderText()</th>
+            <th>返回保持文本</th>
+        </tr>
+        <tr>
+            <th>setPlaceholderText(string)</th>
+            <th>设置保持文本</th>
+        </tr>
+        <tr>
+            <th>alignment()</th>
+            <th>返回文本对齐样式</th>
+        </tr>
+        <tr>
+            <th>setAlignment(QtCore.Qt.AlignmentFlag)</th>
+            <th>设置文本对齐样式</th>
+        </tr>
+        <tr>
+            <th>setMaxLength(int)</th>
+            <th>设置文本最大字符数</th>
+        </tr>
+        <tr>
+            <th>setInputMask(inputMask)</th>
+            <th>设置掩码</th>
+        </tr>
+        <tr>
+            <th>setValidator(QtGui.QValidator)</th>
+            <th>设置验证器</th>
+        </tr>
+        <tr>
+            <th>setEchoMode(PySide6.QtWidgets.QLineEdit.EchoMode)</th>
+            <th>输入字符的显示设置</th>
+        </tr>
+    </tbody>
+</table>
+常用信号：
+<table>
+    <thead>
+        <tr>
+            <th>信号</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>selectionChanged</th>
+            <th>点击发生改变时触发信号</th>
+        </tr>
+        <tr>
+            <th>textChanged</th>
+            <th>修改文本内容时触发信号</th>
+        </tr>
+        <tr>
+            <th>editingFinished</th>
+            <th>文本编辑结束时触发信号</th>
+        </tr>
+    </tbody>
+</table>
 
+<h5 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h5><p>文本对齐样式类型<br>水平方向对齐：</p>
+<table>
+    <thead>
+        <tr>
+            <th>参数</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Qt.AlignLeft</th>
+            <th>左对齐</th>
+        </tr>
+        <tr>
+            <th>Qt.AlignRight</th>
+            <th>右对齐</th>
+        </tr>
+        <tr>
+            <th>Qt.AlignHCenter</th>
+            <th>居中对齐</th>
+        </tr>
+        <tr>
+            <th>Qt.AlignJustify</th>
+            <th>分散对齐</th>
+        </tr>
+    </tbody>
+</table>
+竖直方向对齐：
+<table>
+    <thead>
+        <tr>
+            <th>参数</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Qt.AlignTop</th>
+            <th>向上对齐</th>
+        </tr>
+        <tr>
+            <th>Qt.AlignBottom</th>
+            <th>向下对齐</th>
+        </tr>
+        <tr>
+            <th>Qt.AlignVCenter</th>
+            <th>居中对齐</th>
+        </tr>
+    </tbody>
+</table>
+掩码表格：
+<table>
+    <thead>
+        <tr>
+            <th>掩码字符</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>A</th>
+            <th>ASCII字母字符(A-Z、a-z) 是必须输入的</th>
+        </tr>
+        <tr>
+            <th>a</th>
+            <th>ASCII字母字符(A-Z、a-z) 是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>N</th>
+            <th>ASCII字母字符(A-Z、a-z、0-9)是必须输入的</th>
+        </tr>
+        <tr>
+            <th>n</th>
+            <th>ASCII字母字符(A-Z、a-z、0-9)是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>X</th>
+            <th>任何字符都是必须输入的</th>
+        </tr>
+        <tr>
+            <th>x</th>
+            <th>任何字符都是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>n</th>
+            <th>ASCII字母字符(A-Z、a-z、0-9)是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>9</th>
+            <th>ASCII数字字符(0-9)是必须输入的</th>
+        </tr>
+        <tr>
+            <th>0</th>
+            <th>ASCII数字字符(0-9)是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>D</th>
+            <th>ASCII数字字符(1-9)是必须输入的</th>
+        </tr>
+        <tr>
+            <th>d</th>
+            <th>ASCII数字字符(1-9)是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>#</th>
+            <th>ASCI数字字符或加减符号是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>H</th>
+            <th>十六进制格式字符(A-F、a-f、0-9) 是必须输入的</th>
+        </tr>
+        <tr>
+            <th>h</th>
+            <th>十六进制格式字符(A-F、a-f、0-9) 是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>B</th>
+            <th>二进制格式字符(0,1)是必须输入的</th>
+        </tr>
+        <tr>
+            <th>b</th>
+            <th>二进制格式字符(0,1)是允许输入的,但不是必需输入的</th>
+        </tr>
+        <tr>
+            <th>></th>
+            <th>所有的字母字符都大写</th>
+        </tr>
+        <tr>
+            <th><</th>
+            <th>所有的字母字符都小写</th>
+        </tr>
+        <tr>
+            <th>!</th>
+            <th>关闭大小写转换</th>
+        </tr>
+    </tbody>
+</table>
+验证器：
+<table>
+    <thead>
+        <tr>
+            <th>验证器</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>QtGui.QIntValidator</th>
+            <th>限制输入整数</th>
+        </tr>
+        <tr>
+            <th>QtGui.QDoubleValidator</th>
+            <th>限制输入浮点数</th>
+        </tr>
+        <tr>
+            <th>QtGui.QRegexpValidator</th>
+            <th>检查输入是否符合正则表达式</th>
+        </tr>
+    </tbody>
+</table>
+
+
+<p>EchoMode：</p>
+<table>
+    <thead>
+        <tr>
+            <th>显示状态</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>QLineEdit.Normal</th>
+            <th>输入时显示字符</th>
+        </tr>
+        <tr>
+            <th>QLineEdit.NoEcho</th>
+            <th>啥都不显示</th>
+        </tr>
+        <tr>
+            <th>QLineEdit.Password</th>
+            <th>显示掩码字符</th>
+        </tr>
+        <tr>
+            <th>QLineEdit.PasswordEchoOnEdit</th>
+            <th>在输入时显示字符，输入完显示掩码</th>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="QComboBox"><a href="#QComboBox" class="headerlink" title="QComboBox"></a>QComboBox</h3><p>下拉列表框<br><a href="">参考来自</a><br>获得属性的方法</p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>addItem(string)</th>
+            <th>往下拉列表中添加一个项目</th>
+        </tr>
+        <tr>
+            <th>addItems(list)</th>
+            <th>往下拉列表中添加一个列表</th>
+        </tr>
+        <tr>
+            <th>clear()</th>
+            <th>清除下拉列表中的全部内容</th>
+        </tr>
+        <tr>
+            <th>setItemText(int,string)</th>
+            <th>设置列表中给定索引项目的值</th>
+        </tr>
+        <tr>
+            <th>count()</th>
+            <th>返回下拉列表中项目的数量</th>
+        </tr>
+        <tr>
+            <th>currentIndex()</th>
+            <th>返回当前选项在下拉列表中的索引</th>
+        </tr>
+        <tr>
+            <th>currentText()</th>
+            <th>返回当前选项的文字</th>
+        </tr>
+    </tbody>
+</table>
+常用信号：
+<table>
+    <thead>
+        <tr>
+            <th>信号</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Activated</th>
+            <th>选中一个选项时触发的信号</th>
+        </tr>
+        <tr>
+            <th>currentIndexChanged</th>
+            <th>选中选项发生改变时触发的信号</th>
+        </tr>
+        <tr>
+            <th>highlighted</th>
+            <th>当高亮的项目发生改变时触发的信号</th>
+        </tr>
+    </tbody>
+</table>
         </div>
 
         
@@ -458,11 +797,11 @@
         <li><strong>Title:</strong> PyQt控件使用</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
-                :</strong> 2023-11-07 18:00:00</li>
+                :</strong> 2023-11-07 18:30:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-11-08 13:58:26
+                    :</strong> 2023-11-08 20:31:26
             </li>
         
         <li>
@@ -502,10 +841,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/09/09/py%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%BAexe%E6%96%87%E4%BB%B6/"
+                        href="/2023/11/06/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Py文件打包为exe文件</span>
+                                <span class="post-nav-title-item">Windows下的第一个PyQt程序</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -571,7 +910,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">PyQt控件使用</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyQt%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">PyQt控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QAbstractButton"><span class="nav-text">QAbstractButton</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QPushButton"><span class="nav-text">QPushButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QCheckBox"><span class="nav-text">QCheckBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QRadioButton"><span class="nav-text">QRadioButton</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyQt%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">PyQt控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QAbstractButton"><span class="nav-text">QAbstractButton</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QPushButton"><span class="nav-text">QPushButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QCheckBox"><span class="nav-text">QCheckBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QRadioButton"><span class="nav-text">QRadioButton</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8E%A7%E4%BB%B6"><span class="nav-text">输入控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QlineEdit"><span class="nav-text">QlineEdit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QComboBox"><span class="nav-text">QComboBox</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>

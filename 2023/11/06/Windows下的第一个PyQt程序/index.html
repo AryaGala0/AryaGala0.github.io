@@ -13,18 +13,25 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/"/>
+    <link rel="canonical" href="http://example.com/2023/11/06/windows下的第一个pyqt程序/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+        <meta name="description" content="前言✨PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LGPL授权方式（利用Qt官方动态链接库，但不必开放商业代码）。2009年8月，Qt的开发公司诺基亚发布PySide，提供与PyQt类似的功能，但提供了L">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows下的第一个PyQt程序">
+<meta property="og:url" content="http://example.com/2023/11/06/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言✨PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LGPL授权方式（利用Qt官方动态链接库，但不必开放商业代码）。2009年8月，Qt的开发公司诺基亚发布PySide，提供与PyQt类似的功能，但提供了L">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/Pyqt/firstProject.png">
+<meta property="article:published_time" content="2023-11-06T10:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-08T09:23:40.726Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="PyQt">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/Pyqt/firstProject.png">
     
     
     <!--- Icon Part-->
@@ -35,6 +42,8 @@
     <!--- Page Info-->
     
     <title>
+        
+            Windows下的第一个PyQt程序 -
         
         AryaGala&#39;s Blog
     </title>
@@ -114,63 +123,6 @@
 <main class="page-container" id="swup">
 
     
-        
-    <style>
-        .home-banner-container {
-            background: transparent !important;
-        }
-
-        .home-article-item,
-        .sidebar-links,
-        .sidebar-content,
-        a.page-number,
-        a.extend,
-        .sidebar-links .links:hover,
-        .right-bottom-tools,
-        footer.footer {
-            background-color: var(--background-color-transparent-80) !important;
-        }
-
-        .right-bottom-tools:hover,
-        a.page-number:hover,
-        a.extend:hover {
-            background-color: var(--primary-color) !important;
-        }
-
-        .site-info,
-        .home-article-sticky-label {
-            background-color: var(--background-color-transparent-15) !important;
-        }
-
-        .home-article-sticky-label {
-            backdrop-filter: none !important;
-        }
-    </style>
-
-    <div class="home-banner-background transition-fade">
-    </div>
-
-
-<div class="home-banner-container flex justify-center items-center transition-fade">
-    <div class="content flex justify-center items-center">
-        <div class="description flex flex-col justify-center items-center"
-        
-             style="font-family: 'Comic Sans MS', sans-serif; !important;"
-                
-        >
-            AryaGala's Blog
-            
-            
-                <p><i id="subtitle"></i></p>
-            
-        </div>
-        
-    </div>
-</div>
-
-
-
-    
 
     <div class="main-content-container">
 
@@ -178,7 +130,7 @@
         <div class="main-content-header">
             <header class="navbar-container">
     
-    <div class="navbar-content has-home-banner">
+    <div class="navbar-content">
         <div class="left">
             
                 <a class="logo-image" href="/">
@@ -186,9 +138,9 @@
                 </a>
             
             <a class="logo-title" href="/">
-                <h1>
+                
                 AryaGala&#39;s Blog
-                </h1>
+                
             </a>
         </div>
 
@@ -200,7 +152,7 @@
                         
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active" 
+                                <a class="" 
                                     href="/"  >
                                     
                                         
@@ -232,7 +184,7 @@
             
                 
                     <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
-                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group active" 
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
                         href="/"  >
                              
                                 
@@ -259,413 +211,241 @@
         <div class="main-content-body">
 
             
-                <div class="home-sidebar-container">
-    <div class="sticky-container sticky">
-        
-            
-            <div class="sidebar-content" >
-                <div class="avatar flex justify-center">
-                    <img src="/images/selfie.webp">
-                </div>
-                <div class="author flex flex-col justify-center my-2.5 mx-0">
-                    <div class="name">AryaGala</div>
-                    
-                        <div class="label">Lv1</div>
-                    
-                </div>
-                <div class="statistics">
-                    <a class="item" href="/tags">
-                        <div class="number">4</div>
-                        <div class="label">Tags</div>
-                    </a>
-                    <a class="item" href="/categories">
-                        <div class="number">0</div>
-                        <div class="label">Categories</div>
-                    </a>
-                    <a class="item" href="/archives">
-                        <div class="number">7</div>
-                        <div class="label">Posts</div>
-                    </a>
-                </div>
-            </div>
-        
-
-    </div>
-</div>
-
-            
 
             <div class="main-content">
 
                 
-                    <div class="home-content-container">
-    <ul class="home-article-list">
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">Windows下的第一个PyQt程序</h1>
+            
+            </div>
+            
+                    
         
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/11/07/PyQt%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8/">
-                        PyQt控件使用
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        前言✨
-    “QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。
-    “QtWigets”模块包含了大多数的控件类型。包...
-                    
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/selfie.webp">
                 </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Nov 07 2023 18:30:00 GMT+0800">
-                
-                    2023-11-07
-                
-            </span>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">AryaGala</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-11-06 18:00</span>
+        <span class="mobile">2023-11-06 18:00</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-11-08 17:23:40</span>
+            <span class="mobile">2023-11-08 17:23:40</span>
+            <span class="hover-info">Updated</span>
         </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/PyQt/">PyQt</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
+    
 
-    <a href="/2023/11/07/PyQt%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8/">Read more<span class="seo-reader-text">PyQt控件使用</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PyQt/">PyQt</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
 </div>
 
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/11/06/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/">
-                        Windows下的第一个PyQt程序
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        前言✨PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LG...
-                    
+                    </div>
                 </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Nov 06 2023 18:00:00 GMT+0800">
-                
-                    2023-11-06
-                
-            </span>
-        </span>
+            </div>
         
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/PyQt/">PyQt</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
 
-    <a href="/2023/11/06/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/">Read more<span class="seo-reader-text">Windows下的第一个PyQt程序</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
+        
 
+
+        <div class="article-content markdown-body">
+            <h1 id="前言✨"><a href="#前言✨" class="headerlink" title="前言✨"></a>前言✨</h1><p>PyQt是Python语言的GUI编程解决方案之一，可以运行到多种平台上。可以用来代替Python内置的Tkinter。PyQt的开发者是英国的“Riverbank Computing”公司。它可以免费地用于自由软件的开发。不过目前尚不提供LGPL授权方式（利用Qt官方动态链接库，但不必开放商业代码）。2009年8月，Qt的开发公司诺基亚发布PySide，提供与PyQt类似的功能，但提供了LGPL授权。自4.5版本以后[4]，PyQt同时支持Python 2.x与Python 3.x。<br><br>这是一个简单的PyQt程序，建立一个PyQt窗口，可以逐渐向里面添加控件实现ui编写。因为是比较重要的基础程序，所以在这里列出来。<br><br>参考来自于<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/PyQt" >维基百科 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1 id="安装PySide2"><a href="#安装PySide2" class="headerlink" title="安装PySide2"></a>安装PySide2</h1><p>PySide2支持Qt5框架，兼容Python2.7以上版本以及Python3.5以上版本。<br>在cmd中使用pip安装PySide2</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PySide2</span><br></pre></td></tr></table></figure></div>
+<h1 id="第一个PyQt程序"><a href="#第一个PyQt程序" class="headerlink" title="第一个PyQt程序"></a>第一个PyQt程序</h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PySide2 <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">app=QtWidgets.QApplication(sys.argv)</span><br><span class="line">window=QtWidgets.QMainWindow()</span><br><span class="line">window.resize(<span class="number">250</span>,<span class="number">200</span>)</span><br><span class="line">window.setWindowTitle(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">window.show()</span><br><span class="line">app.exec_()</span><br></pre></td></tr></table></figure></div>
+<p>结果：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/Pyqt/firstProject.png"
+                      alt="PyQtWindow_simple"
+                ></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Windows下的第一个PyQt程序</li>
+        <li><strong>Author:</strong> AryaGala</li>
+        <li><strong>Created at
+                :</strong> 2023-11-06 18:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-11-08 17:23:40
             </li>
         
-            <li class="home-article-item">
+        <li>
+            <strong>Link:</strong> https://aryagala0.github.io/2023/11/06/Windows下的第一个PyQt程序/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
 
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/09/09/py%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%BAexe%E6%96%87%E4%BB%B6/">
-                        Py文件打包为exe文件
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        前言最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。
-下载安装Pyinstaller电脑安装python后，用pip（python包管理工具）对Pyinst...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sat Sep 09 2023 20:09:52 GMT+0800">
-                
-                    2023-09-09
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%89%93%E5%8C%85%E3%80%81%E9%83%A8%E7%BD%B2/">打包、部署</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/09/09/py%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%BAexe%E6%96%87%E4%BB%B6/">Read more<span class="seo-reader-text">Py文件打包为exe文件</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/08/09/%E5%9C%A8python%E5%86%85%E5%BC%95%E7%94%A8ui%E6%96%87%E4%BB%B6/">
-                        在python中使用.ui文件
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        🍕前言最近总是在用pyqt写界面，一般用pyqt写界面时，较复杂的界面会在qtDesigner中制作出来，并生成ui文件。那要如何将ui文件导入python文件中进行引用呢？
-🧐有两种方法：1.将ui文件用pyuic转成py文件，然后以py文件的...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Aug 09 2023 23:09:52 GMT+0800">
-                
-                    2023-08-09
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/PyQt/">PyQt</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/08/09/%E5%9C%A8python%E5%86%85%E5%BC%95%E7%94%A8ui%E6%96%87%E4%BB%B6/">Read more<span class="seo-reader-text">在python中使用.ui文件</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/08/09/pythonos/">
-                        python os模块常用操作解析
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        os.path模块常用内容123456789import osprint( os.path.basename(&#x27;D://test.txt&#x27;) )   # 返回文件名print( os.path.dirname(&#x27;D://...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Aug 09 2023 22:09:52 GMT+0800">
-                
-                    2023-08-09
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/python/">python</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/08/09/pythonos/">Read more<span class="seo-reader-text">python os模块常用操作解析</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/08/09/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/">
-                        pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        ⏸️前言 公司的流程中经常会用到EDL （Edit Desicion List剪辑决策表）来确定每个镜头时间。因为要分别把不同的镜头发给不同的动画师，所以需要一个能够将每一集的分镜根据edl的时间剪辑出不同镜头的插件。用python进行视频处理，有两...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Aug 09 2023 22:09:52 GMT+0800">
-                
-                    2023-08-09
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/python/">python</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/08/09/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/">Read more<span class="seo-reader-text">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/07/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/">
-                        我的第一篇博客--建站心得
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        ▶️前言其实很久之前就想建一个网站了。第一次接触hexo是因为学校的大神师兄 ，也是我TD职业生涯的启蒙者，每次看着他的博客就有一种自己也要写点东西的冲动。但那时我有些畏难，总觉得自己建一个博客像建立一个网站一样，要学完前端后端的知识才能做到。所以一...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Jul 31 2023 22:09:52 GMT+0800">
-                
-                    2023-07-31
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E7%94%9F%E6%B4%BB/">生活</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/07/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/">Read more<span class="seo-reader-text">我的第一篇博客--建站心得</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
+        </li>
     </ul>
-
-    <div class="home-paginator">
-        <div class="paginator">
-    <span class="page-number current">1</span>
 </div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/PyQt/">#PyQt</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/07/PyQt%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">PyQt控件使用</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/09/09/py%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%BAexe%E6%96%87%E4%BB%B6/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Py文件打包为exe文件</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Windows下的第一个PyQt程序</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85PySide2"><span class="nav-text">安装PySide2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F"><span class="nav-text">第一个PyQt程序</span></a></li></ol>
 
     </div>
 </div>
+        </div>
+    
+</div>
 
-                    <div class="comment-container pjax"></div>
+
+
                 
 
             </div>
@@ -737,6 +517,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
@@ -821,7 +622,6 @@
         containers: ["#swup"],
     });
 </script>
-
 
 
 
