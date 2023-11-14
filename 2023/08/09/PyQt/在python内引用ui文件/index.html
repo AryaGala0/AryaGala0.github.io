@@ -13,41 +13,45 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/09/09/py文件打包为exe文件/"/>
+    <link rel="canonical" href="http://example.com/2023/08/09/pyqt/在python内引用ui文件/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。 下载安装Pyinstaller电脑安装python后，用pip（python包管理工具）对Pyinstaller包进行安装（如果python没有安装pip，请参考pip安装教程 ），运行命令： 1pip install Pyinstaller 1.单个">
+        <meta name="description" content="🍕前言最近总是在用pyqt写界面，一般用pyqt写界面时，较复杂的界面会在qtDesigner中制作出来，并生成ui文件。那要如何将ui文件导入python文件中进行引用呢？ 🧐有两种方法：1.将ui文件用pyuic转成py文件，然后以py文件的方式导入：python安装pyqt后，在ui文件路径下用控制台运行下面的命令 1python -m PyQt5.uic.pyuic 需要转写的ui文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Py文件打包为exe文件">
-<meta property="og:url" content="http://example.com/2023/09/09/py%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%BAexe%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="在python中使用.ui文件">
+<meta property="og:url" content="http://example.com/2023/08/09/PyQt/%E5%9C%A8python%E5%86%85%E5%BC%95%E7%94%A8ui%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。 下载安装Pyinstaller电脑安装python后，用pip（python包管理工具）对Pyinstaller包进行安装（如果python没有安装pip，请参考pip安装教程 ），运行命令： 1pip install Pyinstaller 1.单个">
+<meta property="og:description" content="🍕前言最近总是在用pyqt写界面，一般用pyqt写界面时，较复杂的界面会在qtDesigner中制作出来，并生成ui文件。那要如何将ui文件导入python文件中进行引用呢？ 🧐有两种方法：1.将ui文件用pyuic转成py文件，然后以py文件的方式导入：python安装pyqt后，在ui文件路径下用控制台运行下面的命令 1python -m PyQt5.uic.pyuic 需要转写的ui文件">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/pyToExe/spec01.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/spec02.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/error.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/single_exe.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/icon.jpg">
-<meta property="article:published_time" content="2023-09-09T12:09:52.000Z">
-<meta property="article:modified_time" content="2023-10-24T01:45:59.253Z">
+<meta property="article:published_time" content="2023-08-09T15:09:52.000Z">
+<meta property="article:modified_time" content="2023-10-23T09:37:43.460Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="打包、部署">
+<meta property="article:tag" content="PyQt">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/pyToExe/spec01.jpg">
     
+    
+        <!-- Google tag (gtag.js) -->
+        <script src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '');
+        </script>
     
     <!--- Icon Part-->
     <link rel="icon" type="image/png" href="/images/my_icon.ico" sizes="192x192">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/my_icon.ico">
-    <meta name="theme-color" content="#c7aded">
+    <meta name="theme-color" content="#f5c2b5">
     <link rel="shortcut icon" href="/images/my_icon.ico">
     <!--- Page Info-->
     
     <title>
         
-            Py文件打包为exe文件 -
+            在python中使用.ui文件 -
         
         AryaGala&#39;s Blog
     </title>
@@ -86,7 +90,7 @@
     
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#c7aded","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Once you name it,you start getting attached to it.--《Monsters'Inc》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","The real death is that no one in the world remembers you. --《Coco》","The family is more important than the dream  --《Coco》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","灵魂是压不死的，只有生活才能压垮你。-- 《心灵奇旅》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#000","dark":"#d1d1b6"},"text_style":{"title_size":"3rem","subtitle_size":"2rem","line_height":1.2},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":false,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"1263870289@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#f5c2b5","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Once you name it,you start getting attached to it.--《Monsters'Inc》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","The real death is that no one in the world remembers you. --《Coco》","The family is more important than the dream  --《Coco》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","灵魂是压不死的，只有生活才能压垮你。-- 《心灵奇旅》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#ff7385","dark":"#ff6b26"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f5c2b5","right":"#f1f2aa","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -113,6 +117,8 @@
 
 <body>
 <div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
     
 
     
@@ -169,6 +175,22 @@
                                 
                             </li>
                     
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
                     
                 </ul>
             </div>
@@ -201,6 +223,21 @@
                     <!-- Submenu -->
                     
             
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
 
         </ul>
     </div>
@@ -224,7 +261,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Py文件打包为exe文件</h1>
+                <h1 class="article-title-regular">在python中使用.ui文件</h1>
             
             </div>
             
@@ -239,22 +276,22 @@
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">AryaGala</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-09-09 20:09:52</span>
-        <span class="mobile">2023-09-09 20:09:52</span>
+        <span class="desktop">2023-08-09 23:09:52</span>
+        <span class="mobile">2023-08-09 23:09:52</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-24 09:45:59</span>
-            <span class="mobile">2023-10-24 09:45:59</span>
+            <span class="desktop">2023-10-23 17:37:43</span>
+            <span class="mobile">2023-10-23 17:37:43</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -266,7 +303,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%89%93%E5%8C%85%E3%80%81%E9%83%A8%E7%BD%B2/">打包、部署</a>&nbsp;
+                        <a href="/tags/PyQt/">PyQt</a>&nbsp;
                     </li>
                 
             </ul>
@@ -292,57 +329,12 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。</p>
-<h2 id="下载安装Pyinstaller"><a href="#下载安装Pyinstaller" class="headerlink" title="下载安装Pyinstaller"></a>下载安装Pyinstaller</h2><p>电脑安装python后，用pip（python包管理工具）对Pyinstaller包进行安装（如果python没有安装pip，请参考<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" >pip安装教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>），运行命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pyinstaller</span><br></pre></td></tr></table></figure></div>
-<h2 id="1-单个py文件打包成exe文件"><a href="#1-单个py文件打包成exe文件" class="headerlink" title="1.单个py文件打包成exe文件"></a>1.单个py文件打包成exe文件</h2><p>对于单个py文件的打包比较简单：安装installer后，cmd转到py文件路径运行命令（或者在路径下直接运行cmd），运行以下命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --noconsole -F 文件名.py</span><br></pre></td></tr></table></figure></div>
-<p>其中，–noconsole表示不出现控制台，-F表示把所有文件打包到一个exe里面（一般我常用的两个属性）</p>
-<h2 id="2-多个py文件打包成exe文件"><a href="#2-多个py文件打包成exe文件" class="headerlink" title="2.多个py文件打包成exe文件"></a>2.多个py文件打包成exe文件</h2><p>多个py文件的打包首先要生成spec文件，然后在spec文件中对py文件进行配置，最后用pyinstaller生成exe文件，具体操作如下：</p>
-<p>cmd转到py文件路径运行命令（或者在路径下直接运行cmd），运行以下命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyi-makespec 主程序文件名.py</span><br></pre></td></tr></table></figure></div>
-<p>此时，路径下会生成一个.spec文件，内容如下：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/pyToExe/spec01.jpg"
-                      alt="spec_image_raw"
-                ></p>
-<p>要spec文件进行配置，在Analysis中加入所有的py文件,静态资源添加到datas中，data的list是元组的list，第一个元素是python代码读取元素时的目录，第二个位置是数据文件的真实目录。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/pyToExe/spec02.jpg"
-                      alt="spec_image_config"
-                ></p>
-<p>生成exe文件，输入命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller 文件名.spec</span><br></pre></td></tr></table></figure></div>
-<p>生成的exe文件会在路径下的dist文件夹中。</p>
-<h3 id="把所有生成文件打包成一个exe中的配置"><a href="#把所有生成文件打包成一个exe中的配置" class="headerlink" title="把所有生成文件打包成一个exe中的配置"></a>把所有生成文件打包成一个exe中的配置</h3><p>如果在命令行直接加-F，会出现如下报错：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/pyToExe/error.jpg"
-                      alt="error:options not valid when a .spec file is given"
-                ></p>
-<p>要生成一个exe文件，删除coll的内容，在exe中添加:</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.scripts,</span><br><span class="line">a.binaries,      </span><br><span class="line">a.zipfiles,  </span><br></pre></td></tr></table></figure></div>
-<p>并且修改exclude_binaries为False</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/pyToExe/single_exe.jpg"
-                      alt="single_exe_config"
-                ></p>
-<h3 id="icon的配置"><a href="#icon的配置" class="headerlink" title="icon的配置"></a>icon的配置</h3><p>在exe中另外添加icon参数，然后添加图标的绝对路径进行配置<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/pyToExe/icon.jpg"
-                      alt="icon_config"
-                ></p>
-<p>参考来自：</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.51cto.com/xiaohaiwa/5381148" >pyinstaller利用spec文件打包的使用模版 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/tangfreeze/article/details/112240342" >pyinstaller的spec文件用法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+            <h4 id="🍕前言"><a href="#🍕前言" class="headerlink" title="🍕前言"></a>🍕前言</h4><p>最近总是在用pyqt写界面，一般用pyqt写界面时，较复杂的界面会在qtDesigner中制作出来，并生成ui文件。那要如何将ui文件导入python文件中进行引用呢？</p>
+<h4 id="🧐有两种方法："><a href="#🧐有两种方法：" class="headerlink" title="🧐有两种方法："></a>🧐有两种方法：</h4><h5 id="1-将ui文件用pyuic转成py文件，然后以py文件的方式导入："><a href="#1-将ui文件用pyuic转成py文件，然后以py文件的方式导入：" class="headerlink" title="1.将ui文件用pyuic转成py文件，然后以py文件的方式导入："></a>1.将ui文件用pyuic转成py文件，然后以py文件的方式导入：</h5><p>python安装pyqt后，在ui文件路径下用控制台运行下面的命令</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m PyQt5.uic.pyuic 需要转写的ui文件名称（带扩展名） -o 输出的py文件名称（带扩展名）</span><br></pre></td></tr></table></figure></div>
+<p>优点：可以具体对组件进行更细的操作<br>缺点：需要转写，修改不太容易，需要操作的步骤有点多</p>
+<h5 id="2-导入QUiLoader库，直接引用文件"><a href="#2-导入QUiLoader库，直接引用文件" class="headerlink" title="2.导入QUiLoader库，直接引用文件"></a>2.导入QUiLoader库，直接引用文件</h5><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PySide2.QtWidgets <span class="keyword">import</span> QApplication, QWidget</span><br><span class="line"><span class="keyword">from</span> PySide2.QtCore <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PySide2.QtUiTools <span class="keyword">import</span> QUiLoader</span><br><span class="line"></span><br><span class="line">loader = QUiLoader()</span><br><span class="line">path = os.path.abspath(test.ui)        <span class="comment">#ui文件路径</span></span><br><span class="line">ui_file = QFile(path)</span><br><span class="line">ui_file.<span class="built_in">open</span>(QFile.ReadOnly)</span><br><span class="line">_ui = loader.load(ui_file, self)       <span class="comment">#通过访问_ui即可访问文件里的pyqt组件</span></span><br><span class="line">ui_file.close()</span><br></pre></td></tr></table></figure></div>
+<p>优点：方便修改<br>缺点：没法控制具体操作</p>
 
         </div>
 
@@ -350,18 +342,18 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Py文件打包为exe文件</li>
+        <li><strong>Title:</strong> 在python中使用.ui文件</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
-                :</strong> 2023-09-09 20:09:52</li>
+                :</strong> 2023-08-09 23:09:52</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-10-24 09:45:59
+                    :</strong> 2023-10-23 17:37:43
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/09/09/py文件打包为exe文件/
+            <strong>Link:</strong> https://aryagala0.github.io/2023/08/09/PyQt/在python内引用ui文件/
         </li>
         <li>
             <strong>
@@ -382,7 +374,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E6%89%93%E5%8C%85%E3%80%81%E9%83%A8%E7%BD%B2/">#打包、部署</a>&nbsp;
+                        <a href="/tags/PyQt/">#PyQt</a>&nbsp;
                     </li>
                 
             </ul>
@@ -396,7 +388,7 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2023/11/06/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/"
+                        href="/2023/11/06/PyQt/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
@@ -412,10 +404,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/08/09/%E5%9C%A8python%E5%86%85%E5%BC%95%E7%94%A8ui%E6%96%87%E4%BB%B6/"
+                        href="/2023/08/09/python%E9%A1%B9%E7%9B%AE/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">在python中使用.ui文件</span>
+                                <span class="post-nav-title-item">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -480,8 +472,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Py文件打包为exe文件</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Pyinstaller"><span class="nav-text">下载安装Pyinstaller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8D%95%E4%B8%AApy%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%88%90exe%E6%96%87%E4%BB%B6"><span class="nav-text">1.单个py文件打包成exe文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A4%9A%E4%B8%AApy%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%88%90exe%E6%96%87%E4%BB%B6"><span class="nav-text">2.多个py文件打包成exe文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E6%89%80%E6%9C%89%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%88%90%E4%B8%80%E4%B8%AAexe%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">把所有生成文件打包成一个exe中的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#icon%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">icon的配置</span></a></li></ol></li></ol>
+        <div class="page-title">在python中使用.ui文件</div>
+        
 
     </div>
 </div>
@@ -696,10 +688,6 @@
 <script src="/js/tools/codeBlock.js" type="module"></script>
 
 
-
-
-    
-<script src="/js/layouts/lazyload.js" type="module"></script>
 
 
 

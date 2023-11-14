@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/11/07/pyqt控件使用/"/>
+    <link rel="canonical" href="http://example.com/2023/11/07/pyqt/pyqt控件使用/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -21,21 +21,31 @@
         <meta name="description" content="前言✨     “QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。     “QtWigets”模块包含了大多数的控件类型。包含按钮、文本框、列表等常见控件     ““uic”子模块能够将Qt的窗体文件转换为Python代码，能够即时读入窗体文件并且显示出来。  参考来自于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt控件使用">
-<meta property="og:url" content="http://example.com/2023/11/07/PyQt%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:url" content="http://example.com/2023/11/07/PyQt/PyQt%E6%8E%A7%E4%BB%B6%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言✨     “QtCore”模块主要包含了一些非GUI的基础功能，包含事件循环与Qt的信号机制。此外，还提供了跨平台的Unicode、线程、内存映射文件、共享内存、正则表达式和用户设置。     “QtWigets”模块包含了大多数的控件类型。包含按钮、文本框、列表等常见控件     ““uic”子模块能够将Qt的窗体文件转换为Python代码，能够即时读入窗体文件并且显示出来。  参考来自于">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-11-07T10:30:00.000Z">
-<meta property="article:modified_time" content="2023-11-08T12:31:26.620Z">
+<meta property="article:modified_time" content="2023-11-10T08:08:10.142Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="PyQt">
 <meta name="twitter:card" content="summary">
     
     
+        <!-- Google tag (gtag.js) -->
+        <script src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '');
+        </script>
+    
     <!--- Icon Part-->
     <link rel="icon" type="image/png" href="/images/my_icon.ico" sizes="192x192">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/my_icon.ico">
-    <meta name="theme-color" content="#c7aded">
+    <meta name="theme-color" content="#f5c2b5">
     <link rel="shortcut icon" href="/images/my_icon.ico">
     <!--- Page Info-->
     
@@ -80,7 +90,7 @@
     
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#c7aded","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Once you name it,you start getting attached to it.--《Monsters'Inc》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","The real death is that no one in the world remembers you. --《Coco》","The family is more important than the dream  --《Coco》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","灵魂是压不死的，只有生活才能压垮你。-- 《心灵奇旅》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#000","dark":"#d1d1b6"},"text_style":{"title_size":"3rem","subtitle_size":"2rem","line_height":1.2},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":false,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"1263870289@qq.com"},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#f5c2b5","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Once you name it,you start getting attached to it.--《Monsters'Inc》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","The real death is that no one in the world remembers you. --《Coco》","The family is more important than the dream  --《Coco》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","灵魂是压不死的，只有生活才能压垮你。-- 《心灵奇旅》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#ff7385","dark":"#ff6b26"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#f5c2b5","right":"#f1f2aa","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -107,6 +117,8 @@
 
 <body>
 <div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
     
 
     
@@ -163,6 +175,22 @@
                                 
                             </li>
                     
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
                     
                 </ul>
             </div>
@@ -189,6 +217,21 @@
                                     <i class="fa-regular fa-house"></i>
                                 
                                 HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
                             
                         </a>
                     </li>
@@ -233,7 +276,7 @@
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">AryaGala</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
                         
                     </div>
                     <div class="meta-info">
@@ -247,8 +290,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-08 20:31:26</span>
-            <span class="mobile">2023-11-08 20:31:26</span>
+            <span class="desktop">2023-11-10 16:08:10</span>
+            <span class="mobile">2023-11-10 16:08:10</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -293,8 +336,193 @@
 </ul>
 参考来自于[维基百科](https://zh.wikipedia.org/wiki/PyQt)
 
-<h1 id="PyQt控件的使用"><a href="#PyQt控件的使用" class="headerlink" title="PyQt控件的使用"></a>PyQt控件的使用</h1><p>PyQt控件通常在QtWidgets模块下，通过<a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/index.html" >PyQt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>可以查询具体的用法。下面是我常用的一些PyQt控件的用法总结：</p>
-<h2 id="QAbstractButton"><a href="#QAbstractButton" class="headerlink" title="QAbstractButton"></a>QAbstractButton</h2><p>QAbstractButton类为抽象类，不能实例化，是QPushButton，QToolButton，QRadioButton和QCheckBox等的基类。<br><br>下面的方法用于判断按钮的状态。<br><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jia666666/article/details/81513443" >参考来自 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><br>使用方法🌰：<br><br>PySide6.QtWidgets.QAbstractButton.isChecked()</p>
+<h1 id="PyQt控件的使用⛏️"><a href="#PyQt控件的使用⛏️" class="headerlink" title="PyQt控件的使用⛏️"></a>PyQt控件的使用⛏️</h1><p>PyQt控件通常在QtWidgets模块下，通过<a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/index.html" >PyQt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>可以查询具体的用法。下面是我常用的一些PyQt控件的用法总结：</p>
+<h2 id="QFrame🖽🏷️📋"><a href="#QFrame🖽🏷️📋" class="headerlink" title="QFrame🖽🏷️📋"></a>QFrame🖽🏷️📋</h2><p>QFrame是一些有边框控件的基类，这些控件包括QLabel,QSrollArea,QListWidget,QTableWidget等等<br>下面是QFrame的一些方法，用于调整边框样式。<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QFrame.html" >参考来自:Qt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>frameWidth</th>
+            <th>返回边框的宽度</th>
+        </tr>
+        <tr>
+            <th>setLineWidth(int)</th>
+            <th>设置外边框的宽度</th>
+        </tr>
+        <tr>
+            <th>setMidLineWidth(int)</th>
+            <th>设置中间边框的宽度</th>
+        </tr>
+        <tr>
+            <th>setFrameShape(QtWidgets.QFrame.Shape)</th>
+            <th>设置边框的形状，常用的有QFrame.StyledPanel</th>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="QLabel"><a href="#QLabel" class="headerlink" title="QLabel"></a>QLabel</h3><p>标签控件，用于显示文字和图片。下面是它的一些属性和方法：</p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>setText(string)</th>
+            <th>设置标签文字</th>
+        </tr>
+        <tr>
+            <th>text()</th>
+            <th>返回标签的文字</th>
+        </tr>
+        <tr>
+            <th>pixmap()</th>
+            <th>返回图片</th>
+        </tr>
+        <tr>
+            <th>setAlignment(QtCore.Qt.AlignmentFlag)</th>
+            <th>设置对齐方式</th>
+        </tr>
+        <tr>
+            <th>setPicture(QtGui.QPicture)</th>
+            <th>设置图片</th>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="QListWidget"><a href="#QListWidget" class="headerlink" title="QListWidget"></a>QListWidget</h3><p>列表框，是一个显示列表的控件。下面是它的一些方法🌰：</p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>count()</th>
+            <th>返回列表中项目的数量</th>
+        </tr>
+        <tr>
+            <th>currentRow()</th>
+            <th>返回现在选择的行数(int类型)</th>
+        </tr>
+        <tr>
+            <th>currentItem()</th>
+            <th>返回现在所选项目，QtWidgets.QListWidgetItem类型</th>
+        </tr>
+        <tr>
+            <th>clear()</th>
+            <th>清除列表框中所有的项目</th>
+        </tr>
+        <tr>
+            <th>addItem(string)</th>
+            <th>往列表框中添加项目</th>
+        </tr>
+        <tr>
+            <th>addItems(list)</th>
+            <th>往列表框中添加一些项目</th>
+        </tr>
+        <tr>
+            <th>addItems(list)</th>
+            <th>往列表框中添加一些项目</th>
+        </tr>
+        <tr>
+            <th>setCurrentItem(item)</th>
+            <th>把当前选择项设置为</th>
+        </tr>
+        <tr>
+            <th>removeItemWidget(item)</th>
+            <th>移除给出项</th>
+        </tr>
+        <tr>
+            <th>setSortingEnabled(bool)</th>
+            <th>设置是否允许列表进行排序</th>
+        </tr>
+        <tr>
+            <th>sortItems(QtCore.Qt.SortOrder)</th>
+            <th> 有两个参数可选，Qt.AscendingOrder（从A到Z排序），Qt.DescendingOrder（从Z到A排序）</th>
+        </tr>
+    </tbody>
+</table>
+<br>下面是QListWidget提供的一些信号
+<br>使用方法🌰：
+<br>self.mySignal.connect(self.mySlot)
+<table>
+    <thead>
+        <tr>
+            <th>信号</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>currentItemChanged</th>
+            <th>当选择项目改变时触发的信号</th>
+        </tr>
+        <tr>
+            <th>itemClicked(item)</th>
+            <th>当点击该项时触发信号</th>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="QListWidgetItem"><a href="#QListWidgetItem" class="headerlink" title="QListWidgetItem"></a>QListWidgetItem</h3><p>列表项目类，是QListWiget中的列表项。<br><br>下面是QListWidgetItem中的方法🌰：<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QListWidgetItem.html" >参考来自:Qt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>text()</th>
+            <th>得到该项目文字</th>
+        </tr>
+        <tr>
+            <th>setText(string)</th>
+            <th>设置项目的文本</th>
+        </tr>
+        <tr>
+            <th>setTextAlignment(QtCore.Qt.AlignmentFlag)</th>
+            <th>设置每一项列表的背景颜色</th>
+        </tr>
+        <tr>
+            <th>setBackground(QtGui.QBrush)</th>
+            <th>设置每一项列表的背景颜色</th>
+        </tr>
+        <tr>
+            <th>setForeground(QtGui.QBrush)</th>
+            <th>设置每一项列表的前景颜色</th>
+        </tr>
+        <tr>
+            <th>setHidden(bool)</th>
+            <th>设置项目是否隐藏</th>
+        </tr>
+        <tr>
+            <th>setSelected(bool)</th>
+            <th>设置当前状态为选中状态</th>
+        </tr>
+        <tr>
+            <th>setSizeHint(QtCore.QSize)</th>
+            <th>设置行高</th>
+        </tr>
+        <tr>
+            <th>setToolTip(string)</th>
+            <th>设置提示文字</th>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="QAbstractButton🖱️"><a href="#QAbstractButton🖱️" class="headerlink" title="QAbstractButton🖱️"></a>QAbstractButton🖱️</h2><p>QAbstractButton类为抽象类，不能实例化，是QPushButton，QToolButton，QRadioButton和QCheckBox等的基类。<br><br>下面的方法用于判断按钮的状态🌰：<br><br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jia666666/article/details/81513443" >参考来自：jia666666的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <table>
     <thead>
         <tr>
@@ -317,10 +545,7 @@
         </tr>
     </tbody>
 </table>
-<br>下面是获取按钮属性或者对按钮进行控制的一些函数
-<br>使用方法🌰:
-<br>PySide6.QtWidgets.QAbstractButton.setCheckable(arg__1),arg__1 - bool
-<br>PySide6.QtWidgets.QAbstractButton.text()
+<br>下面是获取按钮属性或者对按钮进行控制的一些函数🌰:
 <table>
     <thead>
         <tr>
@@ -330,11 +555,11 @@
     </thead>
     <tbody>
         <tr>
-            <th>setCheckable()</th>
+            <th>setCheckable(bool)</th>
             <th>设置按钮是否可以被勾选</th>
         </tr>
         <tr>
-            <th>setEnabled()</th>
+            <th>setEnabled(bool)</th>
             <th>设置按钮是否可用</th>
         </tr>
         <tr>
@@ -351,8 +576,7 @@
         </tr>
     </tbody>
 </table>
-<br>下面是QAbstractButton提供的一些信号
-<br>使用方法🌰：
+<br>下面是QAbstractButton提供的一些信号🌰：
 <br>self.mySignal.connect(self.mySlot)
 <table>
     <thead>
@@ -378,7 +602,7 @@
 </table>
 
 <h3 id="QPushButton"><a href="#QPushButton" class="headerlink" title="QPushButton"></a>QPushButton</h3><p>QPushButton继承QAbstractButton的方法，基本上使用的方法都是QAbstractButton存在的，它自己的方法没有什么常用到的，这里就不过多赘述了。</p>
-<h3 id="QCheckBox"><a href="#QCheckBox" class="headerlink" title="QCheckBox"></a>QCheckBox</h3><p>复选框一般情况下有两种状态：勾选和不勾选，可以将复选框设置为三态模式，进行更多情况的使用，三态模式分别为：勾选、半勾选、不勾选。（PySide6.QtCore.Qt.CheckState）<br><br> <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jia666666/article/details/81533763" >参考来自 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="QCheckBox"><a href="#QCheckBox" class="headerlink" title="QCheckBox"></a>QCheckBox</h3><p>复选框一般情况下有两种状态：勾选和不勾选，可以将复选框设置为三态模式，进行更多情况的使用，三态模式分别为：勾选、半勾选、不勾选。（PySide6.QtCore.Qt.CheckState）<br><br> <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/jia666666/article/details/81533763" >参考来自：jia666666的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <table>
     <thead>
         <tr>
@@ -453,7 +677,7 @@
     </tbody>
 </table>
 
-<h2 id="输入控件"><a href="#输入控件" class="headerlink" title="输入控件"></a>输入控件</h2><h3 id="QlineEdit"><a href="#QlineEdit" class="headerlink" title="QlineEdit"></a>QlineEdit</h3><p><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLineEdit.html#id11" >参考来自 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>该控件可以控制或者限制用户的输入行为。通过掩码属性（setInputMask）和验证器(setValidator)来达到。<br>设置该控件属性的方法如下：</p>
+<h2 id="输入控件✒️"><a href="#输入控件✒️" class="headerlink" title="输入控件✒️"></a>输入控件✒️</h2><h3 id="QLineEdit"><a href="#QLineEdit" class="headerlink" title="QLineEdit"></a>QLineEdit</h3><p>该控件可以控制或者限制用户的输入行为。通过掩码属性（setInputMask）和验证器(setValidator)来达到。<br><br>下面是QLineEdit提供的一些方法🌰：<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QLineEdit.html#id11" >参考来自：Qt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <table>
     <thead>
         <tr>
@@ -536,7 +760,213 @@
     </tbody>
 </table>
 
-<h5 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h5><p>文本对齐样式类型<br>水平方向对齐：</p>
+
+
+<h3 id="QComboBox"><a href="#QComboBox" class="headerlink" title="QComboBox"></a>QComboBox</h3><p>下拉列表框，在下拉列表中提供一些选项供给选择<br><br>下面是QComboBox提供的一些方法🌰：<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QComboBox.html" >参考来自：Qt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>addItem(string)</th>
+            <th>往下拉列表中添加一个项目</th>
+        </tr>
+        <tr>
+            <th>addItems(list)</th>
+            <th>往下拉列表中添加一个列表</th>
+        </tr>
+        <tr>
+            <th>clear()</th>
+            <th>清除下拉列表中的全部内容</th>
+        </tr>
+        <tr>
+            <th>setItemText(int,string)</th>
+            <th>设置列表中给定索引项目的值</th>
+        </tr>
+        <tr>
+            <th>count()</th>
+            <th>返回下拉列表中项目的数量</th>
+        </tr>
+        <tr>
+            <th>currentIndex()</th>
+            <th>返回当前选项在下拉列表中的索引</th>
+        </tr>
+        <tr>
+            <th>currentText()</th>
+            <th>返回当前选项的文字</th>
+        </tr>
+    </tbody>
+</table>
+常用信号：
+<table>
+    <thead>
+        <tr>
+            <th>信号</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Activated</th>
+            <th>选中一个选项时触发的信号</th>
+        </tr>
+        <tr>
+            <th>currentIndexChanged</th>
+            <th>选中选项发生改变时触发的信号</th>
+        </tr>
+        <tr>
+            <th>highlighted</th>
+            <th>当高亮的项目发生改变时触发的信号</th>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="QAbstractSlider🎚️"><a href="#QAbstractSlider🎚️" class="headerlink" title="QAbstractSlider🎚️"></a>QAbstractSlider🎚️</h2><p>可以滑动的控件，提供输入一个范围内的数的类，是QSlider、QScrollBar等的基类<br><br>下面是QAbstractSlider提供的一些方法🌰：</p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>value()</th>
+            <th>获得滑块的数值</th>
+        </tr>
+        <tr>
+            <th>setValue(int)</th>
+            <th>设置滑块的数值</th>
+        </tr>
+        <tr>
+            <th>setMinimum(int)</th>
+            <th>设置滑块的最小值</th>
+        </tr>
+        <tr>
+            <th>setMaximum(int)</th>
+            <th>设置滑块的最大值</th>
+        </tr>
+        <tr>
+            <th>setSingleStep(int)</th>
+            <th>设置滑块步数</th>
+        </tr>
+    </tbody>
+</table>
+<br>下面是QAbstractSlider的一些信号🌰：
+<table>
+    <thead>
+        <tr>
+            <th>信号</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>valueChanged</th>
+            <th>滑块数值变化触发的信号</th>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="QSlider"><a href="#QSlider" class="headerlink" title="QSlider"></a>QSlider</h3><p>滑块，滑动输入数值，下面是QSlider提供的一些方法🌰：<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QAbstractSlider.html" >参考来自：Qt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>setTickPosition(QtWidgets.QSlider.TickPosition)</th>
+            <th>绘制滑块的刻度线</th>
+        </tr>
+        <tr>
+            <th>setTickInterval(int)</th>
+            <th>设置刻度线的间隔距离</th>
+        </tr>
+    </tbody>
+</table>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>QtWidgets.QSlider.TickPosition</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>QSlider.NoTicks</th>
+            <th>不绘制任何刻度线</th>
+        </tr>
+        <tr>
+            <th>QSlider.TicksBothSides</th>
+            <th>在滑块两侧绘制刻度线</th>
+        </tr>
+                <tr>
+            <th>QSlider.TicksAbove</th>
+            <th>在滑块上方绘制刻度线</th>
+        </tr>
+                <tr>
+            <th>QSlider.TicksBelow</th>
+            <th>在滑块下方绘制刻度线</th>
+        </tr>
+                <tr>
+            <th>QSlider.TicksLeft</th>
+            <th>在滑块左侧绘制刻度线</th>
+        </tr>
+                <tr>
+            <th>QSlider.TicksRight</th>
+            <th>在滑块右侧绘制刻度线</th>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="QPrograssBar"><a href="#QPrograssBar" class="headerlink" title="QPrograssBar"></a>QPrograssBar</h3><p>进度条，显示程序（一般用于循环程序）的进度。下面是QPrograssBar提供的一些方法🌰：<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qtforpython-6/PySide6/QtWidgets/QProgressBar.html" >参考来自：Qt文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<table>
+    <thead>
+        <tr>
+            <th>方法</th>
+            <th>含义</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>setRange(int,int)</th>
+            <th>设置进度条的范围</th>
+        </tr>
+        <tr>
+            <th>setValue(int)</th>
+            <th>设置进度条的值</th>
+        </tr>
+                <tr>
+            <th>setTextVisible(bool)</th>
+            <th>设置进度条是否显示数值</th>
+        </tr>
+                <tr>
+            <th>setInvertedAppearance</th>
+            <th>设置进度条是否反向</th>
+        </tr>
+                <tr>
+            <th>value()</th>
+            <th>获得进度条的数值</th>
+        </tr>
+                <tr>
+            <th>reset()</th>
+            <th>重置进度条</th>
+        </tr>
+    </tbody>
+</table>
+更改PrograssBar进度条的颜色可以在stylesheet中使用qss更改，🌰：
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">QWidgets.QPrograssBar.setStyleSheet(&quot;QProgressBar &#123; border: 4px solid grey; &quot;</span><br><span class="line">&quot;border-radius: 10px; background-color: #FFFFFF; text-align: center;&quot;</span><br><span class="line">&quot;color:rgb(80,80,80);font: 15pt &#x27;Comic Sans MS&#x27;;&#125;&quot;</span><br><span class="line">&quot;QProgressBar::chunk &#123;background:QLinearGradient(x1:0,y1:0,x2:2,y2:0,stop:0 rgb(47,161,202),&quot;</span><br><span class="line">&quot;stop:1  rgb(43,220,112));&#125;&quot;)</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="附：【对齐参数、掩码表格、验证器、EchoMode】"><a href="#附：【对齐参数、掩码表格、验证器、EchoMode】" class="headerlink" title="附：【对齐参数、掩码表格、验证器、EchoMode】"></a>附：【对齐参数、掩码表格、验证器、EchoMode】</h2><h3 id="对齐参数"><a href="#对齐参数" class="headerlink" title="对齐参数"></a>对齐参数</h3><p>文本对齐样式类型<br>水平方向对齐：</p>
 <table>
     <thead>
         <tr>
@@ -586,8 +1016,8 @@
         </tr>
     </tbody>
 </table>
-掩码表格：
-<table>
+
+<h3 id="掩码表格："><a href="#掩码表格：" class="headerlink" title="掩码表格："></a>掩码表格：</h3><table>
     <thead>
         <tr>
             <th>掩码字符</th>
@@ -673,8 +1103,8 @@
         </tr>
     </tbody>
 </table>
-验证器：
-<table>
+
+<h3 id="验证器："><a href="#验证器：" class="headerlink" title="验证器："></a>验证器：</h3><table>
     <thead>
         <tr>
             <th>验证器</th>
@@ -698,8 +1128,7 @@
 </table>
 
 
-<p>EchoMode：</p>
-<table>
+<h3 id="EchoMode："><a href="#EchoMode：" class="headerlink" title="EchoMode："></a>EchoMode：</h3><table>
     <thead>
         <tr>
             <th>显示状态</th>
@@ -725,69 +1154,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3 id="QComboBox"><a href="#QComboBox" class="headerlink" title="QComboBox"></a>QComboBox</h3><p>下拉列表框<br><a href="">参考来自</a><br>获得属性的方法</p>
-<table>
-    <thead>
-        <tr>
-            <th>方法</th>
-            <th>含义</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>addItem(string)</th>
-            <th>往下拉列表中添加一个项目</th>
-        </tr>
-        <tr>
-            <th>addItems(list)</th>
-            <th>往下拉列表中添加一个列表</th>
-        </tr>
-        <tr>
-            <th>clear()</th>
-            <th>清除下拉列表中的全部内容</th>
-        </tr>
-        <tr>
-            <th>setItemText(int,string)</th>
-            <th>设置列表中给定索引项目的值</th>
-        </tr>
-        <tr>
-            <th>count()</th>
-            <th>返回下拉列表中项目的数量</th>
-        </tr>
-        <tr>
-            <th>currentIndex()</th>
-            <th>返回当前选项在下拉列表中的索引</th>
-        </tr>
-        <tr>
-            <th>currentText()</th>
-            <th>返回当前选项的文字</th>
-        </tr>
-    </tbody>
-</table>
-常用信号：
-<table>
-    <thead>
-        <tr>
-            <th>信号</th>
-            <th>含义</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>Activated</th>
-            <th>选中一个选项时触发的信号</th>
-        </tr>
-        <tr>
-            <th>currentIndexChanged</th>
-            <th>选中选项发生改变时触发的信号</th>
-        </tr>
-        <tr>
-            <th>highlighted</th>
-            <th>当高亮的项目发生改变时触发的信号</th>
-        </tr>
-    </tbody>
-</table>
         </div>
 
         
@@ -801,11 +1167,11 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-11-08 20:31:26
+                    :</strong> 2023-11-10 16:08:10
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/11/07/PyQt控件使用/
+            <strong>Link:</strong> https://aryagala0.github.io/2023/11/07/PyQt/PyQt控件使用/
         </li>
         <li>
             <strong>
@@ -837,11 +1203,26 @@
         
             <div class="article-nav">
                 
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/11/13/python%E5%9F%BA%E7%A1%80/asyn%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">asynchronous programing异步编程基础</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/11/06/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/"
+                        href="/2023/11/06/PyQt/Windows%E4%B8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAPyQt%E7%A8%8B%E5%BA%8F/"
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Windows下的第一个PyQt程序</span>
@@ -910,7 +1291,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">PyQt控件使用</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyQt%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">PyQt控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QAbstractButton"><span class="nav-text">QAbstractButton</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QPushButton"><span class="nav-text">QPushButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QCheckBox"><span class="nav-text">QCheckBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QRadioButton"><span class="nav-text">QRadioButton</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8E%A7%E4%BB%B6"><span class="nav-text">输入控件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QlineEdit"><span class="nav-text">QlineEdit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QComboBox"><span class="nav-text">QComboBox</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PyQt%E6%8E%A7%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E2%9B%8F%EF%B8%8F"><span class="nav-text">PyQt控件的使用⛏️</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QFrame%F0%9F%96%BD%F0%9F%8F%B7%EF%B8%8F%F0%9F%93%8B"><span class="nav-text">QFrame🖽🏷️📋</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QLabel"><span class="nav-text">QLabel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QListWidget"><span class="nav-text">QListWidget</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QListWidgetItem"><span class="nav-text">QListWidgetItem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QAbstractButton%F0%9F%96%B1%EF%B8%8F"><span class="nav-text">QAbstractButton🖱️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QPushButton"><span class="nav-text">QPushButton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QCheckBox"><span class="nav-text">QCheckBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QRadioButton"><span class="nav-text">QRadioButton</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%8E%A7%E4%BB%B6%E2%9C%92%EF%B8%8F"><span class="nav-text">输入控件✒️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QLineEdit"><span class="nav-text">QLineEdit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QComboBox"><span class="nav-text">QComboBox</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QAbstractSlider%F0%9F%8E%9A%EF%B8%8F"><span class="nav-text">QAbstractSlider🎚️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#QSlider"><span class="nav-text">QSlider</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QPrograssBar"><span class="nav-text">QPrograssBar</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%EF%BC%9A%E3%80%90%E5%AF%B9%E9%BD%90%E5%8F%82%E6%95%B0%E3%80%81%E6%8E%A9%E7%A0%81%E8%A1%A8%E6%A0%BC%E3%80%81%E9%AA%8C%E8%AF%81%E5%99%A8%E3%80%81EchoMode%E3%80%91"><span class="nav-text">附：【对齐参数、掩码表格、验证器、EchoMode】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E9%BD%90%E5%8F%82%E6%95%B0"><span class="nav-text">对齐参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A9%E7%A0%81%E8%A1%A8%E6%A0%BC%EF%BC%9A"><span class="nav-text">掩码表格：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E5%99%A8%EF%BC%9A"><span class="nav-text">验证器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EchoMode%EF%BC%9A"><span class="nav-text">EchoMode：</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
@@ -1125,10 +1506,6 @@
 <script src="/js/tools/codeBlock.js" type="module"></script>
 
 
-
-
-    
-<script src="/js/layouts/lazyload.js" type="module"></script>
 
 
 
