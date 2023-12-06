@@ -13,23 +13,25 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/11/16/python基础/python装饰器/"/>
+    <link rel="canonical" href="http://example.com/2023/12/06/mayaapi/openmaya2小结/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言💟最近看到一个很久以前的中型项目，可能由于一开始没有怎么规划过，想到啥功能就写啥功能，后来又随着功能的增加，代码堆成了一座“屎山”。正好最近的事情不多，我又想巩固一下python基础，于是我打重构一下这座“屎山”。上网查了一些资料之后，刷到了装饰器这个概念，学习之后总结了一些笔记。python代码简洁书写参考  基本函数装饰器(Decorator)🎀Python装饰器的概念装饰器是一个特殊">
+        <meta name="description" content="随手记Maya是开放软件可以通过插件拓展。但是Maya是闭源的，它的核心代码不可以查看和更改，必须通过Maya提供的两个应用程序接口对Maya软件进行拓展。 1.Maya Commands可以用mel或者python语言进行调用的程序接口。mel是maya编程的核心，maya的GUI就是由mel构建的。而maya.cmds（python）是mel代码的封装。 2.MayaAPIMayaAPI最初是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python装饰器">
-<meta property="og:url" content="http://example.com/2023/11/16/python%E5%9F%BA%E7%A1%80/python%E8%A3%85%E9%A5%B0%E5%99%A8/index.html">
+<meta property="og:title" content="MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)">
+<meta property="og:url" content="http://example.com/2023/12/06/MayaAPI/OpenMaya2%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言💟最近看到一个很久以前的中型项目，可能由于一开始没有怎么规划过，想到啥功能就写啥功能，后来又随着功能的增加，代码堆成了一座“屎山”。正好最近的事情不多，我又想巩固一下python基础，于是我打重构一下这座“屎山”。上网查了一些资料之后，刷到了装饰器这个概念，学习之后总结了一些笔记。python代码简洁书写参考  基本函数装饰器(Decorator)🎀Python装饰器的概念装饰器是一个特殊">
+<meta property="og:description" content="随手记Maya是开放软件可以通过插件拓展。但是Maya是闭源的，它的核心代码不可以查看和更改，必须通过Maya提供的两个应用程序接口对Maya软件进行拓展。 1.Maya Commands可以用mel或者python语言进行调用的程序接口。mel是maya编程的核心，maya的GUI就是由mel构建的。而maya.cmds（python）是mel代码的封装。 2.MayaAPIMayaAPI最初是">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-16T10:00:00.000Z">
-<meta property="article:modified_time" content="2023-11-20T07:11:06.494Z">
+<meta property="og:image" content="http://example.com/images/MayaAPI/compare_PS_and_PP.png">
+<meta property="article:published_time" content="2023-12-06T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T10:00:22.762Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="MayaAPI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/MayaAPI/compare_PS_and_PP.png">
     
     
         <!-- Google tag (gtag.js) -->
@@ -51,7 +53,7 @@
     
     <title>
         
-            python装饰器 -
+            MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1) -
         
         AryaGala&#39;s Blog
     </title>
@@ -261,7 +263,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">python装饰器</h1>
+                <h1 class="article-title-regular">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</h1>
             
             </div>
             
@@ -283,15 +285,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-11-16 18:00</span>
-        <span class="mobile">2023-11-16 18:00</span>
+        <span class="desktop">2023-12-06 08:00</span>
+        <span class="mobile">2023-12-06 08:00</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-20 15:11:06</span>
-            <span class="mobile">2023-11-20 15:11:06</span>
+            <span class="desktop">2023-12-06 18:22</span>
+            <span class="mobile">2023-12-06 18:22</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -303,7 +305,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/python/">python</a>&nbsp;
+                        <a href="/tags/MayaAPI/">MayaAPI</a>&nbsp;
                     </li>
                 
             </ul>
@@ -329,48 +331,38 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="前言💟"><a href="#前言💟" class="headerlink" title="前言💟"></a>前言💟</h2><p>最近看到一个很久以前的中型项目，可能由于一开始没有怎么规划过，想到啥功能就写啥功能，后来又随着功能的增加，代码堆成了一座“屎山”。正好最近的事情不多，我又想巩固一下python基础，于是我打重构一下这座“屎山”。上网查了一些资料之后，刷到了装饰器这个概念，学习之后总结了一些笔记。<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/yinruiqing/clean-code-python" >python代码简洁书写参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="基本函数装饰器-Decorator-🎀"><a href="#基本函数装饰器-Decorator-🎀" class="headerlink" title="基本函数装饰器(Decorator)🎀"></a>基本函数装饰器(Decorator)🎀</h2><h3 id="Python装饰器的概念"><a href="#Python装饰器的概念" class="headerlink" title="Python装饰器的概念"></a>Python装饰器的概念</h3><p>装饰器是一个特殊的函数，它可以扩展一个普通函数的功能，可以把装饰器中定义的功能辅助于所有被装饰的函数，提高代码的复用率，让代码更简洁。</p>
-<h3 id="装饰器的基本定义"><a href="#装饰器的基本定义" class="headerlink" title="装饰器的基本定义"></a>装饰器的基本定义</h3><p>装饰器有自己的功能代码，并且传递一个函数作为参数到装饰器中（回调函数）进行调用。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">callback</span>):        </span><br><span class="line"><span class="meta">    @wraps(<span class="params">callback</span>)    </span><span class="comment">#wraps对回调函数进行装饰，让我们可以访问被装饰前函数的属性    </span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">        <span class="comment">#装饰器自己的功能代码</span></span><br><span class="line">        callback()      <span class="comment">#回调函数，调用回调函数，执行被装饰函数的代码</span></span><br><span class="line">    <span class="keyword">return</span> func</span><br></pre></td></tr></table></figure></div>
-<h3 id="使用装饰器"><a href="#使用装饰器" class="headerlink" title="使用装饰器"></a>使用装饰器</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decorated_func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">    <span class="comment">#普通函数功能代码</span></span><br><span class="line"></span><br><span class="line">decorated_func()       <span class="comment">#调用被装饰的函数</span></span><br></pre></td></tr></table></figure></div>
-<h2 id="装饰带参数的函数（传递变量）🔃"><a href="#装饰带参数的函数（传递变量）🔃" class="headerlink" title="装饰带参数的函数（传递变量）🔃"></a>装饰带参数的函数（传递变量）🔃</h2><p>装饰带参数的函数，不在被装饰的函数调用时中传递参数，而是在装饰器中的回调函数中传递参数。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">calculate</span>(<span class="params">callback</span>):</span><br><span class="line"><span class="comment">#计算1+2+...+50</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">        result=<span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">51</span>):</span><br><span class="line">            result+=n</span><br><span class="line">        callback(result)        <span class="comment">#将参数传递到普通函数中</span></span><br><span class="line">    <span class="keyword">return</span> run</span><br><span class="line"></span><br><span class="line"><span class="meta">@calculate</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">show</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;计算结果是：&quot;</span>,n)         <span class="comment">#得到装饰器中的参数(可以通过传递参数得到装饰器内的变量值)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@calculate</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">showInEnglish</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;The Result is:&quot;</span>,n)       <span class="comment">#相同参数输送给不同的函数，重复利用装饰器逻辑</span></span><br><span class="line"></span><br><span class="line">show()</span><br><span class="line">showInEnglish()</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="带参数的装饰器-Decorator-Factory-🏭"><a href="#带参数的装饰器-Decorator-Factory-🏭" class="headerlink" title="带参数的装饰器(Decorator Factory)🏭"></a>带参数的装饰器(Decorator Factory)🏭</h2><h3 id="装饰器工厂的概念"><a href="#装饰器工厂的概念" class="headerlink" title="装饰器工厂的概念"></a>装饰器工厂的概念</h3><p>通过调用装饰器工厂这个函数生成一个装饰器，然后返回装饰器来使用。</p>
-<h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decorator_factory</span>(<span class="params">argument,argument</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">callback</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">func</span>():</span><br><span class="line">            <span class="comment">#装饰器自己的功能代码</span></span><br><span class="line">            callback()</span><br><span class="line">        <span class="keyword">return</span> func</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br></pre></td></tr></table></figure></div>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@decorator_factory(<span class="params">arg,arg</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decorated_func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">    <span class="comment">#普通函数功能代码</span></span><br><span class="line">decorated_func()</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="装饰器和类🆒"><a href="#装饰器和类🆒" class="headerlink" title="装饰器和类🆒"></a>装饰器和类🆒</h2><h3 id="装饰器类"><a href="#装饰器类" class="headerlink" title="装饰器类"></a>装饰器类</h3><p>给被装饰函数提供类进行装饰，在调用@xxxx时自动创建类对象，初始化的时候传入回调函数，call方法执行回调函数</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Decorator</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,callback</span>):</span><br><span class="line">        self.func=callback</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment">#装饰器类自己的功能代码</span></span><br><span class="line">        self.func()</span><br></pre></td></tr></table></figure></div>
-<h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decorated_func</span>():</span><br><span class="line">    <span class="comment">#普通函数功能代码</span></span><br><span class="line"></span><br><span class="line">decorated_func()</span><br></pre></td></tr></table></figure></div>
-<h3 id="带参数的装饰器类"><a href="#带参数的装饰器类" class="headerlink" title="带参数的装饰器类"></a>带参数的装饰器类</h3><p>给被装饰函数提供类对象进行装饰,在被装饰函数执行的时候调用__call__，传入回调函数</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ParamDacorator</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,name</span>):</span><br><span class="line">        self.name=name</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self,callback</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">            <span class="comment">#装饰器的功能代码</span></span><br><span class="line">            <span class="built_in">print</span>(name)</span><br><span class="line">            callback()</span><br><span class="line">        <span class="keyword">return</span> run</span><br><span class="line"><span class="meta">@ParamDacorator(<span class="params"><span class="string">&quot;Jack&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decorated_func</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line">decorated_func()</span><br></pre></td></tr></table></figure></div>
-
-<h3 id="用装饰器装饰类"><a href="#用装饰器装饰类" class="headerlink" title="用装饰器装饰类"></a>用装饰器装饰类</h3><p>扩充、修改、限制类的功能。</p>
-<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>装饰器函数的参数是指需要装饰的类，在调用类创建对象时，拿到的不是类而是装饰器的返回值。下面是执行装饰器代码并创建类对象的例子。</p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">class_decorator</span>(<span class="params">cls</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;start&quot;</span>)</span><br><span class="line">        obj=cls()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;end&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> obj</span><br><span class="line">    <span class="keyword">return</span> run</span><br><span class="line"></span><br><span class="line"><span class="meta">@class_decorator</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">p1=Person()</span><br></pre></td></tr></table></figure></div>
-
-<p>参考来自：<br><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=qc8hsxAK270&t=8s" >彭彭装饰器基本篇教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=F4hWr87ZcSc" >彭彭装饰工厂教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Lb9nfBvQIzY" >高级python编程知识，类与装饰器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-
+            <h2 id="随手记"><a href="#随手记" class="headerlink" title="随手记"></a>随手记</h2><p>Maya是开放软件可以通过插件拓展。但是Maya是闭源的，它的核心代码不可以查看和更改，必须通过Maya提供的两个应用程序接口对Maya软件进行拓展。</p>
+<h2 id="1-Maya-Commands"><a href="#1-Maya-Commands" class="headerlink" title="1.Maya Commands"></a>1.Maya Commands</h2><p>可以用mel或者python语言进行调用的程序接口。mel是maya编程的核心，maya的GUI就是由mel构建的。而maya.cmds（python）是mel代码的封装。</p>
+<h2 id="2-MayaAPI"><a href="#2-MayaAPI" class="headerlink" title="2.MayaAPI"></a>2.MayaAPI</h2><p>MayaAPI最初是给C++进行调用的程序接口，但是从maya8.5之后已经对python和微软的.NET提供了支持。Python API目前有两个版本,Python API 1.0 和 Python API 2.0 。2.0对python更友好，性能也更好，但并不完全支持所有接口。Python API 1.0所用的库是maya.OpenMaya，Python API 2.0用的库是maya.api.OpenMaya。</p>
+<h2 id="为什么cmds被选择的更多呢？"><a href="#为什么cmds被选择的更多呢？" class="headerlink" title="为什么cmds被选择的更多呢？"></a>为什么cmds被选择的更多呢？</h2><p>1.cmds简单非常多，MayaAPI的学习曲线非常陡岖，很难学习，cmds就相对简单很多。MayaAPI可以操控的东西更多，对使用者对maya的基础知识了解的要求也就越多。需要使用者了解Maya“基于节点”的架构（包括DG和dag），以免使用的时候出现问题。<br><br>2.cmds是已经封装好的命令，里面已经包含了undo方法，而且已经被完全测试过可以使用。而用api写的命令，需要自己写undo方法，并且测试，如果在编写的时候破坏了堆栈会造成maya的崩溃。<br><br>3.同样的操作cmds所需的代码量更小 <br><br>4.唯一能够对mayaUI界面进行操作的应用接口<br></p>
+<h2 id="给我个理由选择MayaAPI？"><a href="#给我个理由选择MayaAPI？" class="headerlink" title="给我个理由选择MayaAPI？"></a>给我个理由选择MayaAPI？</h2><p>1.对maya架构进行扩展，扩展节点、上下文、发射器等等。<br><br>2.可以获得更多的控制。可以获得cmds做不到的控制。<br><br>3.性能更高。特别是在对大量点或面循环进行同样操作，MayaAPI的效率会高很多。<br><br>4.可以将python代码编译为C++插件，避免代码泄露。C++在处理多线程和进行效率最大化方面有更多优势。<br></p>
+<h2 id="python-VS-C"><a href="#python-VS-C" class="headerlink" title="python VS C++"></a>python VS C++</h2><h4 id="C-的优缺点"><a href="#C-的优缺点" class="headerlink" title="C++的优缺点"></a>C++的优缺点</h4><p>1.C++的性能更优，它在加载到maya之前就已经编译优化好了。但是它对maya版本和操作系统版本具有依赖性，对每个不同版本的maya需要分别编译，对不同的平台也需要分别编译，这是很麻烦的事情。<br><br>2.C++可以实现多线程，更优化性能。 但他更难维护，而且写起来复杂。<br><br>3.mayaAPI本来就是针对C++写的，有一些python没有的方法。<br></p>
+<h4 id="PythonAPI的优缺点"><a href="#PythonAPI的优缺点" class="headerlink" title="PythonAPI的优缺点"></a>PythonAPI的优缺点</h4><p>1.开发更快，不用进行编译。更易于使用。但消耗资源比较多，还有全局锁（GIL），对多线程代码有限制。<br><br>2.python有很多第三方库可以解决很多复杂的问题。<br><br>3.对平台或者maya版本没有依赖性，除非不同maya版本的api发生了改变。 <br><br>4.mayaAPI不是针对python开发的，不是所有的MayaAPI都有<br></p>
+<h2 id="3-MayaAPI-1-0-和-MayaAPI-2-0"><a href="#3-MayaAPI-1-0-和-MayaAPI-2-0" class="headerlink" title="3.MayaAPI 1.0 和 MayaAPI 2.0"></a>3.MayaAPI 1.0 和 MayaAPI 2.0</h2><p>一般会把 MayaAPI 1.0 和 MayaAPI 2.0 混合使用，只要它们不产生直接的交互是不会有什么问题的。但如果产生了直接交互（例如用1.0生成的节点再用2.0进行链接），会产生一些难以发觉的错误。特别是当代码量巨大的时候，很容易发生这类错误。</p>
+<h2 id="4-Python-Scripts-和-Python-Plugins"><a href="#4-Python-Scripts-和-Python-Plugins" class="headerlink" title="4.Python Scripts 和 Python Plugins"></a>4.Python Scripts 和 Python Plugins</h2><p><img src="/images/MayaAPI/compare_PS_and_PP.png" alt="comparing python scripts and python plugins"><br></p>
+<p>加载 maya Plugins 可以通过插件管理器和用 MayaCommand（cmd）进行加载。在插件管理器中，有很多不同的文件夹分类，只有加入到maya环境变量中的文件夹路径才会出现在插件管理器中。而写成maya Plugins的代码，必须保存在maya环境变量的路径的文件夹下。</p>
+<h2 id="5-Plugin-template（插件编写模版）"><a href="#5-Plugin-template（插件编写模版）" class="headerlink" title="5.Plugin template（插件编写模版）"></a>5.Plugin template（插件编写模版）</h2><p>一个插件的最基本结构是两个最基本的函数：initializePlugin() 和 uninitializePlugin() 。<br><br>initializePlugin函数是插件的起始点，在插件加载之后即可调用且只会被调用一次，它会向maya注册所有的命令、节点、菜单等等。有一个MObject参数用来注册插件内的这些组件<br><br>uninitializePlugin函数是插件的退出点，在插件取消加载的时候调用且只会被调用一次，它会注销掉所有它建立的命令、节点、菜单等等。也有一个MObject参数，用于注销插件内的这些组件。<br><br>用maya API2.0编写插件时，需要先用maya_useNewAPI函数进行声明。也可以在头部使用 <code>maya_useNewAPI = True </code>来声明。<br></p>
+<h3 id="插件基本结构："><a href="#插件基本结构：" class="headerlink" title="插件基本结构："></a>插件基本结构：</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> maya.api.OpenMaya <span class="keyword">as</span> om2</span><br><span class="line"><span class="keyword">import</span> maya.cmds <span class="keyword">as</span> cmds</span><br><span class="line"></span><br><span class="line"><span class="comment">#maya_unseNewAPI = True</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">maya_useNewAPI</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    vendor=<span class="string">&#x27;AryaGala&#x27;</span></span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span></span><br><span class="line">    om2.MFnPlugin(plugin, vendor, version)          <span class="comment">#用MFnPlugin类生成插件信息，在插件管理器中插件的右侧的🛈按钮中显示</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">uninitializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h3 id="命令插件基本结构："><a href="#命令插件基本结构：" class="headerlink" title="命令插件基本结构："></a>命令插件基本结构：</h3><p>在开发过程中，可以在代码下添加一段用于刷新的函数，方便测试和编写。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> maya.api.OpenMaya <span class="keyword">as</span> om2</span><br><span class="line"><span class="keyword">import</span> maya.cmds <span class="keyword">as</span> cmds</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">maya_useNewAPI</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloOpenMayaCmd</span>(om2.MPxCommand):</span><br><span class="line">    COMMAND_NAME = <span class="string">&#x27;HelloOpenMaya&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(HelloOpenMayaCmd,self).__init__()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">doIt</span>(<span class="params">self,args</span>):</span><br><span class="line">        <span class="comment">#插件命令的核心函数，逻辑函数</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Hello,OpenMaya!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod                </span><span class="comment">#classmethod装饰类，不实例化也可以执行它所装饰的方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">creator</span>(<span class="params">cls</span>):</span><br><span class="line">        <span class="comment">#返回该类的实例，用于注册命令</span></span><br><span class="line">        <span class="keyword">return</span> HelloOpenMayaCmd()</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    vendor=<span class="string">&#x27;AryaGala&#x27;</span></span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span></span><br><span class="line">    plugin_fn = om2.MFnPlugin(plugin, vendor, version)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#注册命令</span></span><br><span class="line">        plugin_fn.registerCommand(HelloOpenMayaCmd.COMMAND_NAME,HelloOpenMayaCmd.creator)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to register command: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloOpenMayaCmd.COMMAND_NAME))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">uninitializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    plugin_fn = om2.MFnPlugin(plugin)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#注销命令</span></span><br><span class="line">        plugin_fn.deregisterCommand(HelloOpenMayaCmd.COMMAND_NAME)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to deregister command: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloOpenMayaCmd.COMMAND_NAME))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    plugin_name=<span class="string">&quot;empty_plugin.py&quot;</span></span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;if cmds.pluginInfo(plugin_name,q=True,loaded=True): cmds.unloadPlugin(plugin_name)&#x27;</span>)</span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;if not cmds.pluginInfo(plugin_name,q=True,loaded=True): cmds.loadPlugin(plugin_name)&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> python装饰器</li>
+        <li><strong>Title:</strong> MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
-                :</strong> 2023-11-16 18:00:00</li>
+                :</strong> 2023-12-06 08:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-11-20 15:11:06
+                    :</strong> 2023-12-06 18:00:22
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/11/16/python基础/python装饰器/
+            <strong>Link:</strong> https://aryagala0.github.io/2023/12/06/MayaAPI/OpenMaya2小结/
         </li>
         <li>
             <strong>
@@ -391,7 +383,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/python/">#python</a>&nbsp;
+                        <a href="/tags/MayaAPI/">#MayaAPI</a>&nbsp;
                     </li>
                 
             </ul>
@@ -402,29 +394,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/11/25/python%E9%A1%B9%E7%9B%AE/adv%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E6%94%B9%E5%86%99-%E5%AF%B9%E7%A7%B0%E6%A3%80%E6%9F%A5/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">adv源代码改写-对称检查工具</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/11/13/python%E5%9F%BA%E7%A1%80/asyn%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/"
+                        href="/2023/11/25/python%E9%A1%B9%E7%9B%AE/adv%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E6%94%B9%E5%86%99-%E5%AF%B9%E7%A7%B0%E6%A3%80%E6%9F%A5/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">asynchronous programing异步编程基础</span>
+                                <span class="post-nav-title-item">adv源代码改写-对称检查工具</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -489,8 +466,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">python装饰器</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%F0%9F%92%9F"><span class="nav-text">前言💟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0%E8%A3%85%E9%A5%B0%E5%99%A8-Decorator-%F0%9F%8E%80"><span class="nav-text">基本函数装饰器(Decorator)🎀</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">Python装饰器的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">装饰器的基本定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-text">使用装饰器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E5%87%BD%E6%95%B0%EF%BC%88%E4%BC%A0%E9%80%92%E5%8F%98%E9%87%8F%EF%BC%89%F0%9F%94%83"><span class="nav-text">装饰带参数的函数（传递变量）🔃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8-Decorator-Factory-%F0%9F%8F%AD"><span class="nav-text">带参数的装饰器(Decorator Factory)🏭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E5%B7%A5%E5%8E%82%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">装饰器工厂的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">基本定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E5%92%8C%E7%B1%BB%F0%9F%86%92"><span class="nav-text">装饰器和类🆒</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E7%B1%BB"><span class="nav-text">装饰器类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8%E7%B1%BB"><span class="nav-text">带参数的装饰器类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E8%A3%85%E9%A5%B0%E5%99%A8%E8%A3%85%E9%A5%B0%E7%B1%BB"><span class="nav-text">用装饰器装饰类</span></a></li></ol></li></ol>
+        <div class="page-title">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%89%8B%E8%AE%B0"><span class="nav-text">随手记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Maya-Commands"><span class="nav-text">1.Maya Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-MayaAPI"><span class="nav-text">2.MayaAPI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88cmds%E8%A2%AB%E9%80%89%E6%8B%A9%E7%9A%84%E6%9B%B4%E5%A4%9A%E5%91%A2%EF%BC%9F"><span class="nav-text">为什么cmds被选择的更多呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E6%88%91%E4%B8%AA%E7%90%86%E7%94%B1%E9%80%89%E6%8B%A9MayaAPI%EF%BC%9F"><span class="nav-text">给我个理由选择MayaAPI？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-VS-C"><span class="nav-text">python VS C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-MayaAPI-1-0-%E5%92%8C-MayaAPI-2-0"><span class="nav-text">3.MayaAPI 1.0 和 MayaAPI 2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Python-Scripts-%E5%92%8C-Python-Plugins"><span class="nav-text">4.Python Scripts 和 Python Plugins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Plugin-template%EF%BC%88%E6%8F%92%E4%BB%B6%E7%BC%96%E5%86%99%E6%A8%A1%E7%89%88%EF%BC%89"><span class="nav-text">5.Plugin template（插件编写模版）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-text">插件基本结构：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%8F%92%E4%BB%B6%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="nav-text">命令插件基本结构：</span></a></li></ol></li></ol>
 
     </div>
 </div>
