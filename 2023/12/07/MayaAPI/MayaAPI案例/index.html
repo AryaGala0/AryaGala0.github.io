@@ -13,22 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/11/25/python项目/adv的源代码改写-对称检查/"/>
+    <link rel="canonical" href="http://example.com/2023/12/07/mayaapi/mayaapi案例/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="⏸️前言 在7月份进公司的时候写了个检查工具，已经发布有一段时间了，但是模型反映对称检查老是会检查出没问题的模型。而且有些通过了对称检查的模型，到绑定这边通过 ADV检查还是会有错误。我猜想到应该是算法不一样，于是直接把 ADV中检查对称的代码改写了一下。终于变成了一个清爽舒适，敏感肌也说好的检查工具了呢~  核心方法差不多，都是通过一个点找出它对称的点，然后和对面模型上的点做对比。我原本的方法是">
+        <meta name="description" content="拍屏显示helloworld  (DrawOverride)1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889i">
 <meta property="og:type" content="article">
-<meta property="og:title" content="adv源代码改写-对称检查工具">
-<meta property="og:url" content="http://example.com/2023/11/25/python%E9%A1%B9%E7%9B%AE/adv%E7%9A%84%E6%BA%90%E4%BB%A3%E7%A0%81%E6%94%B9%E5%86%99-%E5%AF%B9%E7%A7%B0%E6%A3%80%E6%9F%A5/index.html">
+<meta property="og:title" content="MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)">
+<meta property="og:url" content="http://example.com/2023/12/07/MayaAPI/MayaAPI%E6%A1%88%E4%BE%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="⏸️前言 在7月份进公司的时候写了个检查工具，已经发布有一段时间了，但是模型反映对称检查老是会检查出没问题的模型。而且有些通过了对称检查的模型，到绑定这边通过 ADV检查还是会有错误。我猜想到应该是算法不一样，于是直接把 ADV中检查对称的代码改写了一下。终于变成了一个清爽舒适，敏感肌也说好的检查工具了呢~  核心方法差不多，都是通过一个点找出它对称的点，然后和对面模型上的点做对比。我原本的方法是">
+<meta property="og:description" content="拍屏显示helloworld  (DrawOverride)1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889i">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-25T14:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-06T10:34:16.699Z">
+<meta property="article:published_time" content="2023-12-07T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-07T06:35:21.198Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="project">
+<meta property="article:tag" content="MayaAPI">
 <meta name="twitter:card" content="summary">
     
     
@@ -51,7 +51,7 @@
     
     <title>
         
-            adv源代码改写-对称检查工具 -
+            MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1) -
         
         AryaGala&#39;s Blog
     </title>
@@ -261,7 +261,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">adv源代码改写-对称检查工具</h1>
+                <h1 class="article-title-regular">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</h1>
             
             </div>
             
@@ -283,15 +283,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-11-25 22:00</span>
-        <span class="mobile">2023-11-25 22:00</span>
+        <span class="desktop">2023-12-07 08:00</span>
+        <span class="mobile">2023-12-07 08:00</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-12-06 18:34:16</span>
-            <span class="mobile">2023-12-06 18:34:16</span>
+            <span class="desktop">2023-12-07 14:35:21</span>
+            <span class="mobile">2023-12-07 14:35:21</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -303,7 +303,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/project/">project</a>&nbsp;
+                        <a href="/tags/MayaAPI/">MayaAPI</a>&nbsp;
                     </li>
                 
             </ul>
@@ -329,27 +329,25 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="⏸️前言"><a href="#⏸️前言" class="headerlink" title="⏸️前言"></a>⏸️前言</h2><p> 在7月份进公司的时候写了个检查工具，已经发布有一段时间了，但是模型反映对称检查老是会检查出没问题的模型。而且有些通过了对称检查的模型，到绑定这边通过 ADV检查还是会有错误。我猜想到应该是算法不一样，于是直接把 ADV中检查对称的代码改写了一下。终于变成了一个清爽舒适，敏感肌也说好的检查工具了呢~<br><br>  核心方法差不多，都是通过一个点找出它对称的点，然后和对面模型上的点做对比。我原本的方法是查出对面点坐标的位置，然后在模型上查找这个位置存不存在一个点，如果不存在，证明不对称。其中用到了字典对点和它的坐标进行转换。但当我看完adv的代码后，感觉我的代码还是太繁琐了。</p>
-<h2 id="正序"><a href="#正序" class="headerlink" title="正序"></a>正序</h2><p> ADV的思路是，通过一个点找它对称的点，然后通过建立一个closestPointOnMesh类型的节点，找到模型上与它最近的那个点，然后将这个点对称回去，看它和原来那个点之间的距离是否大于0.001。如果超过这个精度的话，就判定为不对称，并把两个点都选出来。<br> <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> shape <span class="keyword">in</span> check_list:</span><br><span class="line">    <span class="comment">#check if the poly is freezed</span></span><br><span class="line">    parents=shape.split(<span class="string">&quot;|&quot;</span>)</span><br><span class="line">    parents=<span class="built_in">list</span>(<span class="built_in">filter</span>(<span class="literal">None</span>,parents))</span><br><span class="line">    check_shape=parents[<span class="number">0</span>]</span><br><span class="line">    isFreReturn=<span class="literal">False</span></span><br><span class="line">    isPiviotReturn=<span class="literal">False</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="built_in">len</span>(parents)):</span><br><span class="line">        tempFloat=cmds.getAttr(check_shape+<span class="string">&#x27;.t&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> tempFloat[<span class="number">0</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">1</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">2</span>] != <span class="number">0</span>:</span><br><span class="line">            isFreReturn=<span class="literal">True</span></span><br><span class="line">        tempFloat=cmds.getAttr(check_shape+<span class="string">&#x27;.r&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> tempFloat[<span class="number">0</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">1</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">2</span>] != <span class="number">0</span>:</span><br><span class="line">            isFreReturn=<span class="literal">True</span></span><br><span class="line">        tempFloat=cmds.getAttr(check_shape+<span class="string">&#x27;.s&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> tempFloat[<span class="number">0</span>] != <span class="number">1</span> <span class="keyword">or</span> tempFloat[<span class="number">1</span>] != <span class="number">1</span> <span class="keyword">or</span> tempFloat[<span class="number">2</span>] != <span class="number">1</span>:</span><br><span class="line">            isFreReturn=<span class="literal">True</span></span><br><span class="line">        tempFloat=cmds.getAttr(check_shape+<span class="string">&#x27;.rp&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> tempFloat[<span class="number">0</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">1</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">2</span>] != <span class="number">0</span>:</span><br><span class="line">            isPiviotReturn=<span class="literal">True</span></span><br><span class="line">        tempFloat=cmds.getAttr(check_shape+<span class="string">&#x27;.sp&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> tempFloat[<span class="number">0</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">1</span>] != <span class="number">0</span> <span class="keyword">or</span> tempFloat[<span class="number">2</span>] != <span class="number">0</span>:</span><br><span class="line">            isPiviotReturn=<span class="literal">True</span></span><br><span class="line">        check_shape+=<span class="string">&quot;|&#123;&#125;&quot;</span>.<span class="built_in">format</span>(parents[i])</span><br><span class="line">    <span class="keyword">if</span> isFreReturn:</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;state&quot;</span>:<span class="literal">False</span>, <span class="string">&quot;info&quot;</span>: <span class="string">u&quot;&#123;&#125;-请先冻结全部物体!!!&quot;</span>.<span class="built_in">format</span>(en_name)&#125;</span><br><span class="line">    <span class="keyword">if</span> isPiviotReturn:</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&quot;state&quot;</span>:<span class="literal">False</span>, <span class="string">&quot;info&quot;</span>: <span class="string">u&quot;&#123;&#125;-请先将物体中心放置在原点!!!&quot;</span>.<span class="built_in">format</span>(en_name)&#125;</span><br><span class="line">            </span><br><span class="line"><span class="keyword">for</span> shape <span class="keyword">in</span> check_list:</span><br><span class="line">    <span class="comment">#check symmetry</span></span><br><span class="line">    <span class="keyword">if</span> cmds.objExists(<span class="string">&#x27;closestSampler&#x27;</span>):</span><br><span class="line">        cmds.delete(<span class="string">&#x27;closestSampler&#x27;</span>)</span><br><span class="line">    cmds.createNode(<span class="string">&#x27;closestPointOnMesh&#x27;</span>,n=<span class="string">&#x27;closestSampler&#x27;</span>)</span><br><span class="line">    cmds.connectAttr(<span class="string">&quot;&#123;&#125;.outMesh&quot;</span>.<span class="built_in">format</span>(shape),<span class="string">&#x27;closestSampler.inMesh&#x27;</span>,f=<span class="literal">True</span>)</span><br><span class="line">    numVtxs=cmds.polyEvaluate(shape,v=<span class="literal">True</span>)</span><br><span class="line">    cmds.select(cl=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(numVtxs):</span><br><span class="line">        posA=cmds.xform(<span class="string">&quot;&#123;&#125;.vtx[&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(shape,i),q=<span class="literal">True</span>,ws=<span class="literal">True</span>,t=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> posA[<span class="number">0</span>]&gt;<span class="number">0.001</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        cmds.setAttr(<span class="string">&#x27;closestSampler.inPosition&#x27;</span>,posA[<span class="number">0</span>]*(-<span class="number">1</span>),posA[<span class="number">1</span>],posA[<span class="number">2</span>])</span><br><span class="line">        mirrorVtx_num=cmds.getAttr(<span class="string">&#x27;closestSampler.closestVertexIndex&#x27;</span>)</span><br><span class="line">        posB=cmds.xform(<span class="string">&quot;&#123;&#125;.vtx[&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(shape,mirrorVtx_num),q=<span class="literal">True</span>,ws=<span class="literal">True</span>,t=<span class="literal">True</span>)</span><br><span class="line">        mag=math.sqrt(math.<span class="built_in">pow</span>(posA[<span class="number">0</span>]-posB[<span class="number">0</span>]*(-<span class="number">1</span>),<span class="number">2</span>)+math.<span class="built_in">pow</span>(posA[<span class="number">1</span>]-posB[<span class="number">1</span>],<span class="number">2</span>)+math.<span class="built_in">pow</span>(posA[<span class="number">2</span>]-posB[<span class="number">2</span>],<span class="number">2</span>))</span><br><span class="line">        <span class="keyword">if</span> mag&gt;<span class="number">0.001</span>:</span><br><span class="line">            self.error_list.append(<span class="string">&quot;&#123;&#125;.vtx[&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(shape,i))</span><br><span class="line">            self.error_list.append(<span class="string">&quot;&#123;&#125;.vtx[&#123;&#125;]&quot;</span>.<span class="built_in">format</span>(shape,mirrorVtx_num))</span><br><span class="line">            <span class="comment">#cmds.select([&quot;&#123;&#125;.vtx[&#123;&#125;]&quot;.format(shape,i),&quot;&#123;&#125;.vtx[&#123;&#125;]&quot;.format(shape,mirrorVtx_num)],add=True)</span></span><br><span class="line">cmds.delete(<span class="string">&#x27;closestSampler&#x27;</span>)</span><br><span class="line">cmds.refresh()</span><br></pre></td></tr></table></figure></div></p>
-
+            <h3 id="拍屏显示helloworld-DrawOverride"><a href="#拍屏显示helloworld-DrawOverride" class="headerlink" title="拍屏显示helloworld  (DrawOverride)"></a>拍屏显示helloworld  (DrawOverride)</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> maya.api.OpenMaya <span class="keyword">as</span> om2</span><br><span class="line"><span class="keyword">import</span> maya.api.OpenMayaUI <span class="keyword">as</span> omui2</span><br><span class="line"><span class="keyword">import</span> maya.api.OpenMayaRender <span class="keyword">as</span> omr2</span><br><span class="line"><span class="keyword">import</span> maya.cmds <span class="keyword">as</span> cmds</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">maya_useNewAPI</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorldNode</span>(omui2.MPxLocatorNode):</span><br><span class="line">        TYPE_NAME = <span class="string">&quot;helloworld&quot;</span></span><br><span class="line">        TYPE_ID=om2.MTypeId(<span class="number">0x0007f7f7</span>)</span><br><span class="line">        DRAW_CLASSIFICATION = <span class="string">&quot;drawdb/geometry/helloworld&quot;</span></span><br><span class="line">        DRAW_REGISTRANT_ID = <span class="string">&quot;HelloWorldNone&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">            <span class="built_in">super</span>(HelloWorldNode,self).__init__()</span><br><span class="line"></span><br><span class="line"><span class="meta">        @classmethod</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">creator</span>(<span class="params">cls</span>):</span><br><span class="line">            <span class="keyword">return</span> HelloWorldNode()</span><br><span class="line">        </span><br><span class="line"><span class="meta">        @classmethod</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params">cls</span>):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorldDrawOverride</span>(omr2.MPxDrawOverride):</span><br><span class="line">    NAME=<span class="string">&quot;HelloWorldDrawOverride&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,mobj</span>):</span><br><span class="line">        <span class="built_in">super</span>(HelloWorldDrawOverride,self).__init__(mobj,<span class="literal">None</span>,<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">prepareForDraw</span>(<span class="params">self,obj_path,camera_path,frame_context,old_data</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">supportedDrawAPIs</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> omr2.MRenderer.kAllDevices</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hasUIDrawables</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">addUIDrawables</span>(<span class="params">self,obj_path,draw_manager,frame_context,data</span>):</span><br><span class="line">        draw_manager.beginDrawable()</span><br><span class="line">        draw_manager.text2d(om2.MPoint(<span class="number">100</span>,<span class="number">100</span>),<span class="string">&#x27;Hello World&#x27;</span>)</span><br><span class="line">        draw_manager.endDrawable()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">creator</span>(<span class="params">cls,obj</span>):</span><br><span class="line">        <span class="keyword">return</span> HelloWorldDrawOverride(obj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    vendor=<span class="string">&#x27;AryaGala&#x27;</span></span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span></span><br><span class="line">    plugin_fn = om2.MFnPlugin(plugin, vendor, version)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        plugin_fn.registerNode(HelloWorldNode.TYPE_NAME,</span><br><span class="line">                               HelloWorldNode.TYPE_ID,</span><br><span class="line">                               HelloWorldNode.creator,</span><br><span class="line">                               HelloWorldNode.initialize,</span><br><span class="line">                               om2.MPxNode.kLocatorNode,</span><br><span class="line">                               HelloWorldNode.DRAW_CLASSIFICATION)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to register node: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldNode.TYPE_NAME))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        omr2.MDrawRegistry.registerDrawOverrideCreator(HelloWorldNode.DRAW_CLASSIFICATION,</span><br><span class="line">                                                       HelloWorldNode.DRAW_REGISTRANT_ID,</span><br><span class="line">                                                       HelloWorldDrawOverride.creator)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to register node: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldDrawOverride.NAME))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">uninitializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    plugin_fn = om2.MFnPlugin(plugin)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        omr2.MDrawRegistry.deregisterDrawOverrideCreator(HelloWorldNode.DRAW_CLASSIFICATION,</span><br><span class="line">                                                         HelloWorldNode.DRAW_REGISTRANT_ID)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to deregister node: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldDrawOverride.NAME))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        plugin_fn.deregisterNode(HelloWorldNode.TYPE_ID)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to deregister command: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldNode.TYPE_NAME))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    cmds.file(new=<span class="literal">True</span>, force=<span class="literal">True</span>)</span><br><span class="line">    plugin_name=<span class="string">&quot;empty_plugin.py&quot;</span></span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;if cmds.pluginInfo(plugin_name,q=True,loaded=True): cmds.unloadPlugin(plugin_name)&#x27;</span>)</span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;if not cmds.pluginInfo(plugin_name,q=True,loaded=True): cmds.loadPlugin(plugin_name)&#x27;</span>)</span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;cmds.createNode(&quot;helloworld&quot;)&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> adv源代码改写-对称检查工具</li>
+        <li><strong>Title:</strong> MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
-                :</strong> 2023-11-25 22:00:00</li>
+                :</strong> 2023-12-07 08:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-12-06 18:34:16
+                    :</strong> 2023-12-07 14:35:21
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/11/25/python项目/adv的源代码改写-对称检查/
+            <strong>Link:</strong> https://aryagala0.github.io/2023/12/07/MayaAPI/MayaAPI案例/
         </li>
         <li>
             <strong>
@@ -370,7 +368,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/project/">#project</a>&nbsp;
+                        <a href="/tags/MayaAPI/">#MayaAPI</a>&nbsp;
                     </li>
                 
             </ul>
@@ -381,29 +379,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/12/06/MayaAPI/MayaAPI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/11/16/python%E5%9F%BA%E7%A1%80/python%E8%A3%85%E9%A5%B0%E5%99%A8/"
+                        href="/2023/12/06/MayaAPI/MayaAPI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">python装饰器</span>
+                                <span class="post-nav-title-item">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -468,8 +451,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">adv源代码改写-对称检查工具</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%8F%B8%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">⏸️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BA%8F"><span class="nav-text">正序</span></a></li></ol>
+        <div class="page-title">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%8D%E5%B1%8F%E6%98%BE%E7%A4%BAhelloworld-DrawOverride"><span class="nav-text">拍屏显示helloworld  (DrawOverride)</span></a></li></ol>
 
     </div>
 </div>
