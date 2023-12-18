@@ -13,29 +13,25 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/08/05/部署/py文件打包为exe文件/"/>
+    <link rel="canonical" href="http://example.com/2023/12/18/pyqt/qcombobox的平替qmenu/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。 下载安装Pyinstaller电脑安装python后，用pip（python包管理工具）对Pyinstaller包进行安装（如果python没有安装pip，请参考pip安装教程 ），运行命令： 1pip install Pyinstaller 1.单个">
+        <meta name="description" content="前言✨最近开发一个项目，我负责UI部分，其中一个需求是一个带标题的下拉选择列表。本来想使用QComboBox来进行选择，用placeHolder方法显示标题（标题不在列表选项中），可是却没有效果。经过查询，找到了实现这个功能的平替：QMenu。 正文📋该方法的逻辑是在QPushButton组件上添加一个QMenu，然后通过addAction方法添加项目以及链接的函数，在该函数中得到sender的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Py文件打包为exe文件">
-<meta property="og:url" content="http://example.com/2023/08/05/%E9%83%A8%E7%BD%B2/py%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%BAexe%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="QComboBox的平替QMenu">
+<meta property="og:url" content="http://example.com/2023/12/18/PyQt/QComboBox%E7%9A%84%E5%B9%B3%E6%9B%BFQMenu/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。 下载安装Pyinstaller电脑安装python后，用pip（python包管理工具）对Pyinstaller包进行安装（如果python没有安装pip，请参考pip安装教程 ），运行命令： 1pip install Pyinstaller 1.单个">
+<meta property="og:description" content="前言✨最近开发一个项目，我负责UI部分，其中一个需求是一个带标题的下拉选择列表。本来想使用QComboBox来进行选择，用placeHolder方法显示标题（标题不在列表选项中），可是却没有效果。经过查询，找到了实现这个功能的平替：QMenu。 正文📋该方法的逻辑是在QPushButton组件上添加一个QMenu，然后通过addAction方法添加项目以及链接的函数，在该函数中得到sender的">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/pyToExe/spec01.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/spec02.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/error.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/single_exe.jpg">
-<meta property="og:image" content="http://example.com/images/pyToExe/icon.jpg">
-<meta property="article:published_time" content="2023-08-05T12:09:52.000Z">
-<meta property="article:modified_time" content="2023-11-10T08:15:55.649Z">
+<meta property="og:image" content="http://example.com/images/Pyqt/QComboBox_Substitute.gif">
+<meta property="article:published_time" content="2023-12-18T10:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-18T10:11:46.821Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="打包、部署">
+<meta property="article:tag" content="PyQt">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/pyToExe/spec01.jpg">
+<meta name="twitter:image" content="http://example.com/images/Pyqt/QComboBox_Substitute.gif">
     
     
         <!-- Google tag (gtag.js) -->
@@ -57,7 +53,7 @@
     
     <title>
         
-            Py文件打包为exe文件 -
+            QComboBox的平替QMenu -
         
         AryaGala&#39;s Blog
     </title>
@@ -267,7 +263,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">Py文件打包为exe文件</h1>
+                <h1 class="article-title-regular">QComboBox的平替QMenu</h1>
             
             </div>
             
@@ -289,15 +285,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-08-05 20:09:52</span>
-        <span class="mobile">2023-08-05 20:09:52</span>
+        <span class="desktop">2023-12-18 18:00</span>
+        <span class="mobile">2023-12-18 18:00</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-11-10 16:15:55</span>
-            <span class="mobile">2023-11-10 16:15:55</span>
+            <span class="desktop">2023-12-18 18:11:46</span>
+            <span class="mobile">2023-12-18 18:11:46</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -309,7 +305,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E6%89%93%E5%8C%85%E3%80%81%E9%83%A8%E7%BD%B2/">打包、部署</a>&nbsp;
+                        <a href="/tags/PyQt/">PyQt</a>&nbsp;
                     </li>
                 
             </ul>
@@ -335,32 +331,12 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近写了很多windows平台下的python程序，要打包给美术使用，一般就是打包为exe执行程序直接双击即可使用。我对打包的方法进行了总结。</p>
-<h2 id="下载安装Pyinstaller"><a href="#下载安装Pyinstaller" class="headerlink" title="下载安装Pyinstaller"></a>下载安装Pyinstaller</h2><p>电脑安装python后，用pip（python包管理工具）对Pyinstaller包进行安装（如果python没有安装pip，请参考<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/python-pip-install-usage.html" >pip安装教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>），运行命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pyinstaller</span><br></pre></td></tr></table></figure></div>
-<h2 id="1-单个py文件打包成exe文件"><a href="#1-单个py文件打包成exe文件" class="headerlink" title="1.单个py文件打包成exe文件"></a>1.单个py文件打包成exe文件</h2><p>对于单个py文件的打包比较简单：安装installer后，cmd转到py文件路径运行命令（或者在路径下直接运行cmd），运行以下命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller --noconsole -F 文件名.py</span><br></pre></td></tr></table></figure></div>
-<p>其中，–noconsole表示不出现控制台，-F表示把所有文件打包到一个exe里面（一般我常用的两个属性）</p>
-<h2 id="2-多个py文件打包成exe文件"><a href="#2-多个py文件打包成exe文件" class="headerlink" title="2.多个py文件打包成exe文件"></a>2.多个py文件打包成exe文件</h2><p>多个py文件的打包首先要生成spec文件，然后在spec文件中对py文件进行配置，最后用pyinstaller生成exe文件，具体操作如下：</p>
-<p>cmd转到py文件路径运行命令（或者在路径下直接运行cmd），运行以下命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyi-makespec 主程序文件名.py</span><br></pre></td></tr></table></figure></div>
-<p>此时，路径下会生成一个.spec文件，内容如下：</p>
-<p><img src="/images/pyToExe/spec01.jpg" alt="spec_image_raw"></p>
-<p>要spec文件进行配置，在Analysis中加入所有的py文件,静态资源添加到datas中，data的list是元组的list，第一个元素是python代码读取元素时的目录，第二个位置是数据文件的真实目录。</p>
-<p><img src="/images/pyToExe/spec02.jpg" alt="spec_image_config"></p>
-<p>生成exe文件，输入命令：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller 文件名.spec</span><br></pre></td></tr></table></figure></div>
-<p>生成的exe文件会在路径下的dist文件夹中。</p>
-<h3 id="把所有生成文件打包成一个exe中的配置"><a href="#把所有生成文件打包成一个exe中的配置" class="headerlink" title="把所有生成文件打包成一个exe中的配置"></a>把所有生成文件打包成一个exe中的配置</h3><p>如果在命令行直接加-F，会出现如下报错：</p>
-<p><img src="/images/pyToExe/error.jpg" alt="error:options not valid when a .spec file is given"></p>
-<p>要生成一个exe文件，删除coll的内容，在exe中添加:</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.scripts,</span><br><span class="line">a.binaries,      </span><br><span class="line">a.zipfiles,  </span><br></pre></td></tr></table></figure></div>
-<p>并且修改exclude_binaries为False</p>
-<p><img src="/images/pyToExe/single_exe.jpg" alt="single_exe_config"></p>
-<h3 id="icon的配置"><a href="#icon的配置" class="headerlink" title="icon的配置"></a>icon的配置</h3><p>在exe中另外添加icon参数，然后添加图标的绝对路径进行配置<br><img src="/images/pyToExe/icon.jpg" alt="icon_config"></p>
-<p>参考来自：</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.51cto.com/xiaohaiwa/5381148" >pyinstaller利用spec文件打包的使用模版 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/tangfreeze/article/details/112240342" >pyinstaller的spec文件用法 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+            <h1 id="前言✨"><a href="#前言✨" class="headerlink" title="前言✨"></a>前言✨</h1><p>最近开发一个项目，我负责UI部分，其中一个需求是一个带标题的下拉选择列表。本来想使用QComboBox来进行选择，用placeHolder方法显示标题（标题不在列表选项中），可是却没有效果。经过查询，找到了实现这个功能的平替：QMenu。</p>
+<h1 id="正文📋"><a href="#正文📋" class="headerlink" title="正文📋"></a>正文📋</h1><p>该方法的逻辑是在QPushButton组件上添加一个QMenu，然后通过addAction方法添加项目以及链接的函数，在该函数中得到sender的text，再将button显示的文字设置为text<br><a class="link"   target="_blank" rel="noopener" href="https://doc.qt.io/qt-5/qpushbutton.html#menu" >参考来自 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><img src="/images/Pyqt/QComboBox_Substitute.gif" alt="comboBox_subtitude"></p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PySide2 <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyFirstQtWin</span>(QtWidgets.QDialog):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(MyFirstQtWin,self).__init__()</span><br><span class="line">        self.resize(<span class="number">250</span>,<span class="number">200</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;MyFirstQtWin&quot;</span>)</span><br><span class="line">        self._ui()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_ui</span>(<span class="params">self</span>):</span><br><span class="line">        self.createWidgets()</span><br><span class="line">        self.createLayouts()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">createWidgets</span>(<span class="params">self</span>):</span><br><span class="line">        self.button=QtWidgets.QPushButton(<span class="string">&quot;button1&quot;</span>)                <span class="comment">#标题</span></span><br><span class="line">        self.menu=QtWidgets.QMenu()</span><br><span class="line">        self.menu.addAction(<span class="string">&quot;aaa&quot;</span>,self.set_button_text)             <span class="comment">#列表项目</span></span><br><span class="line">        self.menu.addAction(<span class="string">&quot;bbb&quot;</span>,self.set_button_text)</span><br><span class="line">        self.menu.addAction(<span class="string">&quot;ccc&quot;</span>,self.set_button_text)</span><br><span class="line">        self.button.setMenu(self.menu)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">createLayouts</span>(<span class="params">self</span>):</span><br><span class="line">        self.layout_outside=QtWidgets.QHBoxLayout(self)</span><br><span class="line">        self.HLayout=QtWidgets.QHBoxLayout()</span><br><span class="line">        self.HLayout.addWidget(self.button)</span><br><span class="line">        self.layout_outside.addLayout(self.HLayout)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set_button_text</span>(<span class="params">self</span>):</span><br><span class="line">        self.button.setText(self.sender().text())           <span class="comment">#设置列表项目</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app=QtWidgets.QApplication(sys.argv)</span><br><span class="line">    win=MyFirstQtWin()</span><br><span class="line">    win.show()</span><br><span class="line">    app.exec_()</span><br></pre></td></tr></table></figure></div>
+
+
 
         </div>
 
@@ -368,18 +344,18 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> Py文件打包为exe文件</li>
+        <li><strong>Title:</strong> QComboBox的平替QMenu</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
-                :</strong> 2023-08-05 20:09:52</li>
+                :</strong> 2023-12-18 18:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-11-10 16:15:55
+                    :</strong> 2023-12-18 18:11:46
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/08/05/部署/py文件打包为exe文件/
+            <strong>Link:</strong> https://aryagala0.github.io/2023/12/18/PyQt/QComboBox的平替QMenu/
         </li>
         <li>
             <strong>
@@ -400,7 +376,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/%E6%89%93%E5%8C%85%E3%80%81%E9%83%A8%E7%BD%B2/">#打包、部署</a>&nbsp;
+                        <a href="/tags/PyQt/">#PyQt</a>&nbsp;
                     </li>
                 
             </ul>
@@ -411,29 +387,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/08/09/python%E9%A1%B9%E7%9B%AE/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/08/04/python%E5%9F%BA%E7%A1%80/python%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F/"
+                        href="/2023/12/07/MayaAPI/MayaAPI%E6%A1%88%E4%BE%8B/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">python 声明变量</span>
+                                <span class="post-nav-title-item">MayaAPI学习案例</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -498,8 +459,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">Py文件打包为exe文件</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85Pyinstaller"><span class="nav-text">下载安装Pyinstaller</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8D%95%E4%B8%AApy%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%88%90exe%E6%96%87%E4%BB%B6"><span class="nav-text">1.单个py文件打包成exe文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A4%9A%E4%B8%AApy%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%88%90exe%E6%96%87%E4%BB%B6"><span class="nav-text">2.多个py文件打包成exe文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E6%89%80%E6%9C%89%E7%94%9F%E6%88%90%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E6%88%90%E4%B8%80%E4%B8%AAexe%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">把所有生成文件打包成一个exe中的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#icon%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-text">icon的配置</span></a></li></ol></li></ol>
+        <div class="page-title">QComboBox的平替QMenu</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87%F0%9F%93%8B"><span class="nav-text">正文📋</span></a></li></ol>
 
     </div>
 </div>
