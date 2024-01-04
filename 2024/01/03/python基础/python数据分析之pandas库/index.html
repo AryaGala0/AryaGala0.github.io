@@ -13,22 +13,22 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/12/07/mayaapi/mayaapi案例/"/>
+    <link rel="canonical" href="http://example.com/2024/01/03/python基础/python数据分析之pandas库/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="前言✨在学习MayaAPI的过程中，顺便总结了一些案例，在之后的学习中也会常更新，主要是方便查阅。理论知识在这里  拍屏显示案例–DrawOverride这个是一个修改拍屏上文字的案例，利用继承openMaya中的MPxDrawOverride，创建drawOverride插件。 12345678910111213141516171819202122232425262728293031323334">
+        <meta name="description" content="前言💟最近接触到一个合作项目，要对excel表格进行操作。我用openxl写好了自己这部分的功能模块，本来一切都风和日丽，谁知道一看源代码，这个项目使用的是pandas来对excel表格进行读写操作。赶巧这个项目因为分镜那边在赶需求受到了拖延，我就打算重新用pandas改一下我写的这部分功能。顺便学习一下这个强大的数据分析库。参考文档 参考教程  Pandas的数据结构DataFrame表格型数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MayaAPI学习案例">
-<meta property="og:url" content="http://example.com/2023/12/07/MayaAPI/MayaAPI%E6%A1%88%E4%BE%8B/index.html">
+<meta property="og:title" content="数据分析之pandas库学习">
+<meta property="og:url" content="http://example.com/2024/01/03/python%E5%9F%BA%E7%A1%80/python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B9%8Bpandas%E5%BA%93/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言✨在学习MayaAPI的过程中，顺便总结了一些案例，在之后的学习中也会常更新，主要是方便查阅。理论知识在这里  拍屏显示案例–DrawOverride这个是一个修改拍屏上文字的案例，利用继承openMaya中的MPxDrawOverride，创建drawOverride插件。 12345678910111213141516171819202122232425262728293031323334">
+<meta property="og:description" content="前言💟最近接触到一个合作项目，要对excel表格进行操作。我用openxl写好了自己这部分的功能模块，本来一切都风和日丽，谁知道一看源代码，这个项目使用的是pandas来对excel表格进行读写操作。赶巧这个项目因为分镜那边在赶需求受到了拖延，我就打算重新用pandas改一下我写的这部分功能。顺便学习一下这个强大的数据分析库。参考文档 参考教程  Pandas的数据结构DataFrame表格型数">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-12-07T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-18T10:25:10.750Z">
+<meta property="article:published_time" content="2024-01-03T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T08:29:55.127Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="MayaAPI">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
     
     
@@ -51,7 +51,7 @@
     
     <title>
         
-            MayaAPI学习案例 -
+            数据分析之pandas库学习 -
         
         AryaGala&#39;s Blog
     </title>
@@ -261,7 +261,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">MayaAPI学习案例</h1>
+                <h1 class="article-title-regular">数据分析之pandas库学习</h1>
             
             </div>
             
@@ -283,15 +283,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-12-07 08:00</span>
-        <span class="mobile">2023-12-07 08:00</span>
+        <span class="desktop">2024-01-03 08:00</span>
+        <span class="mobile">2024-01-03 08:00</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-12-18 18:25:10</span>
-            <span class="mobile">2023-12-18 18:25:10</span>
+            <span class="desktop">2024-01-04 16:29:55</span>
+            <span class="mobile">2024-01-04 16:29:55</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -303,7 +303,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/MayaAPI/">MayaAPI</a>&nbsp;
+                        <a href="/tags/python/">python</a>&nbsp;
                     </li>
                 
             </ul>
@@ -329,27 +329,49 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="前言✨"><a href="#前言✨" class="headerlink" title="前言✨"></a>前言✨</h2><p>在学习MayaAPI的过程中，顺便总结了一些案例，在之后的学习中也会常更新，主要是方便查阅。理论知识在<a class="link"   target="_blank" rel="noopener" href="https://aryagala0.github.io/2023/12/06/MayaAPI/MayaAPI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/" >这里 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="拍屏显示案例–DrawOverride"><a href="#拍屏显示案例–DrawOverride" class="headerlink" title="拍屏显示案例–DrawOverride"></a>拍屏显示案例–DrawOverride</h2><p>这个是一个修改拍屏上文字的案例，利用继承openMaya中的MPxDrawOverride，创建drawOverride插件。<br></p>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> maya.api.OpenMaya <span class="keyword">as</span> om2</span><br><span class="line"><span class="keyword">import</span> maya.api.OpenMayaUI <span class="keyword">as</span> omui2</span><br><span class="line"><span class="keyword">import</span> maya.api.OpenMayaRender <span class="keyword">as</span> omr2</span><br><span class="line"><span class="keyword">import</span> maya.cmds <span class="keyword">as</span> cmds</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">maya_useNewAPI</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorldNode</span>(omui2.MPxLocatorNode):</span><br><span class="line">        TYPE_NAME = <span class="string">&quot;helloworld&quot;</span></span><br><span class="line">        TYPE_ID=om2.MTypeId(<span class="number">0x0007f7f7</span>)</span><br><span class="line">        DRAW_CLASSIFICATION = <span class="string">&quot;drawdb/geometry/helloworld&quot;</span></span><br><span class="line">        DRAW_REGISTRANT_ID = <span class="string">&quot;HelloWorldNone&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">            <span class="built_in">super</span>(HelloWorldNode,self).__init__()</span><br><span class="line"></span><br><span class="line"><span class="meta">        @classmethod</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">creator</span>(<span class="params">cls</span>):</span><br><span class="line">            <span class="keyword">return</span> HelloWorldNode()</span><br><span class="line">        </span><br><span class="line"><span class="meta">        @classmethod</span></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">initialize</span>(<span class="params">cls</span>):</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">HelloWorldDrawOverride</span>(omr2.MPxDrawOverride):</span><br><span class="line">    NAME=<span class="string">&quot;HelloWorldDrawOverride&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,mobj</span>):</span><br><span class="line">        <span class="built_in">super</span>(HelloWorldDrawOverride,self).__init__(mobj,<span class="literal">None</span>,<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">prepareForDraw</span>(<span class="params">self,obj_path,camera_path,frame_context,old_data</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">supportedDrawAPIs</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> omr2.MRenderer.kAllDevices</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">hasUIDrawables</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">addUIDrawables</span>(<span class="params">self,obj_path,draw_manager,frame_context,data</span>):</span><br><span class="line">        draw_manager.beginDrawable()</span><br><span class="line">        draw_manager.text2d(om2.MPoint(<span class="number">100</span>,<span class="number">100</span>),<span class="string">&#x27;Hello World&#x27;</span>)</span><br><span class="line">        draw_manager.endDrawable()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">creator</span>(<span class="params">cls,obj</span>):</span><br><span class="line">        <span class="keyword">return</span> HelloWorldDrawOverride(obj)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    vendor=<span class="string">&#x27;AryaGala&#x27;</span></span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span></span><br><span class="line">    plugin_fn = om2.MFnPlugin(plugin, vendor, version)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        plugin_fn.registerNode(HelloWorldNode.TYPE_NAME,</span><br><span class="line">                               HelloWorldNode.TYPE_ID,</span><br><span class="line">                               HelloWorldNode.creator,</span><br><span class="line">                               HelloWorldNode.initialize,</span><br><span class="line">                               om2.MPxNode.kLocatorNode,</span><br><span class="line">                               HelloWorldNode.DRAW_CLASSIFICATION)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to register node: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldNode.TYPE_NAME))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        omr2.MDrawRegistry.registerDrawOverrideCreator(HelloWorldNode.DRAW_CLASSIFICATION,</span><br><span class="line">                                                       HelloWorldNode.DRAW_REGISTRANT_ID,</span><br><span class="line">                                                       HelloWorldDrawOverride.creator)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to register node: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldDrawOverride.NAME))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">uninitializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    plugin_fn = om2.MFnPlugin(plugin)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        omr2.MDrawRegistry.deregisterDrawOverrideCreator(HelloWorldNode.DRAW_CLASSIFICATION,</span><br><span class="line">                                                         HelloWorldNode.DRAW_REGISTRANT_ID)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to deregister node: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldDrawOverride.NAME))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        plugin_fn.deregisterNode(HelloWorldNode.TYPE_ID)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        om2.MGlobal.displayError(<span class="string">&quot;Failed to deregister command: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(HelloWorldNode.TYPE_NAME))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    cmds.file(new=<span class="literal">True</span>, force=<span class="literal">True</span>)</span><br><span class="line">    plugin_name=<span class="string">&quot;empty_plugin.py&quot;</span></span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;if cmds.pluginInfo(plugin_name,q=True,loaded=True): cmds.unloadPlugin(plugin_name)&#x27;</span>)</span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;if not cmds.pluginInfo(plugin_name,q=True,loaded=True): cmds.loadPlugin(plugin_name)&#x27;</span>)</span><br><span class="line">    cmds.evalDeferred(<span class="string">&#x27;cmds.createNode(&quot;helloworld&quot;)&#x27;</span>)</span><br></pre></td></tr></table></figure></div>
+            <h2 id="前言💟"><a href="#前言💟" class="headerlink" title="前言💟"></a>前言💟</h2><p>最近接触到一个合作项目，要对excel表格进行操作。我用openxl写好了自己这部分的功能模块，本来一切都风和日丽，谁知道一看源代码，这个项目使用的是pandas来对excel表格进行读写操作。赶巧这个项目因为分镜那边在赶需求受到了拖延，我就打算重新用pandas改一下我写的这部分功能。顺便学习一下这个强大的数据分析库。<br><a class="link"   target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/" >参考文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=4hk-5vjibqI&list=PLCemT-oocgakOdivgnFVAgStnxd78hHyI" >参考教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Pandas的数据结构"><a href="#Pandas的数据结构" class="headerlink" title="Pandas的数据结构"></a>Pandas的数据结构</h2><h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><p>表格型数据结构，多行多列。具有行索引index和列索引columns，可以被看做由Series组成的字典。</p>
+<h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><p>Series表示一维数据：一行或者一列。由一组数据以及与这些数据相关的数据标签（列索引）组成。</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>df.loc   可以通过标签或者布尔数组访问一组行或者列<br><a class="link"   target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html" >参考文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="查询一个数据"><a href="#查询一个数据" class="headerlink" title="查询一个数据"></a>查询一个数据</h3><p>通过<code>df.loc[某行，某列]</code>，精确到某行某列，查询它的值。</p>
+<h3 id="查询一行或者一列-Series"><a href="#查询一行或者一列-Series" class="headerlink" title="查询一行或者一列(Series)"></a>查询一行或者一列(Series)</h3><p>通过<code>df[某行或者某列]</code>查询某行或者某列的数据。通过<code>df.loc[某行,[始列,终列]]</code>，或者<code>df.loc[始行:终行,列]</code>查询一个某行或者某列某个范围的数据。</p>
+<h3 id="查询一个表-DataFrame"><a href="#查询一个表-DataFrame" class="headerlink" title="查询一个表(DataFrame)"></a>查询一个表(DataFrame)</h3><p>通过<code>df[某行(列)，某行(列)，某行(列)...]</code>查询一个由某几行(列)组成的DataFrame<br>通过<code>df.loc[[始行，终行],[始列,终列]]</code>，或者<code>df.loc[始行:终行,始列:终列]</code>查询一个有范围的二维数据</p>
+<h3 id="根据条件表达式进行数据的筛选"><a href="#根据条件表达式进行数据的筛选" class="headerlink" title="根据条件表达式进行数据的筛选"></a>根据条件表达式进行数据的筛选</h3><p>通过<code>df.loc[条件,:]</code>,符合的条件一般是与被切片轴长度相同的布尔数组。例如，这个布尔数组可以通过df[行名]&gt;6来获取，即<code>df.loc[df[列名]&gt;6,:]</code>，来获取该列大于6的数据，“：”表示获取改行全部的列数据。</p>
+<h3 id="根据函数对数据进行查询"><a href="#根据函数对数据进行查询" class="headerlink" title="根据函数对数据进行查询"></a>根据函数对数据进行查询</h3><p>将DataFrame的每一行或者每一列传入函数的参数df中，然后返回符合条件的行或者列，组成新的DataFrame。例如：</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">query_my_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="keyword">return</span> df[<span class="string">&quot;aaa&quot;</span>]&gt;<span class="number">10</span> &amp; df[<span class="string">&quot;bbb&quot;</span>]&lt;<span class="number">20</span></span><br><span class="line"></span><br><span class="line">df.loc[query_my_data,:]</span><br></pre></td></tr></table></figure></div>
+<p>或者</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[<span class="keyword">lambda</span> df:df[<span class="string">&quot;aaa&quot;</span>]&gt;<span class="number">10</span> &amp; df[<span class="string">&quot;bbb&quot;</span>]&lt;<span class="number">20</span>]</span><br></pre></td></tr></table></figure></div>
+<h2 id="新增或者修改数据列"><a href="#新增或者修改数据列" class="headerlink" title="新增或者修改数据列"></a>新增或者修改数据列</h2><h3 id="直接赋值"><a href="#直接赋值" class="headerlink" title="直接赋值"></a>直接赋值</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df.loc[行，列]=修改后的数值     <span class="comment">#修改某个值</span></span><br><span class="line">df.loc[某行,:]=修改后的数值     <span class="comment">#修改某行全列为某值</span></span><br><span class="line">df.loc[:,某列]=修改后的数值         <span class="comment">#修改某列全行为某值</span></span><br><span class="line">df.loc[:某列]=df[列<span class="number">1</span>]-df[列<span class="number">2</span>]       <span class="comment">#修改全部行中每行某列的值为每行列1-每行列2</span></span><br><span class="line"></span><br><span class="line">df.loc[:,列名]=某值         <span class="comment">#给DataFrame新增一列</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="df-apply方法"><a href="#df-apply方法" class="headerlink" title="df.apply方法"></a>df.apply方法</h3><p><a class="link"   target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html" >参考文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>对DataFrame的某个轴应用一个函数，来修改或增加数据。参数axis的取值有两个，0和1，0表示传入的Series的key为行名（即循环每一列），1表示传入的Series的key为列名（即循环每一行），例如</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame([[<span class="number">4</span>, <span class="number">9</span>]] * <span class="number">3</span>, columns=[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>])</span><br><span class="line">df.loc[<span class="string">&quot;sum&quot;</span>,:]=df.apply(np.<span class="built_in">sum</span>, axis=<span class="number">1</span>)            <span class="comment">#增加一行，值为该列中的各行值相加</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="df-assign方法"><a href="#df-assign方法" class="headerlink" title="df.assign方法"></a>df.assign方法</h3><p><a class="link"   target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.assign.html" >参考文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>参数传入一个Series或者一个函数。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;temp_c&#x27;</span>: [<span class="number">17.0</span>, <span class="number">25.0</span>]&#125;,index=[<span class="string">&#x27;Portland&#x27;</span>, <span class="string">&#x27;Berkeley&#x27;</span>])</span><br><span class="line">df.assign(temp_f=<span class="keyword">lambda</span> x: x.temp_c * <span class="number">9</span> / <span class="number">5</span> + <span class="number">32</span>)</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">df.describe()               <span class="comment">#统计所有数字结果</span></span><br><span class="line">df[xxx].mean()          <span class="comment">#统计xxx的平均值</span></span><br><span class="line">df[xxx].<span class="built_in">min</span>()               <span class="comment">#统计xxx的最小值</span></span><br><span class="line">df[xxx].<span class="built_in">max</span>()               <span class="comment">#统计xxx的最大值</span></span><br><span class="line"></span><br><span class="line">df[xxx].unique()           <span class="comment">#统计xxx去重后的数据</span></span><br><span class="line">df[xxx].value_counts()          <span class="comment">#统计xxx中各项出现了多少次</span></span><br><span class="line"></span><br><span class="line">df.cov()                <span class="comment">#协方差矩阵，协方差越高，两个参数的相关性越高，正数为正相关，负数为负相关</span></span><br><span class="line">df.corr()               <span class="comment">#相关系数矩阵，相关系数越靠近1，两个参数越相似，正数为正向相似，负数为反向相似</span></span><br></pre></td></tr></table></figure></div>
+
+
+<h2 id="后话😇"><a href="#后话😇" class="headerlink" title="后话😇"></a>后话😇</h2><p>学了两天，大概了解了pandas是对表格数据处理的好工具，它独特的数据结构使得它对数据处理的速度（循环遍历）大大加快。再学下去我就去做数分了哈哈哈，就暂时学到这里，如果大家有兴趣可以看这部教程~有缘再见！</p>
+
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> MayaAPI学习案例</li>
+        <li><strong>Title:</strong> 数据分析之pandas库学习</li>
         <li><strong>Author:</strong> AryaGala</li>
         <li><strong>Created at
-                :</strong> 2023-12-07 08:00:00</li>
+                :</strong> 2024-01-03 08:00:00</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2023-12-18 18:25:10
+                    :</strong> 2024-01-04 16:29:55
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/12/07/MayaAPI/MayaAPI案例/
+            <strong>Link:</strong> https://aryagala0.github.io/2024/01/03/python基础/python数据分析之pandas库/
         </li>
         <li>
             <strong>
@@ -370,7 +392,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/MayaAPI/">#MayaAPI</a>&nbsp;
+                        <a href="/tags/python/">#python</a>&nbsp;
                     </li>
                 
             </ul>
@@ -381,29 +403,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/12/18/PyQt/QComboBox%E7%9A%84%E5%B9%B3%E6%9B%BFQMenu/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">QComboBox的平替QMenu</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/12/06/MayaAPI/MayaAPI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"
+                        href="/2023/12/18/PyQt/QComboBox%E7%9A%84%E5%B9%B3%E6%9B%BFQMenu/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)</span>
+                                <span class="post-nav-title-item">QComboBox的平替QMenu</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -468,8 +475,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">MayaAPI学习案例</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E2%9C%A8"><span class="nav-text">前言✨</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%8D%E5%B1%8F%E6%98%BE%E7%A4%BA%E6%A1%88%E4%BE%8B%E2%80%93DrawOverride"><span class="nav-text">拍屏显示案例–DrawOverride</span></a></li></ol>
+        <div class="page-title">数据分析之pandas库学习</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%F0%9F%92%9F"><span class="nav-text">前言💟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">Pandas的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DataFrame"><span class="nav-text">DataFrame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Series"><span class="nav-text">Series</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="nav-text">查询数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE"><span class="nav-text">查询一个数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E4%B8%80%E8%A1%8C%E6%88%96%E8%80%85%E4%B8%80%E5%88%97-Series"><span class="nav-text">查询一行或者一列(Series)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E4%B8%80%E4%B8%AA%E8%A1%A8-DataFrame"><span class="nav-text">查询一个表(DataFrame)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E7%AD%9B%E9%80%89"><span class="nav-text">根据条件表达式进行数据的筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E5%87%BD%E6%95%B0%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%9F%A5%E8%AF%A2"><span class="nav-text">根据函数对数据进行查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E6%88%96%E8%80%85%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%88%97"><span class="nav-text">新增或者修改数据列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC"><span class="nav-text">直接赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df-apply%E6%96%B9%E6%B3%95"><span class="nav-text">df.apply方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df-assign%E6%96%B9%E6%B3%95"><span class="nav-text">df.assign方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1"><span class="nav-text">统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AF%9D%F0%9F%98%87"><span class="nav-text">后话😇</span></a></li></ol>
 
     </div>
 </div>
