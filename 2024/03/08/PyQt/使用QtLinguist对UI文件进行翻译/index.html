@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="AryaGala">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/03/08/pyqt/使用qtlinguist对ui文件进行翻译/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="🍕前言去年总监提了个想法，想把工具进行国际化和本地化，这样各个地方的团队都可以更舒适的使用工具。我研究了这个方向也有一段时间了，算上maya中的国际化案例，我总共总结了5个流程和一些小demo。 UI界面是通过python代码写的😃准备流程对于准备流程来说，我们需要通过ui文件翻译的qm文件，而qm文件是由Qt Linguist软件通过.ts文件进行翻译后发布的根据写ui的不同方式，我总结了三">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QtLingusit国际化UI">
+<meta property="og:url" content="http://example.com/2024/03/08/PyQt/%E4%BD%BF%E7%94%A8QtLinguist%E5%AF%B9UI%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%BF%BB%E8%AF%91/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="🍕前言去年总监提了个想法，想把工具进行国际化和本地化，这样各个地方的团队都可以更舒适的使用工具。我研究了这个方向也有一段时间了，算上maya中的国际化案例，我总共总结了5个流程和一些小demo。 UI界面是通过python代码写的😃准备流程对于准备流程来说，我们需要通过ui文件翻译的qm文件，而qm文件是由Qt Linguist软件通过.ts文件进行翻译后发布的根据写ui的不同方式，我总结了三">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/Pyqt/QtLinguist_ts_file">
+<meta property="article:published_time" content="2024-03-08T01:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-11T10:15:35.816Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="PyQt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/Pyqt/QtLinguist_ts_file">
+    
+    
+        <!-- Google tag (gtag.js) -->
+        <script src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '');
+        </script>
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/my_icon.ico" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/my_icon.ico">
+    <meta name="theme-color" content="#5e5d5d">
+    <link rel="shortcut icon" href="/images/my_icon.ico">
+    <!--- Page Info-->
+    
+    <title>
+        
+            QtLingusit国际化UI -
+        
+        AryaGala&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+        <link href="" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#5e5d5d","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Those who can,do.And those who can't, supervise.--<The Baby Boss>","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","It's time to make way for the next generation and it's the way of the world--<The Baby Boss>","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","Once you name it,you start getting attached to it.--<Monsters'Inc>","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","The family is more important than the dream  --<Coco>","The real death is that no one in the world remembers you. --<Coco>","Good night,sweetheart.--<Monsters'Inc>"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#5e5d5d","dark":"#000"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#7a7a7a","right":"#fff","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/selfie.webp">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                AryaGala&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color">
+        <ul class="drawer-navbar-list flex flex-col justify-start items-center">
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group " 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                <h1 class="article-title-regular">QtLingusit国际化UI</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header flex flex-row gap-2 items-center">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/selfie.webp">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">AryaGala</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-03-08 09:00</span>
+        <span class="mobile">2024-03-08 09:00</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-03-11 18:15:35</span>
+            <span class="mobile">2024-03-11 18:15:35</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/PyQt/">PyQt</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body">
+            <h2 id="🍕前言"><a href="#🍕前言" class="headerlink" title="🍕前言"></a>🍕前言</h2><p>去年总监提了个想法，想把工具进行国际化和本地化，这样各个地方的团队都可以更舒适的使用工具。我研究了这个方向也有一段时间了，算上maya中的国际化案例，我总共总结了5个流程和一些小demo。</p>
+<h2 id="UI界面是通过python代码写的"><a href="#UI界面是通过python代码写的" class="headerlink" title="UI界面是通过python代码写的"></a>UI界面是通过python代码写的</h2><h3 id="😃准备流程"><a href="#😃准备流程" class="headerlink" title="😃准备流程"></a>😃准备流程</h3><p>对于准备流程来说，我们需要通过ui文件翻译的qm文件，而qm文件是由Qt Linguist软件通过.ts文件进行翻译后发布的<br>根据写ui的不同方式，我总结了三个流程，接下来从简单到复杂地来进行讲解：<br>1.通过.ui文件转写.py文件，然后生成.ts文件，直接在命令行调用两条命令就行了</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m PyQt5.uic.pyuic .ui file -o .py file</span><br><span class="line"></span><br><span class="line">pylupdate5 .py file -ts .ts file </span><br></pre></td></tr></table></figure></div>
+
+<p>2.用代码写的UI，首先需要确保的是UI中需要翻译的文本被Qt中的tr函数“修饰”过。也就是说，UI中的对于文本的修饰可以用：<br></p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>QtCore.QCoreApplication.translate(<span class="string">&quot;&#123;&#125;&quot;</span>.<span class="built_in">format</span>(context),<span class="string">&quot;&#123;&#125;&quot;</span>.<span class="built_in">format</span>(text))</span><br><span class="line"><span class="number">2.</span>self.tr(<span class="string">&quot;&#123;&#125;&quot;</span>.<span class="built_in">format</span>(text))</span><br></pre></td></tr></table></figure></div>
+<p>然后用命令行对py文件进行转换</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pylupdate5 .py file -ts .ts file </span><br></pre></td></tr></table></figure></div>
+
+<p>3.直接在代码里使用.ui文件（通过uic UILoad或者uic.load），在命令行里需要对py文件和ts文件同时进行转写生成ts文件</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pylupdate5 .py file .ui file -ts .ts file</span><br></pre></td></tr></table></figure></div>
+
+<p>转换之后生成的ts文件，需要用Qt Linguist软件对它进行翻译，生成对应的qm文件（一般发布后的qm文件名称和ts文件的名称一样）<br><img src="/images/Pyqt/QtLinguist_ts_file" alt="Usage of .ts file"></p>
+<h3 id="📃在代码中的使用流程"><a href="#📃在代码中的使用流程" class="headerlink" title="📃在代码中的使用流程"></a>📃在代码中的使用流程</h3><p>1.创建QTranslator <br><br>2.将QTranslator安装到正在运行的QApplication上 <br><br>3.通过self.tr()对文本进行翻译 <br></p>
+<h4 id="1-通过qt-designer生成-ui文件，ui文件转写为python："><a href="#1-通过qt-designer生成-ui文件，ui文件转写为python：" class="headerlink" title="1.通过qt designer生成.ui文件，ui文件转写为python："></a>1.通过qt designer生成.ui文件，ui文件转写为python：</h4><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Form implementation generated from reading ui file &#x27;test_ui.ui&#x27;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Created by: PyQt5 UI code generator 5.15.7</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># WARNING: Any manual changes made to this file will be lost when pyuic5 is</span></span><br><span class="line"><span class="comment"># run again.  Do not edit this file unless you know what you are doing.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtCore, QtGui, QtWidgets</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ui_Form</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">setupUi</span>(<span class="params">self, Form</span>):</span><br><span class="line">        Form.setObjectName(<span class="string">&quot;Form&quot;</span>)</span><br><span class="line">        Form.resize(<span class="number">489</span>, <span class="number">394</span>)</span><br><span class="line">        self.verticalLayout_2 = QtWidgets.QVBoxLayout(Form)</span><br><span class="line">        self.verticalLayout_2.setObjectName(<span class="string">&quot;verticalLayout_2&quot;</span>)</span><br><span class="line">        self.verticalLayout = QtWidgets.QVBoxLayout()</span><br><span class="line">        self.verticalLayout.setObjectName(<span class="string">&quot;verticalLayout&quot;</span>)</span><br><span class="line">        self.label = QtWidgets.QLabel(Form)</span><br><span class="line">        self.label.setAlignment(QtCore.Qt.AlignCenter)</span><br><span class="line">        self.label.setObjectName(<span class="string">&quot;label&quot;</span>)</span><br><span class="line">        self.verticalLayout.addWidget(self.label)</span><br><span class="line">        self.English_btn = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.English_btn.setObjectName(<span class="string">&quot;English_btn&quot;</span>)</span><br><span class="line">        self.verticalLayout.addWidget(self.English_btn)</span><br><span class="line">        self.Chinese_btn = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.Chinese_btn.setObjectName(<span class="string">&quot;Chinese_btn&quot;</span>)</span><br><span class="line">        self.verticalLayout.addWidget(self.Chinese_btn)</span><br><span class="line">        self.Hindi_btn = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.Hindi_btn.setObjectName(<span class="string">&quot;Hindi_btn&quot;</span>)</span><br><span class="line">        self.verticalLayout.addWidget(self.Hindi_btn)</span><br><span class="line">        self.verticalLayout_2.addLayout(self.verticalLayout)</span><br><span class="line"></span><br><span class="line">        self.retranslateUi(Form)</span><br><span class="line">        <span class="comment">#QtCore.QMetaObject.connectSlotsByName(Form)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">retranslateUi</span>(<span class="params">self, Form</span>):</span><br><span class="line">        _translate = QtCore.QCoreApplication.translate</span><br><span class="line">        Form.setWindowTitle(_translate(<span class="string">&quot;Form&quot;</span>, <span class="string">&quot;Form&quot;</span>))</span><br><span class="line">        self.label.setText(_translate(<span class="string">&quot;Form&quot;</span>, <span class="string">&quot;Hello,world&quot;</span>))</span><br><span class="line">        self.English_btn.setText(_translate(<span class="string">&quot;Form&quot;</span>, <span class="string">&quot;English&quot;</span>))</span><br><span class="line">        self.Chinese_btn.setText(_translate(<span class="string">&quot;Form&quot;</span>, <span class="string">&quot;中文&quot;</span>))</span><br><span class="line">        self.Hindi_btn.setText(_translate(<span class="string">&quot;Form&quot;</span>, <span class="string">&quot;सोच।&quot;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> test_ui <span class="keyword">import</span> Ui_Form</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> QTranslator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Linguist_win</span>(QtWidgets.QMainWindow, Ui_Form):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Linguist_win, self).__init__()</span><br><span class="line">        self.resize(<span class="number">250</span>, <span class="number">200</span>)</span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;Linguist_win&quot;</span>)</span><br><span class="line">        self.widget = QtWidgets.QWidget()</span><br><span class="line">        self.setupUi(self.widget)</span><br><span class="line">        self.setCentralWidget(self.widget)</span><br><span class="line"></span><br><span class="line">        self.English_btn.clicked.connect(self.trigger_English)</span><br><span class="line">        self.Chinese_btn.clicked.connect(self.trigger_Chinese)</span><br><span class="line">        self.Hindi_btn.clicked.connect(self.trigger_Hindi)</span><br><span class="line"></span><br><span class="line">        self.trans = QTranslator()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">trigger_English</span>(<span class="params">self</span>):</span><br><span class="line">        self.trans.load(<span class="string">&#x27;en&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        app = QtWidgets.QApplication.instance()</span><br><span class="line">        app.installTranslator(self.trans)</span><br><span class="line">        self.retranslateUi(self)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">trigger_Chinese</span>(<span class="params">self</span>):</span><br><span class="line">        self.trans.load(<span class="string">&#x27;zh_CN&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        app = QtWidgets.QApplication.instance()</span><br><span class="line">        app.installTranslator(self.trans)</span><br><span class="line">        self.retranslateUi(self)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">trigger_Hindi</span>(<span class="params">self</span>):</span><br><span class="line">        self.trans.load(<span class="string">&#x27;hi_IN&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        app = QtWidgets.QApplication.instance()</span><br><span class="line">        app.installTranslator(self.trans)</span><br><span class="line">        self.retranslateUi(self)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app=QtWidgets.QApplication(sys.argv)</span><br><span class="line">    win=Linguist_win()</span><br><span class="line">    win.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h4 id="2-用python写的ui界面（官方案例-修改版）："><a href="#2-用python写的ui界面（官方案例-修改版）：" class="headerlink" title="2.用python写的ui界面（官方案例-修改版）："></a>2.用python写的ui界面（官方案例-修改版）：</h4><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Description: 加载中文翻译文件，使工具初始化为中文，其中中文的qm翻译文件需要用命令行进行生成</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># Copyright (C) 2022 The Qt Company Ltd.</span></span><br><span class="line"><span class="comment"># SPDX-License-Identifier: LicenseRef-Qt-Commercial OR BSD-3-Clause</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PySide6.QtCore <span class="keyword">import</span> (QItemSelection, QLibraryInfo, QLocale, QTranslator,</span><br><span class="line">                            Slot)</span><br><span class="line"><span class="keyword">from</span> PySide6.QtWidgets <span class="keyword">import</span> (QAbstractItemView, QApplication, QListWidget,</span><br><span class="line">                               QMainWindow)</span><br><span class="line"><span class="keyword">import</span> linguist_rc  <span class="comment"># noqa: F401</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Window</span>(<span class="title class_ inherited__">QMainWindow</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        file_menu = self.menuBar().addMenu(self.tr(<span class="string">&quot;&amp;File&quot;</span>))</span><br><span class="line">        quit_action = file_menu.addAction(self.tr(<span class="string">&quot;Quit&quot;</span>))</span><br><span class="line">        quit_action.setShortcut(self.tr(<span class="string">&quot;CTRL+Q&quot;</span>))</span><br><span class="line">        quit_action.triggered.connect(self.close)</span><br><span class="line">        help_menu = self.menuBar().addMenu(self.tr(<span class="string">&quot;&amp;Help&quot;</span>))</span><br><span class="line">        about_qt_action = help_menu.addAction(self.tr(<span class="string">&quot;About Qt&quot;</span>))</span><br><span class="line">        about_qt_action.triggered.connect(qApp.aboutQt)  <span class="comment"># noqa: F821</span></span><br><span class="line"></span><br><span class="line">        self._list_widget = QListWidget()</span><br><span class="line">        self._list_widget.setSelectionMode(QAbstractItemView.MultiSelection)</span><br><span class="line">        self._list_widget.selectionModel().selectionChanged.connect(self.selection_changed)</span><br><span class="line">        self._list_widget.addItem(<span class="string">&quot;C++&quot;</span>)</span><br><span class="line">        self._list_widget.addItem(<span class="string">&quot;Java&quot;</span>)</span><br><span class="line">        self._list_widget.addItem(<span class="string">&quot;Python&quot;</span>)</span><br><span class="line">        self.setCentralWidget(self._list_widget)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @Slot(<span class="params">QItemSelection, QItemSelection</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">selection_changed</span>(<span class="params">self, selected, deselected</span>):</span><br><span class="line">        count = <span class="built_in">len</span>(self._list_widget.selectionModel().selectedRows())</span><br><span class="line">        message = self.tr(<span class="string">&quot;%n language(s) selected&quot;</span>, <span class="string">&quot;&quot;</span>, count)</span><br><span class="line">        self.statusBar().showMessage(message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    path = QLibraryInfo.path(QLibraryInfo.TranslationsPath)</span><br><span class="line">    translator = QTranslator(app)</span><br><span class="line">    <span class="keyword">if</span> translator.load(<span class="string">&quot;D://Arya/zh_CN&quot;</span>):           <span class="comment">#加载.qm文件的绝对路径</span></span><br><span class="line">        app.installTranslator(translator)</span><br><span class="line">    <span class="comment"># print(translator.isEmpty())       </span></span><br><span class="line">    <span class="comment"># print(translator.filePath())</span></span><br><span class="line">    window = Window()</span><br><span class="line">    window.show()</span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h4 id="3-用qtdesigner设计的ui界面，然后通过-py和-ui文件一起生成ts文件"><a href="#3-用qtdesigner设计的ui界面，然后通过-py和-ui文件一起生成ts文件" class="headerlink" title="3.用qtdesigner设计的ui界面，然后通过.py和.ui文件一起生成ts文件"></a>3.用qtdesigner设计的ui界面，然后通过.py和.ui文件一起生成ts文件</h4><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtCore</span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> uic</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Linguist_Win</span>(QtWidgets.QMainWindow):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Linguist_Win,self).__init__()</span><br><span class="line">        ui_path = <span class="string">r&quot;D:\Arya\main_ui.ui&quot;</span></span><br><span class="line">        uic.loadUi(ui_path, self)</span><br><span class="line">        self.setCentralWidget(self.main_widget)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app = QtWidgets.QApplication(sys.argv)</span><br><span class="line">    translator = QtCore.QTranslator(app)</span><br><span class="line">    <span class="keyword">if</span> translator.load(<span class="string">&quot;D://Arya/zh_CN&quot;</span>):           <span class="comment">#加载.qm文件的绝对路径</span></span><br><span class="line">        app.installTranslator(translator)</span><br><span class="line">    window = Linguist_Win()</span><br><span class="line">    window.show()</span><br><span class="line">    sys.exit(app.<span class="built_in">exec</span>())</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="maya案例"><a href="#maya案例" class="headerlink" title="maya案例"></a>maya案例</h4><p>在maya中翻译的唯一区别就是，因为maya app已经在运行，所以我们要拿到正在运行的app的实例，然后再安装QTranslator。</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> maya.OpenMayaUI <span class="keyword">as</span> omui</span><br><span class="line"><span class="keyword">from</span> shiboken2 <span class="keyword">import</span> wrapInstance</span><br><span class="line"><span class="keyword">from</span> PySide2 <span class="keyword">import</span> (</span><br><span class="line">    QtWidgets,</span><br><span class="line">    QtCore</span><br><span class="line">    )</span><br><span class="line"><span class="keyword">from</span> PySide2.QtUiTools <span class="keyword">import</span> QUiLoader</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">TRANSLATOR = QtCore.QTranslator()</span><br><span class="line"><span class="comment"># Path to the referenced file used,the qm file used</span></span><br><span class="line"><span class="comment"># for translation(TRANS_CHINESE_FILE_PATH,TRANS_HINDI_FILE_PATH)</span></span><br><span class="line"><span class="comment"># must be an absolute path.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;if you are test this demo, please change the &#x27;TRANS_CHINESE_FILE_PATH&#x27; to the absolute path where the translation files</span></span><br><span class="line"><span class="string">are saved</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">UI_PATH = <span class="string">r&quot;D:\Arya\main_ui.ui&quot;</span></span><br><span class="line"></span><br><span class="line">TRANS_ENGLISH_FILE_PATH = <span class="string">r&quot;D:\Arya\en_US&quot;</span></span><br><span class="line"></span><br><span class="line">TRANS_CHINESE_FILE_PATH = <span class="string">r&quot;D:\Arya\zh_CN&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_maya_window_ptr</span>():</span><br><span class="line">    ptr = omui.MQtUtil.mainWindow()</span><br><span class="line">    maya_win = wrapInstance(<span class="built_in">int</span>(ptr), QtWidgets.QMainWindow)</span><br><span class="line">    <span class="keyword">return</span> maya_win</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Linguist_win</span>(QtWidgets.QMainWindow):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, parent = get_maya_window_ptr(<span class="params"></span>)</span>):</span><br><span class="line">        <span class="built_in">super</span>(Linguist_win, self).__init__(parent = parent)</span><br><span class="line">        <span class="comment"># the ui needs to be create in a method and it will</span></span><br><span class="line">        <span class="comment"># be reload when translating</span></span><br><span class="line">        self._ui()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_ui</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;load UI to self from .ui file and set the button connections</span></span><br><span class="line"><span class="string">        and window title</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        loader = QUiLoader()</span><br><span class="line">        self.ui_file = QtCore.QFile(UI_PATH)</span><br><span class="line">        self.ui_file.<span class="built_in">open</span>(QtCore.QIODevice.ReadOnly)</span><br><span class="line">        self.ui_widget = loader.load(self.ui_file, self)</span><br><span class="line">        <span class="comment">#ui_file.close()</span></span><br><span class="line"></span><br><span class="line">        self.setCentralWidget(self.ui_widget)</span><br><span class="line">        self.setWindowTitle(<span class="string">&quot;LingusitWindow&quot;</span>)</span><br><span class="line">        self.ui_widget.Chinese_btn.clicked.connect(self.translate)</span><br><span class="line">        self.ui_widget.Hindi_btn.clicked.connect(self.translate)</span><br><span class="line">        self.ui_widget.English_btn.clicked.connect(self.translate)</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">translate</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        to translate the UI to English</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># if the path is exist or if the translation file is successfully loaded</span></span><br><span class="line">        <span class="comment"># install the translator to the app instance</span></span><br><span class="line">        <span class="comment"># and reload the ui then show it</span></span><br><span class="line">        <span class="built_in">print</span>(self.sender())</span><br><span class="line">        <span class="keyword">if</span> self.sender() == self.ui_widget.English_btn:</span><br><span class="line">            <span class="keyword">if</span> TRANSLATOR.load(TRANS_ENGLISH_FILE_PATH): </span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;English success&quot;</span>)</span><br><span class="line">        <span class="keyword">elif</span> self.sender() == self.ui_widget.Chinese_btn:</span><br><span class="line">            <span class="keyword">if</span> TRANSLATOR.load(TRANS_CHINESE_FILE_PATH): </span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;Chinese success&quot;</span>)</span><br><span class="line">        self._ui()</span><br><span class="line">        self.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    app = QtWidgets.QApplication.instance()</span><br><span class="line">    app.installTranslator(TRANSLATOR)</span><br><span class="line">    win = Linguist_win()</span><br><span class="line">    win.show()</span><br></pre></td></tr></table></figure></div>
+
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>探索了几个月还是有所收获的，希望研究了那么久的方法可以在项目中大量实现吧。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> QtLingusit国际化UI</li>
+        <li><strong>Author:</strong> AryaGala</li>
+        <li><strong>Created at
+                :</strong> 2024-03-08 09:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-03-11 18:15:35
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://aryagala0.github.io/2024/03/08/PyQt/使用QtLinguist对UI文件进行翻译/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            
+
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/PyQt/">#PyQt</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/01/25/PyQt/QSS%E5%86%99%E6%B3%95/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">QSS写法</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+    </div>
+    
+
+        
+            
+ 
+    <div id="waline"></div>
+    <script type="module"  data-swup-reload-script>
+        import { init } from '/js/libs/waline.mjs';
+
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'https://example.example.com',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+            });
+        }
+
+        if ('true') {
+            const loadWalineTimeout = setTimeout(() => {
+                loadWaline();
+                clearTimeout(loadWalineTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadWaline);
+        }
+        
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">QtLingusit国际化UI</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%8D%95%E5%89%8D%E8%A8%80"><span class="nav-text">🍕前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI%E7%95%8C%E9%9D%A2%E6%98%AF%E9%80%9A%E8%BF%87python%E4%BB%A3%E7%A0%81%E5%86%99%E7%9A%84"><span class="nav-text">UI界面是通过python代码写的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%98%83%E5%87%86%E5%A4%87%E6%B5%81%E7%A8%8B"><span class="nav-text">😃准备流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%93%83%E5%9C%A8%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="nav-text">📃在代码中的使用流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"></span></a></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">AryaGala</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
