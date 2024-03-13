@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="keywords" content="Blog,AryaGala,TD,python,PyQt">
     
     <meta name="author" content="AryaGala">
     <!-- preconnect -->
@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/08/09/python项目/根据edl剪辑镜头工具（时间精确到帧）/"/>
+    <link rel="canonical" href="https://aryagala0.github.io/2023/08/09/python项目/根据edl剪辑镜头工具（时间精确到帧）/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -21,13 +21,13 @@
         <meta name="description" content="⏸️前言 公司的流程中经常会用到EDL （Edit Desicion List剪辑决策表）来确定每个镜头时间。因为要分别把不同的镜头发给不同的动画师，所以需要一个能够将每一集的分镜根据edl的时间剪辑出不同镜头的插件。用python进行视频处理，有两个现成的库可以用，一是moviepy，第二个是opencv。其中moviepy可以精确到秒对视频进行剪辑，而opencv可以精确到帧对视频进行剪辑。本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑">
-<meta property="og:url" content="http://example.com/2023/08/09/python%E9%A1%B9%E7%9B%AE/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://aryagala0.github.io/2023/08/09/python%E9%A1%B9%E7%9B%AE/%E6%A0%B9%E6%8D%AEedl%E5%89%AA%E8%BE%91%E9%95%9C%E5%A4%B4%E5%B7%A5%E5%85%B7%EF%BC%88%E6%97%B6%E9%97%B4%E7%B2%BE%E7%A1%AE%E5%88%B0%E5%B8%A7%EF%BC%89/index.html">
+<meta property="og:site_name" content="AryaGala&#39;s Bolg">
 <meta property="og:description" content="⏸️前言 公司的流程中经常会用到EDL （Edit Desicion List剪辑决策表）来确定每个镜头时间。因为要分别把不同的镜头发给不同的动画师，所以需要一个能够将每一集的分镜根据edl的时间剪辑出不同镜头的插件。用python进行视频处理，有两个现成的库可以用，一是moviepy，第二个是opencv。其中moviepy可以精确到秒对视频进行剪辑，而opencv可以精确到帧对视频进行剪辑。本">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-09T14:09:52.000Z">
 <meta property="article:modified_time" content="2024-01-05T07:53:10.344Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="AryaGala">
 <meta property="article:tag" content="project">
 <meta name="twitter:card" content="summary">
     
@@ -89,9 +89,9 @@
     <!--- Inject Part-->
     
     <script id="hexo-configurations">
-    window.config = {"hostname":"example.com","root":"/","language":"en"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#5e5d5d","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Those who can,do.And those who can't, supervise.  --《The Baby Boss》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","It's time to make way for the next generation and it's the way of the world  --《The Baby Boss》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","Once you name it,you start getting attached to it.--《Monsters'Inc》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","The family is more important than the dream  --《Coco》","The real death is that no one in the world remembers you. --《Coco》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#5e5d5d","dark":"#000"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#7a7a7a","right":"#fff","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
-    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.config = {"hostname":"aryagala0.github.io","root":"/","language":"zh-CN"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#5e5d5d","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Those who can,do.And those who can't, supervise.  --《The Baby Boss》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","It's time to make way for the next generation and it's the way of the world  --《The Baby Boss》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","Once you name it,you start getting attached to it.--《Monsters'Inc》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","The family is more important than the dream  --《Coco》","The real death is that no one in the world remembers you. --《Coco》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#5e5d5d","dark":"#000"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#7a7a7a","right":"#fff","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/AryaGala0","Blog":"https://aryagala0.github.io/","Friends":"/links"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":{"Tags":{"path":"/tags"},"Categories":{"path":"/categories"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
     window.data = {"masonry":false};
   </script>
     
@@ -168,7 +168,7 @@
                                         
                                             <i class="fa-regular fa-house"></i>
                                         
-                                        HOME
+                                        首页
                                     
                                 </a>
                                 <!-- Submenu -->
@@ -184,10 +184,50 @@
                                         
                                             <i class="fa-regular fa-archive"></i>
                                         
-                                        ARCHIVES
+                                        归档
                                     
                                 </a>
                                 <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/about">ME
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://github.com/AryaGala0">GITHUB
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="https://aryagala0.github.io/">BLOG
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/links">友情链接
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
                                 
                             </li>
                     
@@ -216,7 +256,7 @@
                                 
                                     <i class="fa-regular fa-house"></i>
                                 
-                                HOME
+                                首页
                             
                         </a>
                     </li>
@@ -231,11 +271,44 @@
                                 
                                     <i class="fa-regular fa-archive"></i>
                                 
-                                ARCHIVES
+                                归档
                             
                         </a>
                     </li>
                     <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center">
+                        <a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                关于&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="/about">ME</a>
+                            </li>
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" target="_blank" rel="noopener" href="https://github.com/AryaGala0">GITHUB</a>
+                            </li>
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="https://aryagala0.github.io/">BLOG</a>
+                            </li>
+                        
+                            <li class="drawer-navbar-item text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                <a class="py-0.5" href="/links">友情链接</a>
+                            </li>
+                        
                     
             
 
@@ -285,14 +358,14 @@
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2023-08-09 22:09:52</span>
         <span class="mobile">2023-08-09 22:09:52</span>
-        <span class="hover-info">Created</span>
+        <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
             <span class="desktop">2024-01-05 15:53:10</span>
             <span class="mobile">2024-01-05 15:53:10</span>
-            <span class="hover-info">Updated</span>
+            <span class="hover-info">更新</span>
         </span>
     
 
@@ -341,25 +414,25 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</li>
-        <li><strong>Author:</strong> AryaGala</li>
-        <li><strong>Created at
+        <li><strong>标题:</strong> pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</li>
+        <li><strong>作者:</strong> AryaGala</li>
+        <li><strong>创建于
                 :</strong> 2023-08-09 22:09:52</li>
         
             <li>
-                <strong>Updated at
+                <strong>更新于
                     :</strong> 2024-01-05 15:53:10
             </li>
         
         <li>
-            <strong>Link:</strong> https://aryagala0.github.io/2023/08/09/python项目/根据edl剪辑镜头工具（时间精确到帧）/
+            <strong>链接:</strong> https://aryagala0.github.io/2023/08/09/python项目/根据edl剪辑镜头工具（时间精确到帧）/
         </li>
         <li>
             <strong>
-                License:
+                版权声明:
             </strong>
             
-            This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+            本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
             
 
         </li>
@@ -394,7 +467,7 @@
                             </span>
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">在python中使用.ui文件</span>
-                                <span class="post-nav-item">Prev posts</span>
+                                <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
@@ -407,7 +480,7 @@
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">Py文件打包为exe文件</span>
-                                <span class="post-nav-item">Next posts</span>
+                                <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
@@ -424,7 +497,7 @@
                 <div class="comments-container pjax">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fa-solid fa-comments"></i>&nbsp;Comments
+        <i class="fa-solid fa-comments"></i>&nbsp;评论
     </div>
     
 
@@ -470,7 +543,7 @@
         <div class="toc-content-container">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <div class="toc-title">On this page</div>
+        <div class="toc-title">此页目录</div>
         <div class="page-title">pydub+moviepy+opencv+ffmpeg按帧数进行视频剪辑</div>
         <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%8F%B8%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">⏸️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%92%A1%E6%80%9D%E8%B7%AF"><span class="nav-text">💡思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%92%BB%E5%85%B7%E4%BD%93%E5%81%9A%E6%B3%95"><span class="nav-text">💻具体做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%93%96%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">📖遇到的问题</span></a></li></ol>
 
@@ -507,26 +580,26 @@
             <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
                     <span id="busuanzi_container_site_uv" class="lg:!block">
-                        <span class="text-sm">VISITOR COUNT</span>
+                        <span class="text-sm">访问人数</span>
                         <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv" class="lg:!block">
-                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span class="text-sm">总访问量</span>
                         <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
-            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.5.0</a></span>
         </div>
         
         
             <div>
-                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
             </div>
         
         
