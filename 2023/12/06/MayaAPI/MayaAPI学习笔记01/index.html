@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://aryagala0.github.io/images/MayaAPI/MayaAPINote_01/DGUpdate.png">
 <meta property="og:image" content="https://aryagala0.github.io/images/MayaAPI/MayaAPINote_01/Attributes.png">
 <meta property="article:published_time" content="2023-12-06T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-08T10:38:25.470Z">
+<meta property="article:modified_time" content="2024-06-12T05:47:16.128Z">
 <meta property="article:author" content="AryaGala">
 <meta property="article:tag" content="MayaAPI">
 <meta name="twitter:card" content="summary">
@@ -373,8 +373,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-12-08 18:38:25</span>
-            <span class="mobile">2023-12-08 18:38:25</span>
+            <span class="desktop">2024-06-12 13:47:16</span>
+            <span class="mobile">2024-06-12 13:47:16</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -421,7 +421,7 @@
 <h4 id="PythonAPI的优缺点"><a href="#PythonAPI的优缺点" class="headerlink" title="PythonAPI的优缺点"></a>PythonAPI的优缺点</h4><p>1.开发更快，不用进行编译。更易于使用。但消耗资源比较多，还有全局锁（GIL），对多线程代码有限制。<br><br>2.python有很多第三方库可以解决很多复杂的问题。<br><br>3.对平台或者maya版本没有依赖性，除非不同maya版本的api发生了改变。 <br><br>4.mayaAPI不是针对python开发的，不是所有的MayaAPI都有<br></p>
 <h2 id="3-MayaAPI-1-0-和-MayaAPI-2-0"><a href="#3-MayaAPI-1-0-和-MayaAPI-2-0" class="headerlink" title="3.MayaAPI 1.0 和 MayaAPI 2.0"></a>3.MayaAPI 1.0 和 MayaAPI 2.0</h2><p>一般会把 MayaAPI 1.0 和 MayaAPI 2.0 混合使用，只要它们不产生直接的交互是不会有什么问题的。但如果产生了直接交互（例如用1.0生成的节点再用2.0进行链接），会产生一些难以发觉的错误。特别是当代码量巨大的时候，很容易发生这类错误。</p>
 <h2 id="4-Python-Scripts-和-Python-Plugins"><a href="#4-Python-Scripts-和-Python-Plugins" class="headerlink" title="4.Python Scripts 和 Python Plugins"></a>4.Python Scripts 和 Python Plugins</h2><p><img src="/images/MayaAPI/MayaAPINote_01/compare_PS_and_PP.png" alt="comparing python scripts and python plugins"><br></p>
-<p>加载 maya Plugins 可以通过插件管理器和用 MayaCommand（cmd）进行加载。在插件管理器中，有很多不同的文件夹分类，只有加入到maya环境变量中的文件夹路径才会出现在插件管理器中。而写成maya Plugins的代码，必须保存在maya环境变量的路径的文件夹下。</p>
+<p>加载 maya Plugins 可以通过插件管理器和用 MayaCommand（cmd）进行加载。在插件管理器中，有很多不同的文件夹分类，只有加入到maya环境变量中的文件夹路径才会出现在插件管理器中。而写成maya Plugins的代码，必须保存在maya环境变量的路径的文件夹下。一般的plugin代码可以放到maya默认的plugin文件夹下，即：<br><br>C:\Users\User_name\Documents\maya\version\plug-ins</p>
 <h2 id="5-Plugin-template（插件编写模版）"><a href="#5-Plugin-template（插件编写模版）" class="headerlink" title="5.Plugin template（插件编写模版）"></a>5.Plugin template（插件编写模版）</h2><p>一个插件的最基本结构是两个最基本的函数：initializePlugin() 和 uninitializePlugin() 。<br><br>initializePlugin函数是插件的起始点，在插件加载之后即可调用且只会被调用一次，它会向maya注册所有的命令、节点、菜单等等。有一个MObject参数用来注册插件内的这些组件<br><br>uninitializePlugin函数是插件的退出点，在插件取消加载的时候调用且只会被调用一次，它会注销掉所有它建立的命令、节点、菜单等等。也有一个MObject参数，用于注销插件内的这些组件。<br><br>用maya API2.0编写插件时，需要先用maya_useNewAPI函数进行声明。也可以在头部使用 <code>maya_useNewAPI = True </code>来声明。<br></p>
 <h3 id="插件基本结构："><a href="#插件基本结构：" class="headerlink" title="插件基本结构："></a>插件基本结构：</h3><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> maya.api.OpenMaya <span class="keyword">as</span> om2</span><br><span class="line"><span class="keyword">import</span> maya.cmds <span class="keyword">as</span> cmds</span><br><span class="line"></span><br><span class="line"><span class="comment">#maya_unseNewAPI = True</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">maya_useNewAPI</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">initializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    vendor=<span class="string">&#x27;AryaGala&#x27;</span></span><br><span class="line">    version=<span class="string">&#x27;1.0.0&#x27;</span></span><br><span class="line">    om2.MFnPlugin(plugin, vendor, version)          <span class="comment">#用MFnPlugin类生成插件信息，在插件管理器中插件的右侧的🛈按钮中显示</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">uninitializePlugin</span>(<span class="params">plugin</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 <h3 id="命令插件基本结构："><a href="#命令插件基本结构：" class="headerlink" title="命令插件基本结构："></a>命令插件基本结构：</h3><p>在开发过程中，可以在代码下添加一段用于刷新的函数，方便测试和编写。</p>
@@ -457,7 +457,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2023-12-08 18:38:25
+                    :</strong> 2024-06-12 13:47:16
             </li>
         
         <li>

@@ -26,7 +26,7 @@
 <meta property="og:description" content="▶️前言来公司接近一年了，虽然前半年因为一些原因并没有系统的学到些什么，但自从新总监到来之后，也算是逐渐接触到了比较正式的代码交接流程。刚好最近有空，就来总结一下这一年学到的一些东西。 🔥关于pep8我用的IDE是VSCode，为了方便pep8的规范书写，我安装了Flake8和autoDocstring - Python Docstring Generator插件，用于识别pep8不规的地方以及">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-02T01:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-04T06:35:04.473Z">
+<meta property="article:modified_time" content="2024-06-04T09:40:10.455Z">
 <meta property="article:author" content="AryaGala">
 <meta property="article:tag" content="生活">
 <meta name="twitter:card" content="summary">
@@ -363,8 +363,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-04 14:35:04</span>
-            <span class="mobile">2024-06-04 14:35:04</span>
+            <span class="desktop">2024-06-04 17:40:10</span>
+            <span class="mobile">2024-06-04 17:40:10</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -416,6 +416,11 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = append_to_list(<span class="number">10</span>)</span><br><span class="line">[<span class="number">10</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = append_to_list(<span class="number">20</span>)</span><br><span class="line">[<span class="number">10</span>, <span class="number">20</span>]</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="4-关于包和模块："><a href="#4-关于包和模块：" class="headerlink" title="4.关于包和模块："></a>4.关于包和模块：</h3><p>包是含有__init__.py的文件夹。模块是每一个以py结尾的文件。<br><a class="link"   target="_blank" rel="noopener" href="https://peps.python.org/pep-0382/" >参考文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>1.导入模块应该分别导入放到单独的行上</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Correct:</span><br><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line"># Wrong:</span><br><span class="line">import sys, os</span><br></pre></td></tr></table></figure></div>
+
+<p>2.导入的顺序<br>导入放到文件顶部，在全局变量和常量之前，按以下顺序： 标准库&gt;第三方库&gt;本地库</p>
+<h3 id="5-关于类名："><a href="#5-关于类名：" class="headerlink" title="5.关于类名："></a>5.关于类名：</h3><p>类名应该遵循CapWords约定，即单词首字母大写，以大小写作为分隔。</p>
 
         </div>
 
@@ -430,7 +435,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-06-04 14:35:04
+                    :</strong> 2024-06-04 17:40:10
             </li>
         
         <li>
@@ -539,7 +544,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">一些注意事项</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%96%B6%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">▶️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A5%E5%85%B3%E4%BA%8Epep8"><span class="nav-text">🔥关于pep8</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%B3%E4%BA%8E%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%EF%BC%9A"><span class="nav-text">1.关于命名规范：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B3%E4%BA%8E%E6%B3%A8%E9%87%8A%EF%BC%9A"><span class="nav-text">2.关于注释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="nav-text">3.关于变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%85%B3%E4%BA%8E%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-text">4.关于包和模块：</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%96%B6%EF%B8%8F%E5%89%8D%E8%A8%80"><span class="nav-text">▶️前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%94%A5%E5%85%B3%E4%BA%8Epep8"><span class="nav-text">🔥关于pep8</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%B3%E4%BA%8E%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%EF%BC%9A"><span class="nav-text">1.关于命名规范：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B3%E4%BA%8E%E6%B3%A8%E9%87%8A%EF%BC%9A"><span class="nav-text">2.关于注释：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="nav-text">3.关于变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%85%B3%E4%BA%8E%E5%8C%85%E5%92%8C%E6%A8%A1%E5%9D%97%EF%BC%9A"><span class="nav-text">4.关于包和模块：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%85%B3%E4%BA%8E%E7%B1%BB%E5%90%8D%EF%BC%9A"><span class="nav-text">5.关于类名：</span></a></li></ol></li></ol>
 
     </div>
 </div>
