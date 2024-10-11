@@ -13,20 +13,20 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://aryagala0.github.io/2023/08/03/python基础/pythonos/"/>
+    <link rel="canonical" href="https://aryagala0.github.io/2024/09/23/python基础/python unittest模块/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="os.path模块常用内容123456789import osprint( os.path.basename(&amp;#x27;D:&#x2F;&#x2F;test.txt&amp;#x27;) )   # 返回文件名print( os.path.dirname(&amp;#x27;D:&#x2F;&#x2F;test.txt&amp;#x27;) )    # 返回目录路径print( os.path.split(&amp;#x27;D:&#x2F;&#x2F;test.txt&amp;#x27;)">
+        <meta name="description" content="介绍unittest是支持测试自动化并将测试与报告框架独立的单元测试框架。它包含一些特殊的概念，比如测试开始前的清理工作，建立测试用例，使用测试套件以及使用测试运行器运行结果。参考文档  使用继承自unittest.TestCase的类即为一个测试用例，可以定义类方法，以test开头。然后在函数内使用断言方法，这样可以使测试运行器收集所有测试结果并生成报告。 unittest通过命令行运行文件模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python os模块常用操作解析">
-<meta property="og:url" content="https://aryagala0.github.io/2023/08/03/python%E5%9F%BA%E7%A1%80/pythonos/index.html">
+<meta property="og:title" content="python unittest 单元测试框架">
+<meta property="og:url" content="https://aryagala0.github.io/2024/09/23/python%E5%9F%BA%E7%A1%80/python%20unittest%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="AryaGala&#39;s Bolg">
-<meta property="og:description" content="os.path模块常用内容123456789import osprint( os.path.basename(&amp;#x27;D:&#x2F;&#x2F;test.txt&amp;#x27;) )   # 返回文件名print( os.path.dirname(&amp;#x27;D:&#x2F;&#x2F;test.txt&amp;#x27;) )    # 返回目录路径print( os.path.split(&amp;#x27;D:&#x2F;&#x2F;test.txt&amp;#x27;)">
+<meta property="og:description" content="介绍unittest是支持测试自动化并将测试与报告框架独立的单元测试框架。它包含一些特殊的概念，比如测试开始前的清理工作，建立测试用例，使用测试套件以及使用测试运行器运行结果。参考文档  使用继承自unittest.TestCase的类即为一个测试用例，可以定义类方法，以test开头。然后在函数内使用断言方法，这样可以使测试运行器收集所有测试结果并生成报告。 unittest通过命令行运行文件模块">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-08-03T14:09:52.000Z">
-<meta property="article:modified_time" content="2024-01-26T08:02:46.645Z">
+<meta property="article:published_time" content="2024-09-23T10:30:00.000Z">
+<meta property="article:modified_time" content="2024-09-24T06:31:04.366Z">
 <meta property="article:author" content="AryaGala">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -51,7 +51,7 @@
     
     <title>
         
-            python os模块常用操作解析 -
+            python unittest 单元测试框架 -
         
         AryaGala&#39;s Blog
     </title>
@@ -334,7 +334,7 @@
 
         <div class="article-title">
             
-                <h1 class="article-title-regular">python os模块常用操作解析</h1>
+                <h1 class="article-title-regular">python unittest 单元测试框架</h1>
             
             </div>
             
@@ -356,15 +356,15 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-08-03 22:09:52</span>
-        <span class="mobile">2023-08-03 22:09:52</span>
+        <span class="desktop">2024-09-23 18:30</span>
+        <span class="mobile">2024-09-23 18:30</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-01-26 16:02:46</span>
-            <span class="mobile">2024-01-26 16:02:46</span>
+            <span class="desktop">2024-09-24 14:31:04</span>
+            <span class="mobile">2024-09-24 14:31:04</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -402,30 +402,30 @@
 
 
         <div class="article-content markdown-body">
-            <h2 id="os-path模块常用内容"><a href="#os-path模块常用内容" class="headerlink" title="os.path模块常用内容"></a>os.path模块常用内容</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="built_in">print</span>( os.path.basename(<span class="string">&#x27;D://test.txt&#x27;</span>) )   <span class="comment"># 返回文件名</span></span><br><span class="line"><span class="built_in">print</span>( os.path.dirname(<span class="string">&#x27;D://test.txt&#x27;</span>) )    <span class="comment"># 返回目录路径</span></span><br><span class="line"><span class="built_in">print</span>( os.path.split(<span class="string">&#x27;D://test.txt&#x27;</span>) )      <span class="comment"># 分割文件名与路径</span></span><br><span class="line"><span class="built_in">print</span>( os.path.splitext(<span class="string">&#x27;D://test.txt&#x27;</span>) )   <span class="comment">#分割root（除了ext之外的所有内容）和ext（扩展名）</span></span><br><span class="line"><span class="built_in">print</span>( os.path.splitdrive(<span class="string">&#x27;D://folder//test.txt&#x27;</span>) ) </span><br><span class="line"><span class="built_in">print</span>( os.path.join(<span class="string">&#x27;Root&#x27;</span>,<span class="string">&#x27;folder&#x27;</span>,<span class="string">&#x27;test.txt&#x27;</span>) )  <span class="comment"># 将目录和文件名合成一个路径</span></span><br><span class="line"><span class="built_in">print</span>( os.path.abspath(<span class="string">&#x27;test.txt&#x27;</span>) )                       <span class="comment">#返回绝对路径</span></span><br><span class="line"><span class="built_in">print</span>(os.path.normcase(<span class="string">&#x27;D://FOLDER//TEXT.txt&#x27;</span>))     <span class="comment">#将路径的所有字符转换为小写，正斜杠转为反斜杠(windows)</span></span><br></pre></td></tr></table></figure></div>
-<p>输出结果：<br>test.txt<br>D:&#x2F;&#x2F;<br>[‘D:&#x2F;&#x2F;‘, ‘test.txt’]<br>[‘D:&#x2F;&#x2F;test’, ‘.txt’]<br>(‘D:’, ‘&#x2F;&#x2F;folder&#x2F;&#x2F;test.txt’)<br>Root\folder\test.txt<br>D:\test.txt<br>d:\folder\text.txt</p>
-<h2 id="os模块常用内容"><a href="#os模块常用内容" class="headerlink" title="os模块常用内容"></a>os模块常用内容</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#返回路径下的文件名称</span></span><br><span class="line"><span class="number">1.</span><span class="built_in">print</span>(os.listdir(D:\test))                      </span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历该目录下的文件,返回当前所遍历的文件夹所在地址，该文件夹中所有目录的名字，文件夹中所有的目录</span></span><br><span class="line"><span class="number">2.</span><span class="built_in">print</span>(os.walk(地址))        </span><br><span class="line"></span><br><span class="line"><span class="comment">#返回当前路径</span></span><br><span class="line"><span class="number">3.</span><span class="built_in">print</span>(os.getcwd())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件</span></span><br><span class="line"><span class="number">4.</span>os.startfile(path)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Linux用~来代表/home/username,但是python不认识~,所以需要调用os库来把~展开</span></span><br><span class="line"><span class="number">5.</span>path=os.path.expanduser(<span class="string">&#x27;~/Documents&#x27;</span>)        </span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取文件的大小</span></span><br><span class="line"><span class="number">6.</span>os.stat(path).st_size</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>输出结果：<br>1.[‘aaa.py’, ‘bbb.py’]<br>5.’C:\Arya\Documents’</p>
-<p>参考来自：<a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/python/python-os-path.html" >🥦🐦教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>unittest是支持测试自动化并将测试与报告框架独立的单元测试框架。它包含一些特殊的概念，比如测试开始前的清理工作，建立测试用例，使用测试套件以及使用测试运行器运行结果。<br><a class="link"   target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.12/library/unittest.html" >参考文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>继承自unittest.TestCase的类即为一个测试用例，可以定义类方法，以test开头。然后在函数内使用断言方法，这样可以使测试运行器收集所有测试结果并生成报告。</p>
+<p>unittest通过命令行运行文件模块、类和独立方法进行测试</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python -m unittest tests/test_something.py</span><br><span class="line">python -m unittest test_module1 test_module2</span><br><span class="line">python -m unittest test_module.TestClass</span><br><span class="line">python -m unittest test_module.TestClass.test_method</span><br></pre></td></tr></table></figure></div>
 
+<h2 id="命令行选项"><a href="#命令行选项" class="headerlink" title="命令行选项"></a>命令行选项</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python -m unittest -b test_module1 test_module2             <span class="comment"># 丢弃成功输出，只输出测试失败信息</span></span><br><span class="line">python -m unittest -k foo       <span class="comment"># 测试该目录下名称中含有“foo“的模块</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> python os模块常用操作解析</li>
+        <li><strong>标题:</strong> python unittest 单元测试框架</li>
         <li><strong>作者:</strong> AryaGala</li>
         <li><strong>创建于
-                :</strong> 2023-08-03 22:09:52</li>
+                :</strong> 2024-09-23 18:30:00</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-01-26 16:02:46
+                    :</strong> 2024-09-24 14:31:04
             </li>
         
         <li>
-            <strong>链接:</strong> https://aryagala0.github.io/2023/08/03/python基础/pythonos/
+            <strong>链接:</strong> https://aryagala0.github.io/2024/09/23/python基础/python unittest模块/
         </li>
         <li>
             <strong>
@@ -460,13 +460,13 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2023/08/04/python%E5%9F%BA%E7%A1%80/python%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F/"
+                        href="/2024/09/24/REZ/rez%E5%9F%BA%E7%A1%80/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
                             </span>
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">python 声明变量</span>
+                                <span class="post-nav-title-item"></span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -476,10 +476,10 @@
                     <div class="article-next">
                         <a class="next"
                         rel="next"
-                        href="/2023/07/31/%E7%94%9F%E6%B4%BB/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2-%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/"
+                        href="/2024/09/03/git/git%E4%BD%BF%E7%94%A8%E5%AE%88%E5%88%99/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">我的第一篇博客--建站心得</span>
+                                <span class="post-nav-title-item">git使用守则</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -544,8 +544,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">python os模块常用操作解析</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#os-path%E6%A8%A1%E5%9D%97%E5%B8%B8%E7%94%A8%E5%86%85%E5%AE%B9"><span class="nav-text">os.path模块常用内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#os%E6%A8%A1%E5%9D%97%E5%B8%B8%E7%94%A8%E5%86%85%E5%AE%B9"><span class="nav-text">os模块常用内容</span></a></li></ol>
+        <div class="page-title">python unittest 单元测试框架</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E9%80%89%E9%A1%B9"><span class="nav-text">命令行选项</span></a></li></ol>
 
     </div>
 </div>
