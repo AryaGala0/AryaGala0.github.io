@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://aryagala0.github.io/2023/12/06/mayaapi/mayaapi学习笔记01/"/>
+    <link rel="canonical" href="https://aryagala0.github.io/2023/12/06/maya/mayaapi学习笔记01/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -21,7 +21,7 @@
         <meta name="description" content="随手记Maya是开放软件可以通过插件拓展。但是Maya是闭源的，它的核心代码不可以查看和更改，必须通过Maya提供的两个应用程序接口对Maya软件进行拓展。 1.Maya Commands可以用mel或者python语言进行调用的程序接口。mel是maya编程的核心，maya的GUI就是由mel构建的。而maya.cmds（python）是mel代码的封装。 2.MayaAPIMayaAPI最初是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MayaAPI学习笔记--Zurbrigg - Maya Python API (Volume1)">
-<meta property="og:url" content="https://aryagala0.github.io/2023/12/06/MayaAPI/MayaAPI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/index.html">
+<meta property="og:url" content="https://aryagala0.github.io/2023/12/06/Maya/MayaAPI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/index.html">
 <meta property="og:site_name" content="AryaGala&#39;s Bolg">
 <meta property="og:description" content="随手记Maya是开放软件可以通过插件拓展。但是Maya是闭源的，它的核心代码不可以查看和更改，必须通过Maya提供的两个应用程序接口对Maya软件进行拓展。 1.Maya Commands可以用mel或者python语言进行调用的程序接口。mel是maya编程的核心，maya的GUI就是由mel构建的。而maya.cmds（python）是mel代码的封装。 2.MayaAPIMayaAPI最初是">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://aryagala0.github.io/images/MayaAPI/MayaAPINote_01/DGUpdate.png">
 <meta property="og:image" content="https://aryagala0.github.io/images/MayaAPI/MayaAPINote_01/Attributes.png">
 <meta property="article:published_time" content="2023-12-06T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-13T10:01:06.872Z">
+<meta property="article:modified_time" content="2024-11-22T07:45:52.504Z">
 <meta property="article:author" content="AryaGala">
 <meta property="article:tag" content="MayaAPI">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,7 @@
     
     <script id="hexo-configurations">
     window.config = {"hostname":"aryagala0.github.io","root":"/","language":"zh-CN"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#5e5d5d","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Those who can,do.And those who can't, supervise.  --《The Baby Boss》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","It's time to make way for the next generation and it's the way of the world  --《The Baby Boss》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","Once you name it,you start getting attached to it.--《Monsters'Inc》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","The family is more important than the dream  --《Coco》","The real death is that no one in the world remembers you. --《Coco》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#5e5d5d","dark":"#000"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#7a7a7a","right":"#fff","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/AryaGala0","Blog":"https://aryagala0.github.io/","Friends":"/links"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":{"Tags":{"path":"/tags"},"Categories":{"path":"/categories"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#5e5d5d","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Dosis","url":null},"english":{"enable":true,"family":"Comic Sans MS","url":null}},"content_max_width":"1200px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":true,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"images/day_bg.webp","dark":"images/night_bg.webp"},"title":"AryaGala's Blog","subtitle":{"text":["我想成为惊吓专员 --《怪兽大学》","我今天状态特佳。 --《怪兽电力公司》","Those who can,do.And those who can't, supervise.  --《The Baby Boss》","尽管我不够优秀，但是我无所畏惧 --《怪兽大学》","When life gets you down,you know what you gotta do?Just keep swimming--《Finding Nemo》","生活要有目标，但我们不是为了目标而生活。-- 《心灵奇旅》","Once you name it,you start getting attached to it.--《Monsters'Inc》","忘我是快乐的，但当这种快乐成了一种执念，人就成了迷失的灵魂。-- 《心灵奇旅》","只喜欢看天，走路、吃披萨的人生也很好。-- 《心灵奇旅》","感谢每一种梦想，让生活值得奔赴。-- 《心灵奇旅》","The family is more important than the dream  --《Coco》","The real death is that no one in the world remembers you. --《Coco》","Good night,sweetheart.--《Monsters'Inc》"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":80,"backing_speed":20,"starting_delay":1000,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#5e5d5d","dark":"#000"},"text_style":{"title_size":"5rem","subtitle_size":"2.2rem","line_height":6},"custom_font":{"enable":true,"family":"Comic Sans MS","url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/AryaGala0","instagram":null,"zhihu":null,"twitter":null,"email":"jingyaqin000@gmail.com"},"qrs":{"weixin":"images/wechat.jpg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.5.0","navbar":{"auto_hide":false,"color":{"left":"#7a7a7a","right":"#fff","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/AryaGala0","Blog":"https://aryagala0.github.io/","Friends":"/links"}}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"links":{"Tags":{"path":"/tags"},"Categories":{"path":"/categories"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/1 0:0:0"};
     window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
     window.data = {"masonry":false};
   </script>
@@ -373,8 +373,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-13 18:01:06</span>
-            <span class="mobile">2024-06-13 18:01:06</span>
+            <span class="desktop">2024-11-22 15:45:52</span>
+            <span class="mobile">2024-11-22 15:45:52</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -462,11 +462,11 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-06-13 18:01:06
+                    :</strong> 2024-11-22 15:45:52
             </li>
         
         <li>
-            <strong>链接:</strong> https://aryagala0.github.io/2023/12/06/MayaAPI/MayaAPI学习笔记01/
+            <strong>链接:</strong> https://aryagala0.github.io/2023/12/06/Maya/MayaAPI学习笔记01/
         </li>
         <li>
             <strong>
@@ -501,7 +501,7 @@
                     <div class="article-prev">
                         <a class="prev"
                         rel="prev"
-                        href="/2023/12/07/MayaAPI/MayaAPI%E6%A1%88%E4%BE%8B/"
+                        href="/2023/12/07/Maya/MayaAPI%E6%A1%88%E4%BE%8B/"
                         >
                             <span class="left arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-left"></i>
