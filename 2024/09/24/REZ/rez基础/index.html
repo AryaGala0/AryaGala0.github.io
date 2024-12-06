@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://aryagala0.github.io/images/rez/rez_version.png">
 <meta property="article:published_time" content="2024-09-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-12-06T03:19:28.429Z">
+<meta property="article:modified_time" content="2024-12-06T05:30:05.548Z">
 <meta property="article:author" content="AryaGala">
 <meta property="article:tag" content="rez">
 <meta name="twitter:card" content="summary">
@@ -365,8 +365,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-12-06 11:19:28</span>
-            <span class="mobile">2024-12-06 11:19:28</span>
+            <span class="desktop">2024-12-06 13:30:05</span>
+            <span class="mobile">2024-12-06 13:30:05</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -417,6 +417,10 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rez-env maya_utils &#x27;!maya-2015.6&#x27;</span><br></pre></td></tr></table></figure></div>
 <h4 id="弱操作符"><a href="#弱操作符" class="headerlink" title="弱操作符"></a>弱操作符</h4><p>~操作符表示弱引用，也就是说，用它操作的包在生成环境的时候不一定是必须的，但如果有这个包，就一定要在对应的版本内。</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rez-env foo &#x27;~nuke-9.rc2&#x27;</span><br></pre></td></tr></table></figure></div>
+<h3 id="隐式包"><a href="#隐式包" class="headerlink" title="隐式包"></a>隐式包</h3><p>隐式包就是rez每次请求包的时候会自动添加的包，不用额外再在请求的时候添加。隐式包添加在</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">implicit_packages = [</span><br><span class="line">   &quot;~platform==&#123;system.platform&#125;&quot;,</span><br><span class="line">   &quot;~arch==&#123;system.arch&#125;&quot;,</span><br><span class="line">   &quot;~os==&#123;system.os&#125;&quot;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></div>
+<p>中</p>
+
         </div>
 
         
@@ -430,7 +434,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-12-06 11:19:28
+                    :</strong> 2024-12-06 13:30:05
             </li>
         
         <li>
@@ -554,7 +558,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">rez中的概念</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rez%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">Rez中的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez"><span class="nav-text">Rez</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Version"><span class="nav-text">Rez-Version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Packages"><span class="nav-text">Rez-Packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Package-Repositories"><span class="nav-text">Rez-Package Repositories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Packages-Search-Path"><span class="nav-text">Rez-Packages Search Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Package-Commands"><span class="nav-text">Rez-Package Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Package-Requests"><span class="nav-text">Rez-Package Requests</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Rez%E4%B8%AD%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">Rez中的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez"><span class="nav-text">Rez</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Version"><span class="nav-text">Rez-Version</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Packages"><span class="nav-text">Rez-Packages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Package-Repositories"><span class="nav-text">Rez-Package Repositories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Packages-Search-Path"><span class="nav-text">Rez-Packages Search Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Package-Commands"><span class="nav-text">Rez-Package Commands</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rez-Package-Requests"><span class="nav-text">Rez-Package Requests</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E5%8C%85"><span class="nav-text">隐式包</span></a></li></ol></li></ol>
 
     </div>
 </div>
